@@ -53,12 +53,6 @@ public class VentanaOpcionesFisio extends JFrame {
 			}
 		});
 		
-		JButton btnNewButton = new JButton("Apuntar sesion");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		
 		JButton btnNewButton_3 = new JButton("Cerrar Sesi\u00F3n");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -67,32 +61,44 @@ public class VentanaOpcionesFisio extends JFrame {
 				dispose();
 			}
 		});
+		
+		JButton btnGenerarInforme = new JButton("Generar informe");
+		btnGenerarInforme.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VentanaGenerarInforme obj3=new VentanaGenerarInforme();
+				obj3.setVisible(true);
+				dispose();
+			}
+		});
+		btnGenerarInforme.setBounds(233, 168, 161, 23);
+		contentPane.add(btnGenerarInforme);
 		btnNewButton_3.setBounds(57, 439, 161, 23);
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_2 = new JButton("Dar alta medica");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				DarAltaMedica obj=new DarAltaMedica();
+			    obj.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_2.setBounds(233, 202, 161, 23);
+		contentPane.add(btnNewButton_2);
+		
+		JButton btnNewButton_1 = new JButton("Dar baja medica");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				ventanabajamedica obj=new ventanabajamedica();
 				obj.setVisible(true);
 				dispose();
 			}
 		});
-		btnNewButton_2.setBounds(356, 200, 161, 23);
-		contentPane.add(btnNewButton_2);
-		
-		JButton btnNewButton_1 = new JButton("Dar baja medica");
-		btnNewButton_1.setBounds(356, 150, 161, 23);
+		btnNewButton_1.setBounds(233, 134, 161, 23);
 		contentPane.add(btnNewButton_1);
-		btnNewButton.setBounds(138, 200, 161, 23);
-		contentPane.add(btnNewButton);
 		btnNewButton_6.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\Proyecto csm\\ventanas proyecto\\exit.png"));
 		btnNewButton_6.setBounds(488, 407, 107, 55);
 		contentPane.add(btnNewButton_6);
-		
-		JButton btnCrearInformeDe = new JButton("Crear informe de lesiones");
-		btnCrearInformeDe.setBounds(138, 150, 161, 23);
-		contentPane.add(btnCrearInformeDe);
 		
 		JLabel lblBienvenidoUsuario = new JLabel("Bienvenido Usuario");
 		lblBienvenidoUsuario.setFont(new Font("Modern No. 20", Font.PLAIN, 20));

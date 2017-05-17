@@ -59,12 +59,16 @@ public class VentanaLogin extends JFrame {
 	
 	
 	public VentanaLogin() {
+		setResizable(false);
 		setIconImage(new ImageIcon(getClass().getResource("soccer.png")).getImage());
 		setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
 		setTitle("Login");
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 638, 453);
+		int ancho=java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
+		int alto=java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
+		//setBounds()
+		setBounds(0, 0, ancho, alto);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
