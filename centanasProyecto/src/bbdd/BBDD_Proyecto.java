@@ -35,4 +35,23 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 			return null;
 		}
 	}
+	
+	public Vector<String> buscarEmpleado(){
+		String cadena="SELECT Dni_Emple FROM empleados";
+		try{
+			this.abrir();
+			s=c.createStatement();
+			reg=s.executeQuery(cadena);
+			Vector<String> emp=new Vector<String>();
+			while(reg.next())
+				emp.add(reg.getString(1));
+			s.close();
+			this.cerrar();
+			return emp;	
+		}
+		catch ( SQLException e){
+			this.cerrar();
+			return null;
+		}
+	}
 }

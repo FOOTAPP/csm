@@ -89,6 +89,13 @@ public class VentanaOpcionesEntrenador extends JFrame {
 		contentPane.add(btnNewButton_6);
 		
 		JButton btnNewButton_4 = new JButton("Dar baja cuerpo tecnico");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				DarBajaEmpleado obj = new DarBajaEmpleado();
+				obj.setVisible(true);
+				dispose();
+			}
+		});
 		btnNewButton_4.setBounds(362, 170, 180, 23);
 		contentPane.add(btnNewButton_4);
 		
