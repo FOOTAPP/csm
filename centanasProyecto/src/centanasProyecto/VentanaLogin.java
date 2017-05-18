@@ -28,6 +28,8 @@ import java.awt.event.ActionEvent;
 import org.eclipse.wb.swing.FocusTraversalOnArray;
 import java.awt.Component;
 import java.awt.Dialog.ModalExclusionType;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class VentanaLogin extends JFrame {
 
@@ -65,24 +67,34 @@ public class VentanaLogin extends JFrame {
 		setTitle("Login");
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		int ancho=java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
+		int inicioancho=ancho/4;
 		int alto=java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
+		int inicioalto=alto/4;
+		ancho=ancho/2;
+		alto=alto/2;
 		//setBounds()
-		setBounds(0, 0, ancho, alto);
+		setBounds(inicioancho,inicioalto, ancho, alto);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(102, 153, 51));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("");
+		btnNewButton.setForeground(Color.WHITE);
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
 		});
-		btnNewButton.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\Proyecto csm\\ventanas proyecto\\exit.png"));
-		btnNewButton.setBounds(473, 350, 108, 54);
+		
+		btnNewButton.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\WorkSpaceEclipse\\centanasProyecto\\power-button-off.png"));
+		btnNewButton.setBounds(767, 455, 57, 42);
 		contentPane.add(btnNewButton);
 		
 		passwordField = new JPasswordField();
@@ -153,11 +165,6 @@ public class VentanaLogin extends JFrame {
 		btnIniciciarSesion.setBackground(UIManager.getColor("Button.background"));
 		btnIniciciarSesion.setBounds(239, 165, 134, 23);
 		contentPane.add(btnIniciciarSesion);
-		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\Proyecto csm\\ventanas proyecto\\fondo2.jpg"));
-		lblNewLabel.setBounds(10, -11, 600, 443);
-		contentPane.add(lblNewLabel);
-		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{contentPane, btnNewButton, passwordField, lblContrasea, error, textField, lblUsuario, btnIniciciarSesion, lblNewLabel}));
+		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{contentPane, btnNewButton, passwordField, lblContrasea, error, textField, lblUsuario, btnIniciciarSesion}));
 	}
 }
