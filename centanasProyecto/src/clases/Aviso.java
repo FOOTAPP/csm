@@ -10,7 +10,7 @@ public class Aviso {
 	private LocalDateTime fh_leido, fh_creado;
 	private Vector<String> destinatarios;
 	private Date date;
-	//hola quuetet
+	//hola quuetet nnnn
 	public Aviso(String dni_emple, String motivo, LocalDateTime fh_creado, Vector<String> destinatarios) {
 		super();
 		this.dni_emple = dni_emple;
