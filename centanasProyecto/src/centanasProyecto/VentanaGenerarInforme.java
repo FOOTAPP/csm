@@ -14,6 +14,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+
+import bbdd.BBDD_Fisio;
+
 import javax.swing.JComboBox;
 
 

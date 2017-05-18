@@ -1,24 +1,22 @@
 package centanasProyecto;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.LocalDateTime;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import bbdd.BBDD_Fisio;
+import bbdd.BBDD_Jugador;
 
-import javax.swing.JComboBox;
-
-public class DarAltaMedica extends JFrame {
+public class DarBajaJugador extends JFrame{
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -30,7 +28,7 @@ public class DarAltaMedica extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					DarAltaMedica frame = new DarAltaMedica();
+					DarBajaJugador frame = new DarBajaJugador();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,9 +40,9 @@ public class DarAltaMedica extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public DarAltaMedica() {
-		BBDD_Fisio bd=new BBDD_Fisio("proyecto");
-		setTitle("Baja m\u00E9dica");
+	public DarBajaJugador() {
+		BBDD_Jugador bd=new BBDD_Jugador("proyecto");
+		setTitle("Dar baja jugador");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 546, 367);
 		contentPane = new JPanel();
@@ -52,7 +50,7 @@ public class DarAltaMedica extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblErrorNoHya = new JLabel("Error, no hya jugadores disponibles");
+		JLabel lblErrorNoHya = new JLabel("Error, no hay jugadores disponibles");
 		lblErrorNoHya.setForeground(Color.WHITE);
 		lblErrorNoHya.setBounds(137, 228, 229, 14);
 		contentPane.add(lblErrorNoHya);
@@ -61,22 +59,22 @@ public class DarAltaMedica extends JFrame {
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(160, 133, 124, 20);
 		contentPane.add(comboBox);		
-		for(String a : bd.buscarJugadoresLesionados("Si"))
+		for(String a : bd.buscarJugadores())
 			comboBox.addItem(a);
 		
 		
 		
-		JButton btnGenerarBajaMedica = new JButton("Generar alta medica");
-		btnGenerarBajaMedica.addActionListener(new ActionListener() {
+		JButton darBajaJugador = new JButton("Dar baja");
+		darBajaJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String dni = (String) comboBox.getSelectedItem();
 				if (dni==null)
 					lblErrorNoHya.setVisible(true);
 				else{
 				
-				bd.darAltaMedica(dni);
+				bd.borrarJugador(dni);
 				
-				VentanaGenerarInforme obj2=new VentanaGenerarInforme(dni);
+				VentanaOpcionesEntrenador obj2=new VentanaOpcionesEntrenador();
 				obj2.setVisible(true);
 				dispose();
 				}
@@ -86,17 +84,18 @@ public class DarAltaMedica extends JFrame {
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaOpcionesFisio obj2=new VentanaOpcionesFisio();
-				obj2.setVisible(true);
+				VentanaOpcionesEntrenador obj4=new VentanaOpcionesEntrenador();
+				obj4.setVisible(true);
 				dispose();
+				
 			}
 		});
 		
 		
 		btnVolver.setBounds(0, 306, 89, 23);
 		contentPane.add(btnVolver);
-		btnGenerarBajaMedica.setBounds(301, 278, 182, 23);
-		contentPane.add(btnGenerarBajaMedica);
+		darBajaJugador.setBounds(301, 278, 182, 23);
+		contentPane.add(darBajaJugador);
 		
 		
 		textField = new JTextField();

@@ -52,7 +52,7 @@ public class VentanaOpcionesEntrenador extends JFrame {
 			}
 		});
 		
-		JButton btnNewButton = new JButton("Ssolicitar material");
+		JButton btnNewButton = new JButton("Solicitar material");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -61,6 +61,9 @@ public class VentanaOpcionesEntrenador extends JFrame {
 		JButton btnNewButton_2 = new JButton("Dar alta jugador");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				DarAltaJugador obj = new DarAltaJugador();
+				obj.setVisible(true);
+				dispose();
 			}
 		});
 		
@@ -98,6 +101,9 @@ public class VentanaOpcionesEntrenador extends JFrame {
 		JButton btnNewButton_3 = new JButton("Dar baja jugador");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				DarBajaJugador obj = new DarBajaJugador();
+				obj.setVisible(true);
+				dispose();
 			}
 		});
 		btnNewButton_3.setBounds(122, 281, 180, 23);
