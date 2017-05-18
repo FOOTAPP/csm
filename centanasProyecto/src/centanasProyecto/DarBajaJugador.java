@@ -56,7 +56,7 @@ public class DarBajaJugador extends JFrame{
 		contentPane.add(lblErrorNoHya);
 		lblErrorNoHya.setVisible(false);
 		
-		JComboBox comboBox = new JComboBox();
+		JComboBox<String> comboBox = new JComboBox<String>();
 		comboBox.setBounds(160, 133, 124, 20);
 		contentPane.add(comboBox);		
 		for(String a : bd.buscarJugadores())

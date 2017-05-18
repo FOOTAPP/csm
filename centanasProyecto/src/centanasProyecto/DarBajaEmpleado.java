@@ -50,13 +50,13 @@ public class DarBajaEmpleado extends JFrame{
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblErrorNoHya = new JLabel("Error, no hay jugadores disponibles");
+		JLabel lblErrorNoHya = new JLabel("Error, no hay empleados disponibles");
 		lblErrorNoHya.setForeground(Color.WHITE);
 		lblErrorNoHya.setBounds(137, 228, 229, 14);
 		contentPane.add(lblErrorNoHya);
 		lblErrorNoHya.setVisible(false);
 		
-		JComboBox comboBox = new JComboBox();
+		JComboBox<String> comboBox = new JComboBox<String>();
 		comboBox.setBounds(160, 133, 124, 20);
 		contentPane.add(comboBox);		
 		for(String a : bd.buscarEmpleado())

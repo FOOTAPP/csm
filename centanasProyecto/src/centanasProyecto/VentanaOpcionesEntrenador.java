@@ -1,6 +1,5 @@
 package centanasProyecto;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -100,6 +99,13 @@ public class VentanaOpcionesEntrenador extends JFrame {
 		contentPane.add(btnNewButton_4);
 		
 		JButton btnDarAltaCuerpo = new JButton("Dar alta cuerpo tecnico");
+		btnDarAltaCuerpo.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				DarAltaEmpleado obj = new DarAltaEmpleado();
+				obj.setVisible(true);
+				dispose();
+			}
+		});
 		btnDarAltaCuerpo.setBounds(362, 116, 180, 23);
 		contentPane.add(btnDarAltaCuerpo);
 		btnNewButton_2.setBounds(122, 327, 180, 23);

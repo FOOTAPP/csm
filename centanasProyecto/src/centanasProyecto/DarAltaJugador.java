@@ -1,6 +1,5 @@
 package centanasProyecto;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
@@ -19,10 +18,6 @@ import bbdd.BBDD_Jugador;
 import clases.Jugador;
 
 import javax.swing.JComboBox;
-import javax.swing.JTable;
-import com.toedter.calendar.JCalendar;
-import com.toedter.calendar.JDayChooser;
-import com.toedter.calendar.JDateChooser;
 
 public class DarAltaJugador extends JFrame{
 
@@ -66,9 +61,15 @@ public class DarAltaJugador extends JFrame{
 		
 		JLabel lblErrorNoHya = new JLabel("Rellene todos los campos");
 		lblErrorNoHya.setForeground(Color.WHITE);
-		lblErrorNoHya.setBounds(324, 280, 152, 14);
+		lblErrorNoHya.setBounds(160, 280, 152, 14);
 		contentPane.add(lblErrorNoHya);
 		lblErrorNoHya.setVisible(false);
+		
+		JLabel dnierroneo = new JLabel("Dni erroneo");
+		dnierroneo.setForeground(Color.WHITE);
+		dnierroneo.setBounds(335, 29, 152, 14);
+		contentPane.add(dnierroneo);
+		dnierroneo.setVisible(false);
 		
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.addActionListener(new ActionListener() {
@@ -140,7 +141,7 @@ public class DarAltaJugador extends JFrame{
 		textcorreo.setBounds(119, 225, 182, 20);
 		contentPane.add(textcorreo);
 		
-		JComboBox comboBox = new JComboBox();
+		JComboBox<String> comboBox = new JComboBox<String>();
 		comboBox.setBounds(160, 185, 57, 20);
 		contentPane.add(comboBox);
 		comboBox.addItem("POR");
@@ -154,14 +155,21 @@ public class DarAltaJugador extends JFrame{
 		JButton darAltaJugador = new JButton("Dar alta");
 		darAltaJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(textnombre.getText().equals("") || textdni.getText().equals("") || textcorreo.getText().equals("") || textcuenta.getText().equals("") || texttelf.getText().equals(""))
+				ValidarDni a=new ValidarDni(textdni.getText());
+				boolean validado=a.validar();
+				if(textnombre.getText().equals("") || textdni.getText().equals("") || textcorreo.getText().equals("") || textcuenta.getText().equals("") || texttelf.getText().equals("") || demarcacion.equals(""))
 					lblErrorNoHya.setVisible(true);
 				else{
-					Jugador nuevojugador=new Jugador(textnombre.getText(),textdni.getText(), textcorreo.getText(), demarcacion, textcuenta.getText(), texttelf.getText(), hoy, nacimiento);
-					bd.altaJugador(nuevojugador);
-					VentanaOpcionesEntrenador obj2=new VentanaOpcionesEntrenador();
-					obj2.setVisible(true);
-					dispose();
+					lblErrorNoHya.setVisible(false);
+					if(!validado)
+						dnierroneo.setVisible(true);
+					else{
+						Jugador nuevojugador=new Jugador(textnombre.getText(),textdni.getText(), textcorreo.getText(), demarcacion, textcuenta.getText(), texttelf.getText(), hoy, nacimiento);
+						bd.altaJugador(nuevojugador);
+						VentanaOpcionesEntrenador obj2=new VentanaOpcionesEntrenador();
+						obj2.setVisible(true);
+						dispose();
+						}
 					}
 				}
 			}
