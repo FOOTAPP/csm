@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -14,6 +16,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+
+import com.toedter.calendar.JDateChooser;
+
 import bbdd.BBDD_Jugador;
 import clases.Jugador;
 
@@ -28,7 +33,6 @@ public class DarAltaJugador extends JFrame{
 	private JTextField textcuenta;
 	private JTextField textcorreo;
 	private LocalDateTime hoy=LocalDateTime.now();
-	private LocalDate nacimiento=LocalDate.now();
 
 	/**
 	 * Launch the application.
@@ -70,6 +74,18 @@ public class DarAltaJugador extends JFrame{
 		dnierroneo.setBounds(335, 29, 152, 14);
 		contentPane.add(dnierroneo);
 		dnierroneo.setVisible(false);
+		
+		JLabel dniexiste = new JLabel("Este Dni ya existe");
+		dniexiste.setForeground(Color.WHITE);
+		dniexiste.setBounds(335, 29, 152, 14);
+		contentPane.add(dniexiste);
+		dniexiste.setVisible(false);
+		
+		JLabel errortelefono = new JLabel("Teléfono erroneo");
+		errortelefono.setForeground(Color.WHITE);
+		errortelefono.setBounds(300, 111, 152, 14);
+		contentPane.add(errortelefono);
+		errortelefono.setVisible(false);
 		
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.addActionListener(new ActionListener() {
@@ -152,24 +168,43 @@ public class DarAltaJugador extends JFrame{
 		comboBox.addItem("DC");
 		String demarcacion=(String) comboBox.getSelectedItem();
 		
+		JDateChooser dateChooser = new JDateChooser();
+		dateChooser.setBounds(392, 182, 95, 20);
+		contentPane.add(dateChooser);
+		
 		JButton darAltaJugador = new JButton("Dar alta");
 		darAltaJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ValidarDni a=new ValidarDni(textdni.getText());
-				boolean validado=a.validar();
+				ValidarDni dni=new ValidarDni(textdni.getText());
+				boolean validado=dni.validar();
+				
+				Date inputDate = new Date();
+				inputDate=dateChooser.getDate();
+				LocalDate fnacimiento = inputDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+				
 				if(textnombre.getText().equals("") || textdni.getText().equals("") || textcorreo.getText().equals("") || textcuenta.getText().equals("") || texttelf.getText().equals("") || demarcacion.equals(""))
 					lblErrorNoHya.setVisible(true);
 				else{
 					lblErrorNoHya.setVisible(false);
 					if(!validado)
 						dnierroneo.setVisible(true);
-					else{
-						Jugador nuevojugador=new Jugador(textnombre.getText(),textdni.getText(), textcorreo.getText(), demarcacion, textcuenta.getText(), texttelf.getText(), hoy, nacimiento);
-						bd.altaJugador(nuevojugador);
-						VentanaOpcionesEntrenador obj2=new VentanaOpcionesEntrenador();
-						obj2.setVisible(true);
-						dispose();
+					else
+						if(bd.buscarDni(textdni.getText()) == 1){
+							dniexiste.setVisible(true);
+							dnierroneo.setVisible(false);
 						}
+						else
+							if(texttelf.getText().length() != 9){
+								dniexiste.setVisible(false);
+								errortelefono.setVisible(true);
+							}
+							else{
+								Jugador nuevojugador=new Jugador(textnombre.getText(),textdni.getText(), textcorreo.getText(), demarcacion, textcuenta.getText(), texttelf.getText(), hoy, fnacimiento);
+								bd.altaJugador(nuevojugador);
+								VentanaOpcionesEntrenador obj2=new VentanaOpcionesEntrenador();
+								obj2.setVisible(true);
+								dispose();
+								}
 					}
 				}
 			}

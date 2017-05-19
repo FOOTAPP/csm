@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -18,6 +20,8 @@ import javax.swing.border.EmptyBorder;
 
 import bbdd.BBDD_Empleado;
 import clases.Empleado;
+import com.toedter.calendar.JDayChooser;
+import com.toedter.calendar.JDateChooser;
 
 public class DarAltaEmpleado extends JFrame{
 
@@ -28,7 +32,6 @@ public class DarAltaEmpleado extends JFrame{
 	private JTextField textcuenta;
 	private JTextField textcorreo;
 	private LocalDateTime hoy=LocalDateTime.now();
-	private LocalDate nacimiento=LocalDate.now();
 
 	/**
 	 * Launch the application.
@@ -81,6 +84,18 @@ public class DarAltaEmpleado extends JFrame{
 		dnierroneo.setBounds(335, 29, 152, 14);
 		contentPane.add(dnierroneo);
 		dnierroneo.setVisible(false);
+		
+		JLabel dniexiste = new JLabel("Este Dni ya existe");
+		dniexiste.setForeground(Color.WHITE);
+		dniexiste.setBounds(335, 29, 152, 14);
+		contentPane.add(dniexiste);
+		dniexiste.setVisible(false);
+		
+		JLabel errortelefono = new JLabel("Teléfono erroneo");
+		errortelefono.setForeground(Color.WHITE);
+		errortelefono.setBounds(300, 111, 152, 14);
+		contentPane.add(errortelefono);
+		errortelefono.setVisible(false);
 
 		
 		JLabel lblNewLabel = new JLabel("");
@@ -153,11 +168,20 @@ public class DarAltaEmpleado extends JFrame{
 		textcorreo.setBounds(119, 225, 209, 20);
 		contentPane.add(textcorreo);
 		
+		JDateChooser dateChooser = new JDateChooser();
+		dateChooser.setBounds(392, 182, 95, 20);
+		contentPane.add(dateChooser);
+		
+		
 		JButton darAltaJugador = new JButton("Dar alta");
 		darAltaJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ValidarDni a=new ValidarDni(textdni.getText());
-				boolean validado=a.validar();
+				ValidarDni dni=new ValidarDni(textdni.getText());
+				boolean validado=dni.validar();
+				
+				Date inputDate = new Date();
+				inputDate=dateChooser.getDate();
+				LocalDate fnacimiento = inputDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 				
 				if(textnombre.getText().equals("") || textdni.getText().equals("") || textcorreo.getText().equals("") || textcuenta.getText().equals("") || texttelf.getText().equals("") || cargo.equals(""))
 					lblErrorNoHya.setVisible(true);
@@ -165,21 +189,33 @@ public class DarAltaEmpleado extends JFrame{
 					lblErrorNoHya.setVisible(false);
 					if(!validado)
 						dnierroneo.setVisible(true);
-					else{
-					Empleado nuevoempleado=new Empleado(textnombre.getText(),textdni.getText(), textcorreo.getText(), cargo, textcuenta.getText(), texttelf.getText(), hoy, nacimiento);
-					bd.altaEmpleado(nuevoempleado);
-					VentanaOpcionesEntrenador obj2=new VentanaOpcionesEntrenador();
-					obj2.setVisible(true);
-					dispose();
+					else
+						if(bd.buscarDni(textdni.getText()) == 1){
+							dniexiste.setVisible(true);
+							dnierroneo.setVisible(false);
 						}
+						else
+							if(texttelf.getText().length() != 9){
+								dniexiste.setVisible(false);
+								errortelefono.setVisible(true);
+							}
+							else{
+							Empleado nuevoempleado=new Empleado(textnombre.getText(),textdni.getText(), textcorreo.getText(), cargo, textcuenta.getText(), texttelf.getText(), hoy, fnacimiento);
+							bd.altaEmpleado(nuevoempleado);
+							VentanaOpcionesEntrenador obj2=new VentanaOpcionesEntrenador();
+							obj2.setVisible(true);
+							dispose();
+								}
 					}
 				}
 			}
 		);
 		
-		btnVolver.setBounds(0, 306, 89, 23);
+		btnVolver.setBounds(10, 295, 89, 23);
 		contentPane.add(btnVolver);
 		darAltaJugador.setBounds(324, 295, 182, 23);
 		contentPane.add(darAltaJugador);
+		
+		
 	}
 }
