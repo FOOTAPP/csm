@@ -79,8 +79,8 @@ public class VentanaOpcionesEntrenador extends JFrame {
 		JButton btnNewButton_2 = new JButton("Dar alta jugador");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				DarAltaJugador obj = new DarAltaJugador();
-				obj.setVisible(true);
+				DarAltaJugador obj2 = new DarAltaJugador();
+				obj2.setVisible(true);
 				dispose();
 			}
 		});
