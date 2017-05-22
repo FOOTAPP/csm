@@ -67,16 +67,26 @@ public class VentanaOpcionesFinanciero extends JFrame {
 		btnNewButton4.setBounds(496, 374, 108, 54);
 		contentPane.add(btnNewButton4);
 		
-		JButton btnNewButton_2 = new JButton("Modificar sueldo o informacion financiera de un miembro de un empleado");
-		btnNewButton_2.setBounds(239, 207, 185, 57);
+		JButton btnNewButton_2 = new JButton("Modificar cuenta bancaria Jugador");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ModificarCuentaJugador obj = new ModificarCuentaJugador();
+				obj.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_2.setBounds(199, 187, 300, 30);
 		contentPane.add(btnNewButton_2);
 		
-		JButton btnNewButton = new JButton("Acceder a las cuentas del club");
-		btnNewButton.setBounds(239, 108, 185, 23);
-		contentPane.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("Modificar sueldo o informacion financiera de un jugador");
-		btnNewButton_1.setBounds(239, 144, 185, 52);
+		JButton btnNewButton_1 = new JButton("Modificar cuenta bancaria Empleado");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ModificarCuentaEmpleado obj = new ModificarCuentaEmpleado();
+				obj.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_1.setBounds(199, 144, 300, 30);
 		contentPane.add(btnNewButton_1);
 		
 		JLabel lblBienvenidoUsuario = new JLabel("Bienvenido Usuario");
