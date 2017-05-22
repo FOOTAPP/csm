@@ -28,6 +28,10 @@ import java.awt.event.ActionEvent;
 import org.eclipse.wb.swing.FocusTraversalOnArray;
 import java.awt.Component;
 import java.awt.Dialog.ModalExclusionType;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import javax.swing.JEditorPane;
+import javax.swing.JDialog;
 
 public class VentanaLogin extends JFrame {
 
@@ -64,51 +68,62 @@ public class VentanaLogin extends JFrame {
 		setTitle("Login");
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		int ancho=java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
+		int inicioancho=ancho/4;
 		int alto=java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
+		int inicioalto=alto/4;
+		ancho=ancho/2;
+		alto=alto/2;
 		//setBounds()
-		setBounds(0, 0, ancho, alto);
+		setBounds(inicioancho,inicioalto, ancho, alto);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(60, 179, 113));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("");
+		btnNewButton.setForeground(Color.WHITE);
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
 		});
-		btnNewButton.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\Proyecto csm\\ventanas proyecto\\exit.png"));
-		btnNewButton.setBounds(473, 350, 108, 54);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\csmx.jpg"));
+		lblNewLabel.setBounds(10, 0, 213, 84);
+		contentPane.add(lblNewLabel);
+		
+		btnNewButton.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\WorkSpaceEclipse\\centanasProyecto\\power-button-off.png"));
+		btnNewButton.setBounds(573, 131, 57, 42);
 		contentPane.add(btnNewButton);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(312, 118, 161, 20);
+		passwordField.setBounds(377, 284, 161, 20);
 		contentPane.add(passwordField);
 		
 		JLabel lblContrasea = new JLabel("Contrase\u00F1a: ");
+		lblContrasea.setFont(new Font("Arial Black", Font.BOLD, 16));
 		lblContrasea.setForeground(Color.WHITE);
 		lblContrasea.setBackground(Color.BLACK);
-		lblContrasea.setBounds(224, 121, 86, 14);
+		lblContrasea.setBounds(226, 275, 141, 33);
 		contentPane.add(lblContrasea);
 		
-		JLabel error = new JLabel("Error, usuario o contrase\u00F1a incorrectos");
-		error.setForeground(Color.WHITE);
-		error.setBounds(65, 371, 243, 14);
-		contentPane.add(error);
-		error.setVisible(false);
-		
 		textField = new JTextField();
-		textField.setBounds(312, 88, 161, 20);
+		textField.setBounds(377, 222, 161, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		JLabel lblUsuario = new JLabel("Usuario:");
+		lblUsuario.setFont(new Font("Arial Black", Font.BOLD, 15));
 		lblUsuario.setForeground(Color.WHITE);
 		lblUsuario.setBackground(UIManager.getColor("Button.darkShadow"));
-		lblUsuario.setBounds(224, 87, 86, 23);
+		lblUsuario.setBounds(226, 219, 102, 23);
 		contentPane.add(lblUsuario);
 		
 		JButton btnIniciciarSesion = new JButton("Iniciciar Sesion");
@@ -135,28 +150,31 @@ public class VentanaLogin extends JFrame {
 					dispose();
 				}
 				else{
-					if(textField.getText().equals("presidente")){
-						lblUsuario.setForeground(Color.GREEN);;
-						lblContrasea.setForeground(Color.RED);
-					}
-					if(passwordField.getText().equals("presidente")){
-						lblUsuario.setForeground(Color.RED);
-						lblContrasea.setForeground(Color.GREEN);
-					}
-					error.setVisible(true);
+					//JDialog obj14=new JDialog(this);
+					//obj14.setModal(true);
+				
+					//obj14.setBounds(100, 100, 450, 300);
+					//OtroErrorInicioSesion obj14=new OtroErrorInicioSesion();
+					//ErrorInicioSesion obj14=new ErrorInicioSesion();
+					//obj14.setVisible(true);
 				}
 			}
 		});
-		btnIniciciarSesion.setForeground(UIManager.getColor("Button.darkShadow"));
-		btnIniciciarSesion.setFont(new Font("Verdana", Font.PLAIN, 11));
-		btnIniciciarSesion.setBackground(UIManager.getColor("Button.background"));
-		btnIniciciarSesion.setBounds(239, 165, 134, 23);
+		btnIniciciarSesion.setForeground(SystemColor.infoText);
+		btnIniciciarSesion.setFont(new Font("Kartika", Font.BOLD, 14));
+		btnIniciciarSesion.setBackground(SystemColor.scrollbar);
+		btnIniciciarSesion.setBounds(324, 345, 172, 33);
 		contentPane.add(btnIniciciarSesion);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\Proyecto csm\\ventanas proyecto\\fondo2.jpg"));
-		lblNewLabel.setBounds(10, -11, 600, 443);
-		contentPane.add(lblNewLabel);
-		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{contentPane, btnNewButton, passwordField, lblContrasea, error, textField, lblUsuario, btnIniciciarSesion, lblNewLabel}));
+		JEditorPane editorPane = new JEditorPane();
+		editorPane.setBackground(new Color(0, 0, 0));
+		editorPane.setBounds(0, 0, 834, 84);
+		contentPane.add(editorPane);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\fondo2.jpg"));
+		lblNewLabel_1.setBounds(ancho/4, alto/4, ancho/2, alto/2);
+		contentPane.add(lblNewLabel_1);
+		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{contentPane, btnNewButton, passwordField, lblContrasea, textField, lblUsuario, btnIniciciarSesion}));
 	}
 }
