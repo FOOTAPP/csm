@@ -33,9 +33,6 @@ public class DarAltaEmpleado extends JFrame{
 	private JTextField textcorreo;
 	private LocalDateTime hoy=LocalDateTime.now();
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -49,9 +46,7 @@ public class DarAltaEmpleado extends JFrame{
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public DarAltaEmpleado() {
 		BBDD_Empleado bd=new BBDD_Empleado("proyecto");
 		setTitle("Dar alta empleado");
