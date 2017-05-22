@@ -45,11 +45,12 @@ public class VentanaOpcionesFisio extends JFrame {
 		setIconImage(new ImageIcon(getClass().getResource("soccer.png")).getImage());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(60, 179, 113));
+		
 		contentPane.setForeground(new Color(154, 205, 50));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		contentPane.setBackground(new Color(60, 179, 113));
 		int ancho=java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
 		int inicioancho=ancho/4;
 		int alto=java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;

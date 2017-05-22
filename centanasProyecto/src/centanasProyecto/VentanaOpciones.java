@@ -99,6 +99,11 @@ public class VentanaOpciones extends JFrame {
 		contentPane.add(btnNewButton_4);
 		
 		JButton btnNewButton_3 = new JButton("Dar alta");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btnNewButton_3.setBounds(304, 266, 143, 23);
 		contentPane.add(btnNewButton_3);
 		
