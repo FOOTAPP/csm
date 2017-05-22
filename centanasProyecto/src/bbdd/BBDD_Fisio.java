@@ -1,8 +1,9 @@
-
-package centanasProyecto;
+package bbdd;
 
 import java.sql.SQLException;
 import java.util.Vector;
+
+import clases.Tratamiento;
 
 public class BBDD_Fisio extends BBDD_Proyecto{
 
@@ -11,7 +12,7 @@ public class BBDD_Fisio extends BBDD_Proyecto{
 	}
 	
 	//COMPROBADO Y FUNCIONA
-	public boolean nuevaSesion (Tratamiento t){
+	public boolean nuevaSesion (centanasProyecto.Tratamiento t){
 		String cadena="INSERT INTO sesion values ('"+t.getDni_Jugador()+"','"+t.getDni_fisio()+"','"+t.getFh_sesion()+"','"+
 				t.getMotivo()+"','"+t.getDiagnostico()+"')";
 		try{
@@ -62,8 +63,10 @@ public class BBDD_Fisio extends BBDD_Proyecto{
 		}
 	}
 	
-	public Vector<String> buscarJugadoresLesionados(String lesion){
-		String cadena="SELECT Dni_Jugador FROM jugadores WHERE Lesionado='"+ lesion + "'";
+	
+	//COMPROBADO Y FUNCIONA
+	public Vector<String> buscarJugadoresLesionados(String lesionado){
+		String cadena="SELECT Dni_Jugador FROM jugadores WHERE Lesionado='"+lesionado+"'";
 		try{
 			this.abrir();
 			s=c.createStatement();
@@ -80,6 +83,7 @@ public class BBDD_Fisio extends BBDD_Proyecto{
 			return null;
 		}
 	}
+	
 	
 	public Vector<String> buscarFisioterapeutas(){
 		String cadena="SELECT Dni_Emple FROM empleados WHERE Cargo ='Fisioterapeuta'";
@@ -100,23 +104,4 @@ public class BBDD_Fisio extends BBDD_Proyecto{
 		}
 	}
 	
-	public Vector<String> buscarJugadores(){
-		String cadena="SELECT Dni_Jugador FROM jugadores";
-		try{
-			this.abrir();
-			s=c.createStatement();
-			reg=s.executeQuery(cadena);
-			Vector<String> jug=new Vector<String>();
-			while(reg.next())
-				jug.add(reg.getString(1));
-			s.close();
-			this.cerrar();
-			return jug;	
-		}
-		catch ( SQLException e){
-			this.cerrar();
-			return null;
-		}
-	}
-
 }
