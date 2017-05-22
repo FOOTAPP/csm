@@ -53,14 +53,6 @@ public class VentanaOpcionesEntrenador extends JFrame {
 		lblBienvenidoUsuario.setBounds(207, 63, 252, 28);
 		contentPane.add(lblBienvenidoUsuario);
 		
-		
-		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setFont(new Font("Informal Roman", Font.PLAIN, 11));
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\Proyecto csm\\ventanas proyecto\\fondo2.jpg"));
-		lblNewLabel.setBounds(47, 0, 600, 473);
-		contentPane.add(lblNewLabel);
-		
 		JButton btnNewButton = new JButton("Crear Aviso");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -69,8 +61,20 @@ public class VentanaOpcionesEntrenador extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton.setBounds(252, 116, 180, 23);
+		btnNewButton.setBounds(118, 116, 180, 23);
 		contentPane.add(btnNewButton);
+		
+		
+		JButton btnLeerAvisos = new JButton("Leer Avisos");
+		btnLeerAvisos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				LeerAviso obj = new LeerAviso();
+				obj.setVisible(true);
+				dispose();
+			}
+		});
+		btnLeerAvisos.setBounds(417, 116, 180, 23);
+		contentPane.add(btnLeerAvisos);
 		
 		JButton btnNewButton_2 = new JButton("Dar alta jugador");
 		btnNewButton_2.addActionListener(new ActionListener() {
@@ -80,7 +84,7 @@ public class VentanaOpcionesEntrenador extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_2.setBounds(252, 163, 180, 23);
+		btnNewButton_2.setBounds(118, 167, 180, 23);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Dar baja jugador");
@@ -91,7 +95,7 @@ public class VentanaOpcionesEntrenador extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_3.setBounds(252, 209, 180, 23);
+		btnNewButton_3.setBounds(417, 167, 180, 23);
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnDarAltaCuerpo = new JButton("Dar alta cuerpo tecnico");
@@ -102,7 +106,7 @@ public class VentanaOpcionesEntrenador extends JFrame {
 				dispose();
 			}
 		});
-		btnDarAltaCuerpo.setBounds(252, 255, 180, 23);
+		btnDarAltaCuerpo.setBounds(118, 221, 180, 23);
 		contentPane.add(btnDarAltaCuerpo);
 		
 		JButton btnNewButton_5 = new JButton("Cerrar Sesi\u00F3n");
@@ -124,9 +128,8 @@ public class VentanaOpcionesEntrenador extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_4.setBounds(252, 299, 180, 23);
+		btnNewButton_4.setBounds(417, 221, 180, 23);
 		contentPane.add(btnNewButton_4);
-		
 		
 		JButton btnNewButton_6 = new JButton("");
 		btnNewButton_6.addActionListener(new ActionListener() {
@@ -137,6 +140,11 @@ public class VentanaOpcionesEntrenador extends JFrame {
 		btnNewButton_6.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\Proyecto csm\\ventanas proyecto\\exit.png"));
 		btnNewButton_6.setBounds(497, 373, 107, 55);
 		contentPane.add(btnNewButton_6);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setFont(new Font("Informal Roman", Font.PLAIN, 11));
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\Proyecto csm\\ventanas proyecto\\fondo2.jpg"));
+		lblNewLabel.setBounds(47, 0, 600, 473);
+		contentPane.add(lblNewLabel);
 	}
-
 }
