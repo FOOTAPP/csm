@@ -101,7 +101,9 @@ public class VentanaOpciones extends JFrame {
 		JButton btnNewButton_3 = new JButton("Dar alta");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				OpcionDarAlta obj3= new OpcionDarAlta();
+				obj3.setVisible(true);
+				dispose();
 			}
 		});
 		btnNewButton_3.setBounds(304, 266, 143, 23);
