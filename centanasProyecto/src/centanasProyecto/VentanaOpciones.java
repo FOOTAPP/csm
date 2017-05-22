@@ -80,10 +80,10 @@ public class VentanaOpciones extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_7.setBounds(304, 363, 143, 23);
+		btnNewButton_7.setBounds(131, 411, 143, 23);
 		contentPane.add(btnNewButton_7);
 		
-		JButton btnNewButton_5 = new JButton("Ver solicitudes de material");
+		JButton btnNewButton_5 = new JButton("Leer Avisos");
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				VentanaMaterial material=new VentanaMaterial();
@@ -91,11 +91,11 @@ public class VentanaOpciones extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_5.setBounds(291, 164, 164, 23);
+		btnNewButton_5.setBounds(186, 163, 164, 23);
 		contentPane.add(btnNewButton_5);
 		
 		JButton btnNewButton_4 = new JButton("Dar baja");
-		btnNewButton_4.setBounds(304, 300, 143, 23);
+		btnNewButton_4.setBounds(467, 211, 164, 23);
 		contentPane.add(btnNewButton_4);
 		
 		JButton btnNewButton_3 = new JButton("Dar alta");
@@ -106,26 +106,20 @@ public class VentanaOpciones extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_3.setBounds(304, 266, 143, 23);
+		btnNewButton_3.setBounds(467, 163, 164, 23);
 		contentPane.add(btnNewButton_3);
 		
-		JButton btnNewButton = new JButton("Modificar informaci\u00F3n");
+		JButton btnNewButton = new JButton("Modificar Cuenta");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.setBounds(304, 232, 143, 23);
+		btnNewButton.setBounds(321, 254, 164, 23);
 		contentPane.add(btnNewButton);
 		
-		JButton btnCuentasDelClub = new JButton("Cuentas del Club");
-		btnCuentasDelClub.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnCuentasDelClub.setVerticalAlignment(SwingConstants.TOP);
-		btnCuentasDelClub.setFont(new Font("Kalinga", Font.PLAIN, 11));
-		btnCuentasDelClub.setBounds(304, 198, 143, 23);
-		contentPane.add(btnCuentasDelClub);
+		JButton btnCrearAviso = new JButton("Crear Aviso");
+		btnCrearAviso.setBounds(186, 211, 164, 23);
+		contentPane.add(btnCrearAviso);
 		
 		JLabel lblBienvenidoUsuario = new JLabel("Bienvenido Usuario");
 		lblBienvenidoUsuario.setFont(new Font("Modern No. 20", Font.PLAIN, 20));
