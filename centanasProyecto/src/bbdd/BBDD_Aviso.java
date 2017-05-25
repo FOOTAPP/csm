@@ -69,4 +69,36 @@ public class BBDD_Aviso extends BBDD_Proyecto{
 		}
 	}
 	
+	public String buscarPresi (){
+		String cadena="SELECT Dni_Emple FROM empleados where cargo='PRESIDENTE'";
+		try{
+			this.abrir();
+			s=c.createStatement();
+			reg=s.executeQuery(cadena);
+			while(reg.next())
+				return reg.getString(1);
+			return null;
+		}
+		catch ( SQLException e){
+			this.cerrar();
+			return null;
+		}
+	}
+	
+	public String buscarEntrenador (){
+		String cadena="SELECT Dni_Emple FROM empleados where cargo='ENTRENADOR'";
+		try{
+			this.abrir();
+			s=c.createStatement();
+			reg=s.executeQuery(cadena);
+			while(reg.next())
+				return reg.getString(1);
+			return null;
+		}
+		catch ( SQLException e){
+			this.cerrar();
+			return null;
+		}
+	}	
+	
 }

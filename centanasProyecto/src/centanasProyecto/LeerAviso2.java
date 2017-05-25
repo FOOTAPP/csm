@@ -27,12 +27,13 @@ public class LeerAviso2 extends JFrame{
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
+	protected static String dni;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LeerAviso2 frame = new LeerAviso2(Aviso);
+					LeerAviso2 frame = new LeerAviso2(Aviso, dni);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,7 +42,7 @@ public class LeerAviso2 extends JFrame{
 		});
 	}
 
-	public LeerAviso2(Aviso av) {
+	public LeerAviso2(Aviso av, String dni) {
 		
 		BBDD_Aviso bd=new BBDD_Aviso("proyecto");
 		
@@ -56,7 +57,7 @@ public class LeerAviso2 extends JFrame{
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				LeerAviso obj4=new LeerAviso();
+				LeerAviso obj4=new LeerAviso(dni);
 				obj4.setVisible(true);
 				dispose();
 				

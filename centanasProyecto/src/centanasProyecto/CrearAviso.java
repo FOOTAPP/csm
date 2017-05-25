@@ -3,6 +3,7 @@ package centanasProyecto;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.GraphicsConfiguration;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -26,6 +27,7 @@ import java.awt.event.ActionEvent;
 
 public class CrearAviso extends JFrame {
 
+	protected static final java.lang.String String = null;
 	private JPanel contentPane;
 	private LocalDateTime hoy=LocalDateTime.now();
 
@@ -36,7 +38,7 @@ public class CrearAviso extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					CrearAviso frame = new CrearAviso();
+					CrearAviso frame = new CrearAviso(String);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -48,7 +50,7 @@ public class CrearAviso extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public CrearAviso() {
+	public CrearAviso(String dni) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -77,10 +79,9 @@ public class CrearAviso extends JFrame {
 		contentPane.add(lblIntroduceDni);	
 		
 		JComboBox<String> dnicrea = new JComboBox<String>();
-		dnicrea.setBounds(136, 194, 124, 20);
+		dnicrea.setBounds(121, 26, 124, 20);
 		contentPane.add(dnicrea);
-		for(String a : bd.buscarEmpleado())
-			dnicrea.addItem(a);
+		dnicrea.addItem(dni);
 		
 		JLabel lblMotivo = new JLabel("Motivo: ");
 		lblMotivo.setForeground(Color.WHITE);
@@ -97,7 +98,7 @@ public class CrearAviso extends JFrame {
 		contentPane.add(lblDniDestinatario);
 		
 		JComboBox<String> dnidest = new JComboBox<String>();
-		dnidest.setBounds(136, 26, 124, 20);
+		dnidest.setBounds(121, 194, 124, 20);
 		contentPane.add(dnidest);
 		for(String a : bd.buscarEmpleado())
 			dnidest.addItem(a);
@@ -126,13 +127,21 @@ public class CrearAviso extends JFrame {
 		btnNewButton.setBounds(300, 228, 124, 23);
 		contentPane.add(btnNewButton);
 		
+		String dnicompar=bd2.buscarEntrenador();
 		
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaOpcionesEntrenador obj4=new VentanaOpcionesEntrenador();
-				obj4.setVisible(true);
-				dispose();
+				if(dni.equals(dnicompar)){
+					VentanaOpcionesEntrenador obj4=new VentanaOpcionesEntrenador();
+					obj4.setVisible(true);
+					dispose();
+				}
+				else{
+					VentanaOpciones obj4=new VentanaOpciones();
+					obj4.setVisible(true);
+					dispose();
+				}
 				
 			}
 		});

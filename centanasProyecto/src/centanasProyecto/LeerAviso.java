@@ -21,13 +21,14 @@ import clases.Aviso;
 
 public class LeerAviso extends JFrame{
 	
+	protected static final String String = null;
 	private JPanel contentPane;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LeerAviso frame = new LeerAviso();
+					LeerAviso frame = new LeerAviso(String);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +37,7 @@ public class LeerAviso extends JFrame{
 		});
 	}
 
-	public LeerAviso() {
+	public LeerAviso(String dni) {
 		
 		BBDD_Aviso bd=new BBDD_Aviso("proyecto");
 		
@@ -56,7 +57,7 @@ public class LeerAviso extends JFrame{
 		JComboBox<Aviso> avisos = new JComboBox<Aviso>();
 		avisos.setBounds(27, 58, 386, 20);
 		contentPane.add(avisos);
-		for(Aviso b : bd.leerAvisos("37198985H"))
+		for(Aviso b : bd.leerAvisos(dni))
 			avisos.addItem(b);
 		
 		JButton btnNewButton = new JButton("Leer Aviso");
@@ -65,7 +66,7 @@ public class LeerAviso extends JFrame{
 				Aviso a;
 				a=(Aviso) avisos.getSelectedItem();
 				
-				LeerAviso2 obj = new LeerAviso2(a);
+				LeerAviso2 obj = new LeerAviso2(a,dni);
 				obj.setVisible(true);
 				dispose();
 			}
@@ -74,13 +75,22 @@ public class LeerAviso extends JFrame{
 		btnNewButton.setBounds(300, 228, 124, 23);
 		contentPane.add(btnNewButton);
 		
+		String dnicompar=bd.buscarEntrenador();
 		
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaOpcionesEntrenador obj4=new VentanaOpcionesEntrenador();
-				obj4.setVisible(true);
-				dispose();
+				if(dni.equals(dnicompar)){
+					VentanaOpcionesEntrenador obj4=new VentanaOpcionesEntrenador();
+					obj4.setVisible(true);
+					dispose();
+				}
+				else{
+					VentanaOpciones obj4=new VentanaOpciones();
+					obj4.setVisible(true);
+					dispose();
+				}
+					
 				
 			}
 		});

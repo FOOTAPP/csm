@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import bbdd.BBDD_Aviso;
+
 import javax.swing.UIManager;
 import javax.swing.SwingConstants;
 import java.awt.Font;
@@ -44,6 +46,10 @@ public class VentanaOpciones extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaOpciones() {
+		BBDD_Aviso bd=new BBDD_Aviso("Proyecto");
+		
+		String dni=bd.buscarPresi();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 699, 519);
 		contentPane = new JPanel();
@@ -86,8 +92,8 @@ public class VentanaOpciones extends JFrame {
 		JButton btnNewButton_5 = new JButton("Leer Avisos");
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaMaterial material=new VentanaMaterial();
-				material.setVisible(true);
+				LeerAviso obj=new LeerAviso(dni);
+				obj.setVisible(true);
 				dispose();
 			}
 		});
@@ -95,6 +101,13 @@ public class VentanaOpciones extends JFrame {
 		contentPane.add(btnNewButton_5);
 		
 		JButton btnNewButton_4 = new JButton("Dar baja");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				OpcionDarBaja obj3= new OpcionDarBaja();
+				obj3.setVisible(true);
+				dispose();
+			}
+		});
 		btnNewButton_4.setBounds(467, 211, 164, 23);
 		contentPane.add(btnNewButton_4);
 		
@@ -112,12 +125,20 @@ public class VentanaOpciones extends JFrame {
 		JButton btnNewButton = new JButton("Modificar Cuenta");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 			}
 		});
 		btnNewButton.setBounds(321, 254, 164, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnCrearAviso = new JButton("Crear Aviso");
+		btnCrearAviso.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CrearAviso obj = new CrearAviso(dni);
+				obj.setVisible(true);
+				dispose();
+			}
+		});
 		btnCrearAviso.setBounds(186, 211, 164, 23);
 		contentPane.add(btnCrearAviso);
 		
