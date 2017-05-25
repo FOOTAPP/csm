@@ -14,7 +14,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class OpcionDarAlta extends JFrame {
+public class OpcionDarBaja extends JFrame {
 
 	private JPanel contentPane;
 
@@ -25,7 +25,7 @@ public class OpcionDarAlta extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					OpcionDarAlta frame = new OpcionDarAlta();
+					OpcionDarBaja frame = new OpcionDarBaja();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,7 +37,7 @@ public class OpcionDarAlta extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public OpcionDarAlta() {
+	public OpcionDarBaja() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -71,10 +71,10 @@ public class OpcionDarAlta extends JFrame {
 		btnVolver.setBounds(356, 349, 107, 23);
 		contentPane.add(btnVolver);
 		
-		JButton btnDarAltaEmpleado = new JButton("Dar alta empleado");
+		JButton btnDarAltaEmpleado = new JButton("Dar baja empleado");
 		btnDarAltaEmpleado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				DarAltaEmpleado2 obj= new DarAltaEmpleado2();
+				DarBajaEmpleado2 obj= new DarBajaEmpleado2();
 				obj.setVisible(true);
 				dispose();
 			}
@@ -82,10 +82,10 @@ public class OpcionDarAlta extends JFrame {
 		btnDarAltaEmpleado.setBounds(334, 283, 148, 23);
 		contentPane.add(btnDarAltaEmpleado);
 		
-		JButton btnDarAltaJugador = new JButton("Dar alta jugador");
+		JButton btnDarAltaJugador = new JButton("Dar baja jugador");
 		btnDarAltaJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				DarAltaJugador2 obj= new DarAltaJugador2();
+				DarBajaJugador2 obj= new DarBajaJugador2();
 				obj.setVisible(true);
 				dispose();
 			}

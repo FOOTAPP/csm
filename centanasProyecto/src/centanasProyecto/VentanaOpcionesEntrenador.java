@@ -14,6 +14,8 @@ import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
+import bbdd.BBDD_Aviso;
+
 public class VentanaOpcionesEntrenador extends JFrame {
 
 	private JPanel contentPane;
@@ -38,6 +40,10 @@ public class VentanaOpcionesEntrenador extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaOpcionesEntrenador() {
+		BBDD_Aviso bd=new BBDD_Aviso("Proyecto");
+		
+		String dni=bd.buscarEntrenador();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 716, 515);
 		contentPane = new JPanel();
@@ -56,7 +62,7 @@ public class VentanaOpcionesEntrenador extends JFrame {
 		JButton btnNewButton = new JButton("Crear Aviso");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CrearAviso obj = new CrearAviso();
+				CrearAviso obj = new CrearAviso(dni);
 				obj.setVisible(true);
 				dispose();
 			}
@@ -64,11 +70,10 @@ public class VentanaOpcionesEntrenador extends JFrame {
 		btnNewButton.setBounds(118, 116, 180, 23);
 		contentPane.add(btnNewButton);
 		
-		
 		JButton btnLeerAvisos = new JButton("Leer Avisos");
 		btnLeerAvisos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				LeerAviso obj = new LeerAviso();
+				LeerAviso obj = new LeerAviso(dni);
 				obj.setVisible(true);
 				dispose();
 			}

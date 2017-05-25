@@ -14,7 +14,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class OpcionDarAlta extends JFrame {
+public class OpcionModificarCuenta extends JFrame {
 
 	private JPanel contentPane;
 
@@ -25,7 +25,7 @@ public class OpcionDarAlta extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					OpcionDarAlta frame = new OpcionDarAlta();
+					OpcionModificarCuenta frame = new OpcionModificarCuenta();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,7 +37,7 @@ public class OpcionDarAlta extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public OpcionDarAlta() {
+	public OpcionModificarCuenta() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -71,26 +71,26 @@ public class OpcionDarAlta extends JFrame {
 		btnVolver.setBounds(356, 349, 107, 23);
 		contentPane.add(btnVolver);
 		
-		JButton btnDarAltaEmpleado = new JButton("Dar alta empleado");
+		JButton btnDarAltaEmpleado = new JButton("Modificar cuenta empleado");
 		btnDarAltaEmpleado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				DarAltaEmpleado2 obj= new DarAltaEmpleado2();
+				ModificarCuentaEmpleado obj= new ModificarCuentaEmpleado();
 				obj.setVisible(true);
 				dispose();
 			}
 		});
-		btnDarAltaEmpleado.setBounds(334, 283, 148, 23);
+		btnDarAltaEmpleado.setBounds(300, 279, 213, 23);
 		contentPane.add(btnDarAltaEmpleado);
 		
-		JButton btnDarAltaJugador = new JButton("Dar alta jugador");
+		JButton btnDarAltaJugador = new JButton("Modificar cuenta jugador");
 		btnDarAltaJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				DarAltaJugador2 obj= new DarAltaJugador2();
+				ModificarCuentaJugador obj= new ModificarCuentaJugador();
 				obj.setVisible(true);
 				dispose();
 			}
 		});
-		btnDarAltaJugador.setBounds(334, 216, 148, 23);
+		btnDarAltaJugador.setBounds(300, 217, 213, 23);
 		contentPane.add(btnDarAltaJugador);
 		
 		JEditorPane editorPane = new JEditorPane();

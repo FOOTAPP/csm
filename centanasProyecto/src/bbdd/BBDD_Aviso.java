@@ -52,13 +52,12 @@ public class BBDD_Aviso extends BBDD_Proyecto{
 			}
 			for(String na: naviso){
 				s2=c.createStatement();
-				//String cadena3="UPDATE avisos SET FH_Leido=CURRENT_TIMESTAMP where N_Aviso="+na+" AND FH_Leido is NULL";
-				//s.executeUpdate(cadena3);
+				String cadena3="UPDATE avisos SET FH_Leido=CURRENT_TIMESTAMP where N_Aviso="+na+" AND FH_Leido is NULL";
+				s.executeUpdate(cadena3);
 				String cadena2="SELECT Dni_Emple, Motivo, FH_Creacion FROM avisos WHERE N_Aviso="+na;
 				reg2 = s2.executeQuery(cadena2);
 				while(reg2.next())
 					avisos.add(new Aviso(reg2.getString(1),reg2.getString(2), reg2.getDate(3)));
-					//avisos.add(new Aviso(reg2.getString(1),reg2.getString(2), reg2.getDate(3)));
 				s2.close();
 			}
 			s.close();
@@ -69,4 +68,37 @@ public class BBDD_Aviso extends BBDD_Proyecto{
 			return null;
 		}
 	}
+	
+	public String buscarPresi (){
+		String cadena="SELECT Dni_Emple FROM empleados where cargo='PRESIDENTE'";
+		try{
+			this.abrir();
+			s=c.createStatement();
+			reg=s.executeQuery(cadena);
+			while(reg.next())
+				return reg.getString(1);
+			return null;
+		}
+		catch ( SQLException e){
+			this.cerrar();
+			return null;
+		}
+	}
+	
+	public String buscarEntrenador (){
+		String cadena="SELECT Dni_Emple FROM empleados where cargo='ENTRENADOR'";
+		try{
+			this.abrir();
+			s=c.createStatement();
+			reg=s.executeQuery(cadena);
+			while(reg.next())
+				return reg.getString(1);
+			return null;
+		}
+		catch ( SQLException e){
+			this.cerrar();
+			return null;
+		}
+	}	
+	
 }

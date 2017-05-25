@@ -6,6 +6,11 @@ import java.util.Vector;
 
 public class Aviso {
 
+	@Override
+	public String toString() {
+		return dni_emple + ", " + motivo + ", " + date;
+	}
+
 	private String dni_emple, motivo;
 	private LocalDateTime fh_leido, fh_creado;
 	private Vector<String> destinatarios;
