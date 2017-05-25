@@ -54,4 +54,40 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 			return null;
 		}
 	}
+	public static boolean validarCuenta(String cuenta){
+		String miCuenta[];
+		try{
+		if(!cuenta.substring(0, 2).equals("ES"))
+			return false;
+		}
+		catch(StringIndexOutOfBoundsException e){
+			return false;
+		}
+		if(cuenta.length() != 27 )
+			return false;
+		miCuenta=cuenta.split("-");
+		if (miCuenta.length!=5)
+			 return false;
+		try{
+		Integer.parseInt(miCuenta[0].substring(2, 4));
+		}
+		catch(StringIndexOutOfBoundsException e){
+			return false;
+		}
+		catch(NumberFormatException e){
+			return false;
+		}
+		
+		for (int i=1;i<miCuenta.length;i++){
+		try{
+		Integer.parseInt(miCuenta[i]);
+		}
+		catch(NumberFormatException e){
+			return false;
+		}
+		}
+		return true;
+	}
+	
+	
 }

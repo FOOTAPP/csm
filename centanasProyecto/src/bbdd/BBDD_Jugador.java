@@ -84,6 +84,27 @@ public class BBDD_Jugador extends BBDD_Proyecto{
 		}
 	}
 	
+	//COMPROBADO Y FUNCIONA
+	public int buscarCuenta (String cuenta){
+		String cadena="SELECT Dni_Jugador FROM jugadores where Cuenta_Bancaria='"+cuenta+"'";
+		try{
+			this.abrir();
+			s=c.createStatement();
+			reg=s.executeQuery(cadena);
+			while(reg.next()){
+				s.close();
+				this.cerrar();
+				return 1;
+			}
+			s.close();
+			this.cerrar();
+			return 0;
+		}
+		catch ( SQLException e){
+			this.cerrar();
+			return -1;
+		}
+	}
 	
 	
 

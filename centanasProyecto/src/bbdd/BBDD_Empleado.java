@@ -79,5 +79,26 @@ public class BBDD_Empleado extends BBDD_Proyecto{
 		}
 	}
 	
+	public int buscarCuenta (String cuenta){
+		String cadena="SELECT Dni_Emple FROM empleados where Cuenta_Bancaria='"+cuenta+"'";
+		try{
+			this.abrir();
+			s=c.createStatement();
+			reg=s.executeQuery(cadena);
+			while(reg.next()){
+				s.close();
+				this.cerrar();
+				return 1;
+			}
+			s.close();
+			this.cerrar();
+			return 0;
+		}
+		catch ( SQLException e){
+			this.cerrar();
+			return -1;
+		}
+	}
+	
 	
 }
