@@ -14,12 +14,15 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 
 import bbdd.BBDD_Fisio;
 
 import javax.swing.JComboBox;
 import javax.swing.JEditorPane;
+import java.awt.Toolkit;
 
 
 public class VentanaGenerarInforme extends JFrame {
@@ -52,14 +55,15 @@ public class VentanaGenerarInforme extends JFrame {
 
 	
 	private void pintarVentana(){
+		Border border = LineBorder.createBlackLineBorder();
 		BBDD_Fisio bd=new BBDD_Fisio("proyecto");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		setIconImage(new ImageIcon(getClass().getResource("soccer.png")).getImage());
-		contentPane.setBackground(new Color(60, 179, 113));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaGenerarInforme.class.getResource("/Resources/soccer.png")));
+		contentPane.setBackground(new Color(38, 233, 78));
 		int ancho=java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
 		int inicioancho=ancho/4;
 		int alto=java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
@@ -69,14 +73,14 @@ public class VentanaGenerarInforme extends JFrame {
 		//setBounds()
 		setBounds(inicioancho,inicioalto, ancho, alto);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\csmx.jpg"));
-		lblNewLabel.setBounds(10, 0, 213, 84);
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(VentanaGenerarInforme.class.getResource("/Resources/csmx.jpg")));
+		lblNewLabel.setBounds(0, 0, 213, 84);
 		contentPane.add(lblNewLabel);
 		
 
 		JEditorPane editorPane = new JEditorPane();
-		editorPane.setBackground(new Color(0, 0, 0));
+		editorPane.setBackground(new Color(1,3,64));
 		editorPane.setBounds(0, 0, 834, 84);
 		contentPane.add(editorPane);
 		
@@ -84,28 +88,28 @@ public class VentanaGenerarInforme extends JFrame {
 		JLabel lblErrorFaltanCampos = new JLabel("Rellene todos los campos");
 		lblErrorFaltanCampos.setFont(new Font("Arial Black", Font.BOLD, 13));
 		lblErrorFaltanCampos.setForeground(Color.WHITE);
-		lblErrorFaltanCampos.setBounds(299, 345, 317, 14);
+		lblErrorFaltanCampos.setBounds(307, 313, 317, 14);
 		contentPane.add(lblErrorFaltanCampos);
 		lblErrorFaltanCampos.setVisible(false);
 		lblErrorFaltanCampos.setVisible(false);
 		
-		comboBox.setBounds(466, 189, 153, 20);
+		comboBox.setBounds(422, 167, 153, 20);
 		contentPane.add(comboBox);
 		
 		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(466, 219, 153, 20);
+		comboBox_1.setBounds(422, 197, 153, 20);
 		contentPane.add(comboBox_1);
 		for(String a : bd.buscarFisioterapeutas())
 			comboBox_1.addItem(a);
 		dniemple=(String) comboBox_1.getSelectedItem();
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(466, 281, 153, 20);
+		textField_1.setBounds(422, 256, 153, 20);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
 		textField = new JTextField();
-		textField.setBounds(466, 250, 153, 20);
+		textField.setBounds(422, 228, 153, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
@@ -153,21 +157,21 @@ public class VentanaGenerarInforme extends JFrame {
 
 		
 		JLabel lblDiagnostico = new JLabel("Diagnostico:");
-		lblDiagnostico.setBounds(299, 287, 117, 14);
+		lblDiagnostico.setBounds(266, 257, 117, 14);
 		lblDiagnostico.setFont(new Font("Microsoft YaHei", Font.BOLD, 15));
 		lblDiagnostico.setForeground(Color.WHITE);
 		contentPane.add(lblDiagnostico);
 		
 		JLabel lblMotivo = new JLabel("Motivo:");
-		lblMotivo.setBounds(299, 256, 101, 14);
+		lblMotivo.setBounds(266, 227, 101, 14);
 		lblMotivo.setFont(new Font("Microsoft YaHei", Font.BOLD, 15));
 		lblMotivo.setForeground(Color.WHITE);
 		contentPane.add(lblMotivo);
 		
 		
 		
-		JLabel lblIntroduceDniDel = new JLabel("Dni empleado: ");
-		lblIntroduceDniDel.setBounds(299, 220, 134, 14);
+		JLabel lblIntroduceDniDel = new JLabel("Dni fisio: ");
+		lblIntroduceDniDel.setBounds(266, 198, 134, 14);
 		lblIntroduceDniDel.setFont(new Font("Microsoft YaHei", Font.BOLD, 15));
 		lblIntroduceDniDel.setForeground(Color.WHITE);
 		contentPane.add(lblIntroduceDniDel);
@@ -175,14 +179,14 @@ public class VentanaGenerarInforme extends JFrame {
 		JLabel lblIntroduceDni = new JLabel("Dni jugador:");
 		lblIntroduceDni.setFont(new Font("Microsoft YaHei", Font.BOLD, 15));
 		lblIntroduceDni.setForeground(Color.WHITE);
-		lblIntroduceDni.setBounds(299, 190, 134, 14);
+		lblIntroduceDni.setBounds(266, 168, 134, 14);
 		contentPane.add(lblIntroduceDni);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\fondo2.jpg"));
+		lblNewLabel_1.setIcon(new ImageIcon(VentanaGenerarInforme.class.getResource("/Resources/fondobueno.jpg")));
 		lblNewLabel_1.setBounds(ancho/4, alto/4, ancho/2, alto/2);
 		contentPane.add(lblNewLabel_1);
-		
+		lblNewLabel_1.setBorder(border);
 	}
 	
 	public VentanaGenerarInforme(String dni){
@@ -193,6 +197,7 @@ public class VentanaGenerarInforme extends JFrame {
 	}
 	
 	public VentanaGenerarInforme() {
+		setTitle("Informe");
 		pintarVentana();
 		BBDD_Fisio bd=new BBDD_Fisio("proyecto");
 		for(String a : bd.buscarJugadores())

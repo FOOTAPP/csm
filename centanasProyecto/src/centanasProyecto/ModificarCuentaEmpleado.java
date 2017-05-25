@@ -2,12 +2,14 @@ package centanasProyecto;
 
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -16,6 +18,7 @@ import javax.swing.border.EmptyBorder;
 
 import bbdd.BBDD_Empleado;
 import clases.Empleado;
+import clases.Jugador;
 
 public class ModificarCuentaEmpleado extends JFrame{
 
@@ -44,55 +47,74 @@ public class ModificarCuentaEmpleado extends JFrame{
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		contentPane.setBackground(new Color(38, 233, 78));
+		int ancho=java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
+		int inicioancho=ancho/4;
+		int alto=java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
+		int inicioalto=alto/4;
+		ancho=ancho/2;
+		alto=alto/2;
+		//setBounds()
+		setBounds(inicioancho,inicioalto, ancho, alto);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\Proyecto csm\\ventanas proyecto\\fondo2.jpg"));
-		lblNewLabel.setBounds(0, 0, 530, 329);
+		lblNewLabel.setIcon(new ImageIcon(ModificarCuentaEmpleado.class.getResource("/Resources/csmx.jpg")));
+		lblNewLabel.setBounds(0, 0, 213, 84);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblErrorNoHya = new JLabel("Error, no hay empleados disponibles");
-		lblErrorNoHya.setForeground(Color.WHITE);
-		lblErrorNoHya.setBounds(137, 228, 229, 14);
-		contentPane.add(lblErrorNoHya);
-		lblErrorNoHya.setVisible(false);
+		JEditorPane editorPane = new JEditorPane();
+		editorPane.setBackground(new Color(1,3,64));
+		editorPane.setBounds(0, 0, 834, 84);
+		contentPane.add(editorPane);
 		
-		JLabel rellenarcuenta = new JLabel("Rellene el campo de la cuenta");
+		JLabel rellenarcuenta = new JLabel("La cuenta introducida no es v\u00E1lida");
+		rellenarcuenta.setFont(new Font("Microsoft YaHei", Font.BOLD, 15));
 		rellenarcuenta.setForeground(Color.WHITE);
-		rellenarcuenta.setBounds(185, 143, 229, 14);
+		rellenarcuenta.setBounds(304, 292, 278, 14);
 		contentPane.add(rellenarcuenta);
 		rellenarcuenta.setVisible(false);
 		
-		JLabel lblIntroduceDni = new JLabel("Introduce dni:");
+		JLabel lblNewLabel_2 = new JLabel("Dni no valido");
+		lblNewLabel_2.setFont(new Font("Microsoft YaHei", Font.BOLD, 15));
+		lblNewLabel_2.setForeground(Color.WHITE);
+		lblNewLabel_2.setBounds(376, 267, 124, 14);
+		contentPane.add(lblNewLabel_2);
+		lblNewLabel_2.setVisible(false);
+		
+		JLabel lblIntroduceDni = new JLabel("Selecciona dni");
+		lblIntroduceDni.setFont(new Font("Microsoft YaHei", Font.BOLD, 14));
 		lblIntroduceDni.setForeground(Color.WHITE);
-		lblIntroduceDni.setBounds(62, 48, 155, 14);
+		lblIntroduceDni.setBounds(233, 185, 155, 14);
 		contentPane.add(lblIntroduceDni);
 		
 		JComboBox<String> comboBox = new JComboBox<String>();
-		comboBox.setBounds(185, 45, 124, 20);
+		comboBox.setBounds(401, 179, 124, 20);
 		contentPane.add(comboBox);		
 		for(String a : bd.buscarEmpleado())
 			comboBox.addItem(a);
 		
 		JLabel lblNuevaCuenta = new JLabel("Nueva Cuenta:");
+		lblNuevaCuenta.setFont(new Font("Microsoft YaHei", Font.BOLD, 15));
 		lblNuevaCuenta.setForeground(Color.WHITE);
-		lblNuevaCuenta.setBounds(62, 112, 155, 14);
+		lblNuevaCuenta.setBounds(233, 212, 155, 14);
 		contentPane.add(lblNuevaCuenta);
 		
 		nuevacuenta = new JTextField();
-		nuevacuenta.setBounds(185, 108, 229, 22);
+		nuevacuenta.setBounds(401, 210, 229, 22);
 		contentPane.add(nuevacuenta);
 		nuevacuenta.setColumns(10);
+		String cuenta=nuevacuenta.getText();
 		
 		JButton modificarDatos = new JButton("Modificar datos bancarios");
 		modificarDatos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String dni = (String) comboBox.getSelectedItem();
+				boolean valido=bd.validarCuenta(nuevacuenta.getText());
+				int cuentaok=bd.buscarCuenta(nuevacuenta.getText());
 				if (dni==null)
-					lblErrorNoHya.setVisible(true);
-				if(nuevacuenta.getText().equals("")){
+					lblNewLabel_2.setVisible(true);
+				if(nuevacuenta.getText().equals("") || valido==false || cuentaok==1)
 					rellenarcuenta.setVisible(true);
-					lblErrorNoHya.setVisible(false);
-				}
 				else{
 					Empleado e=new Empleado(dni, nuevacuenta.getText());
 					bd.actualizarCuentaEmpleado(e);
@@ -102,7 +124,7 @@ public class ModificarCuentaEmpleado extends JFrame{
 				}
 			}
 		});
-		modificarDatos.setBounds(301, 278, 182, 23);
+		modificarDatos.setBounds(343, 317, 182, 23);
 		contentPane.add(modificarDatos);
 		
 		
@@ -114,8 +136,44 @@ public class ModificarCuentaEmpleado extends JFrame{
 				dispose();
 			}
 		});
-		btnVolver.setBounds(12, 284, 89, 23);
+		btnVolver.setBounds(387, 370, 89, 23);
 		contentPane.add(btnVolver);
 		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setBounds(0, 0, 0, 0);
+		lblNewLabel_1.setFont(new Font("Microsoft YaHei", Font.BOLD, 15));
+		lblNewLabel_1.setIcon(new ImageIcon(ModificarCuentaEmpleado.class.getResource("/Resources/fondobueno.jpg")));
+		contentPane.add(lblNewLabel_1);
+		lblNewLabel_1.setBounds(ancho/4, alto/4, ancho/2, alto/2);
+	}
+	
+	public static boolean validarCuenta(String cuenta){
+		String miCuenta[];
+		if(!cuenta.substring(0, 2).equals("ES"))
+			return false;
+		if(cuenta.length() != 27 )
+			return false;
+		miCuenta=cuenta.split("-");
+		if (miCuenta.length!=5)
+			 return false;
+		try{
+		Integer.parseInt(miCuenta[0].substring(2, 4));
+		}
+		catch(StringIndexOutOfBoundsException e){
+			return false;
+		}
+		catch(NumberFormatException e){
+			return false;
+		}
+		
+		for (int i=1;i<miCuenta.length;i++){
+		try{
+		Integer.parseInt(miCuenta[i]);
+		}
+		catch(NumberFormatException e){
+			return false;
+		}
+		}
+		return true;
 	}
 }
