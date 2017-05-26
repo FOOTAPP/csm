@@ -180,7 +180,7 @@ public class DarAltaJugador extends JFrame{
 		comboBox.addItem("MC");
 		comboBox.addItem("EXT");
 		comboBox.addItem("DC");
-		String demarcacion=(String) comboBox.getSelectedItem();
+		
 		
 		JDateChooser dateChooser = new JDateChooser();
 		dateChooser.setBounds(319, 248, 124, 20);
@@ -189,6 +189,7 @@ public class DarAltaJugador extends JFrame{
 		JButton darAltaJugador = new JButton("Dar alta");
 		darAltaJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				String demarcacion=(String) comboBox.getSelectedItem();
 				ValidarDni dni=new ValidarDni(textdni.getText());
 				boolean validado=dni.validar();
 				boolean nombreok=false;
@@ -212,8 +213,14 @@ public class DarAltaJugador extends JFrame{
 					nombreok=true;
 				}
 					
-				if(textdni.getText().equals("") || !validado || bd.buscarDni(textdni.getText()) == 1)
+				if(textdni.getText().equals("") || !validado || bd.buscarDni(textdni.getText()) == 1){
 					lblIntroduceDni.setForeground(Color.red);
+					if(!validado)
+						textdni.setText("Dni erroneo");
+					if( bd.buscarDni(textdni.getText()) == 1)
+						textdni.setText("Dni ya registrado");
+				}
+					
 				else{
 					lblIntroduceDni.setForeground(Color.white);
 					dniok=true;
@@ -221,14 +228,23 @@ public class DarAltaJugador extends JFrame{
 					
 				if(textcorreo.getText().equals("") || bd.validarCorreo(textcorreo.getText()) == false)
 					lblCorreo.setForeground(Color.red);
+				    if(bd.validarCorreo(textcorreo.getText()) == false)
+				    	textcorreo.setText("Fomato no válido");
 				else{
 					lblCorreo.setForeground(Color.white);
 					correook=true;
 				}
 					
 				
-				if(bd.validarCuenta(textcuenta.getText())==false || textcuenta.getText().equals("") || bd.buscarCuenta(textcuenta.getText()) == 1)
+				if(bd.validarCuenta(textcuenta.getText())==false || textcuenta.getText().equals("") || bd.buscarCuenta(textcuenta.getText()) == 1){
 					lblCuentaBancaria.setForeground(Color.red);
+					if(bd.validarCuenta(textcuenta.getText())==false)
+						textcuenta.setText("Formato no válido");
+					if(bd.buscarCuenta(textcuenta.getText()) == 1)
+						textcuenta.setText("Cuenta ya registrada");
+				}
+					
+				
 				else{
 					cuentaok=true;
 					lblCuentaBancaria.setForeground(Color.white);
@@ -240,8 +256,10 @@ public class DarAltaJugador extends JFrame{
 					edadok=true;
 					lblFnacimiento.setForeground(Color.white);
 				}
-				if(texttelf.getText().equals("") ||  bd.validarTelefono(texttelf.getText()) == false)
+				if(texttelf.getText().equals("") ||  bd.validarTelefono(texttelf.getText()) == false){
 					lbltelefono.setForeground(Color.RED);
+				}
+					
 				else{
 					lbltelefono.setForeground(Color.WHITE);
 					telefonook=true;
