@@ -22,6 +22,7 @@ import clases.Jugador;
 
 public class ModificarCuentaEmpleado extends JFrame{
 
+	protected static final String String = null;
 	private JPanel contentPane;
 	private JTextField nuevacuenta;
 
@@ -29,7 +30,7 @@ public class ModificarCuentaEmpleado extends JFrame{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ModificarCuentaEmpleado frame = new ModificarCuentaEmpleado();
+					ModificarCuentaEmpleado frame = new ModificarCuentaEmpleado(String);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,7 +39,7 @@ public class ModificarCuentaEmpleado extends JFrame{
 		});
 	}
 
-	public ModificarCuentaEmpleado() {
+	public ModificarCuentaEmpleado(String dni) {
 		BBDD_Empleado bd=new BBDD_Empleado("proyecto");
 		setTitle("Modificar cuenta Empleado");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -131,9 +132,16 @@ public class ModificarCuentaEmpleado extends JFrame{
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaOpcionesFinanciero obj4=new VentanaOpcionesFinanciero();
-				obj4.setVisible(true);
-				dispose();
+				if(dni.equals(bd.buscarPresi())){
+					OpcionModificarCuenta obj4=new OpcionModificarCuenta(dni);
+					obj4.setVisible(true);
+					dispose();
+				}
+				else{
+					VentanaOpcionesFinanciero obj4=new VentanaOpcionesFinanciero();
+					obj4.setVisible(true);
+					dispose();
+				}
 			}
 		});
 		btnVolver.setBounds(387, 370, 89, 23);

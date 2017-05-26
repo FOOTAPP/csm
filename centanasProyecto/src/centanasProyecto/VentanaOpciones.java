@@ -7,6 +7,7 @@ import java.awt.EventQueue;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -122,13 +123,33 @@ public class VentanaOpciones extends JFrame {
 		btnNewButton_3.setBounds(467, 163, 164, 23);
 		contentPane.add(btnNewButton_3);
 		
-		JButton btnNewButton = new JButton("Modificar Cuenta");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton button = new JButton("Modificar cuentas");
+		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				OpcionModificarCuenta obj3= new OpcionModificarCuenta(bd.buscarPresi());
+				obj3.setVisible(true);
+				dispose();
 			}
 		});
-		btnNewButton.setBounds(321, 254, 164, 23);
+		button.setBounds(282, 270, 262, 23);
+		contentPane.add(button);		
+		
+		JButton btnNewButton = new JButton("Exportar base de datos a XML");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String direccion = "proyecto.xml";
+				try
+				                {
+									//Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + direccion);
+									Runtime.getRuntime().exec("C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe "+direccion);
+				                }
+				                catch(Exception err)
+				                {
+				                    JOptionPane.showMessageDialog(null,"Error: "+err);
+				                }
+			}
+		});
+		btnNewButton.setBounds(282, 345, 262, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnCrearAviso = new JButton("Crear Aviso");
