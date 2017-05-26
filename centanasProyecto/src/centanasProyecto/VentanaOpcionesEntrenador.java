@@ -131,7 +131,7 @@ public class VentanaOpcionesEntrenador extends JFrame {
 		});
 		btnDarAltaCuerpo.setBounds(229, 260, 180, 23);
 		contentPane.add(btnDarAltaCuerpo);
-		
+		//holaaaa
 		JButton btnNewButton_5 = new JButton("Cerrar Sesi\u00F3n");
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
