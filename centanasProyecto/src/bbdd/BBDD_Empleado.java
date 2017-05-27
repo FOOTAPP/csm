@@ -3,12 +3,28 @@ package bbdd;
 import java.sql.SQLException;
 import clases.Empleado;
 
+/**
+ * The Class BBDD_Empleado.
+ */
 public class BBDD_Empleado extends BBDD_Proyecto{
 
+	/**
+	 * Instantiates a new BBD D empleado.
+	 *
+	 * @param bbdd
+	 *            the bbdd
+	 */
 	public BBDD_Empleado(String bbdd) {
 		super(bbdd);
 	}
 
+	/**
+	 * Alta empleado.
+	 *
+	 * @param emp
+	 *            the emp
+	 * @return the int
+	 */
 	//COMPROBADO Y FUNCIONA
 	public int altaEmpleado (Empleado emp){
 		String cadena="INSERT INTO empleados values ('"+emp.getDni_emple()+"','"+emp.getNombre()+"','"+emp.getF_nac()+"','"+
@@ -30,6 +46,13 @@ public class BBDD_Empleado extends BBDD_Proyecto{
 		}
 	}
 	
+	/**
+	 * Borrar empleado.
+	 *
+	 * @param dni
+	 *            the dni
+	 * @return the int
+	 */
 	//COMPROBADO Y FUNCIONA
 	public int borrarEmpleado (String dni){
 		String cadena="DELETE FROM empleados WHERE Dni_Emple='"+dni+"'";
@@ -47,6 +70,13 @@ public class BBDD_Empleado extends BBDD_Proyecto{
 		}
 	}
 	
+	/**
+	 * Actualizar cuenta empleado.
+	 *
+	 * @param emp
+	 *            the emp
+	 * @return the int
+	 */
 	//COMPROBADO Y FUNCIONA
 	public int actualizarCuentaEmpleado (Empleado emp){
 		String cadena="UPDATE empleados SET Cuenta_Bancaria='"+emp.getCuenta()+"' WHERE Dni_Emple='"+emp.getDni_emple()+"'";
@@ -65,6 +95,13 @@ public class BBDD_Empleado extends BBDD_Proyecto{
 	}
 	
 	
+	/**
+	 * Buscar dni.
+	 *
+	 * @param dni
+	 *            the dni
+	 * @return the int
+	 */
 	//COMPROBADO Y FUNCIONA
 	public int buscarDni (String dni){
 		String cadena="SELECT Dni_Emple FROM empleados where Dni_Emple='"+dni+"'";
@@ -82,6 +119,13 @@ public class BBDD_Empleado extends BBDD_Proyecto{
 		}
 	}
 	
+	/**
+	 * Buscar cuenta.
+	 *
+	 * @param cuenta
+	 *            the cuenta
+	 * @return the int
+	 */
 	public int buscarCuenta (String cuenta){
 		String cadena="SELECT Dni_Emple FROM empleados where Cuenta_Bancaria='"+cuenta+"'";
 		try{
@@ -104,6 +148,11 @@ public class BBDD_Empleado extends BBDD_Proyecto{
 	}
 	
 	
+	/**
+	 * Buscar cargo.
+	 *
+	 * @return the int
+	 */
 	public int buscarCargo (){
 		String cadena="SELECT Cargo FROM empleados where Cargo='ENTRENADOR'";
 		try{

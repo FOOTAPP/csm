@@ -26,12 +26,19 @@ import java.awt.Font;
 import javax.swing.UIManager;
 import java.awt.Toolkit;
 
+/**
+ * The Class ventanabajamedica.
+ */
 public class ventanabajamedica extends JFrame {
 
+	/** The content pane. */
 	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
+	 *
+	 * @param args
+	 *            the arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

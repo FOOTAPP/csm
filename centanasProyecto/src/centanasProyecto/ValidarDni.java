@@ -1,5 +1,8 @@
 package centanasProyecto;
 
+/**
+ * The Class ValidarDni.
+ */
 public class ValidarDni {
 	/**
 	Clase que permite validar un DNI.  
@@ -10,12 +13,23 @@ public class ValidarDni {
 	 
 	    private String dni;
 	 
-	        public ValidarDni(String dni) {
+	        /**
+			 * Instantiates a new validar dni.
+			 *
+			 * @param dni
+			 *            the dni
+			 */
+        	public ValidarDni(String dni) {
 	            this.dni = dni;
 	        }
 	 
 	     
-	    public boolean validar() {
+	    /**
+		 * Validar.
+		 *
+		 * @return true, if successful
+		 */
+    	public boolean validar() {
 	 
 	         
 	        String letraMayuscula = ""; //Guardaremos la letra introducida en formato mayúscula
@@ -39,7 +53,12 @@ public class ValidarDni {
 	        }
 	    }
 	 
-	        private boolean soloNumeros() {
+	        /**
+			 * Solo numeros.
+			 *
+			 * @return true, if successful
+			 */
+        	private boolean soloNumeros() {
 	 
 	            int i, j = 0;
 	            String numero = ""; // Es el número que se comprueba uno a uno por si hay alguna letra entre los 8 primeros dígitos
@@ -70,7 +89,12 @@ public class ValidarDni {
 	            }*/
 	        }
 	 
-	        private String letraDNI() {
+	        /**
+			 * Letra DNI.
+			 *
+			 * @return the string
+			 */
+        	private String letraDNI() {
 	        // El método es privado porque lo voy a usar internamente en esta clase, no se necesita fuera de ella
 	 
 	        // pasar miNumero a integer

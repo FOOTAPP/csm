@@ -5,12 +5,28 @@ import java.util.Vector;
 
 import clases.Tratamiento;
 
+/**
+ * The Class BBDD_Fisio.
+ */
 public class BBDD_Fisio extends BBDD_Proyecto{
 
+	/**
+	 * Instantiates a new BBD D fisio.
+	 *
+	 * @param bbdd
+	 *            the bbdd
+	 */
 	public BBDD_Fisio(String bbdd) {
 		super(bbdd);
 	}
 	
+	/**
+	 * Nueva sesion.
+	 *
+	 * @param t
+	 *            the t
+	 * @return true, if successful
+	 */
 	//COMPROBADO Y FUNCIONA
 	public boolean nuevaSesion (centanasProyecto.Tratamiento t){
 		String cadena="INSERT INTO sesion values ('"+t.getDni_Jugador()+"','"+t.getDni_fisio()+"','"+t.getFh_sesion()+"','"+
@@ -29,6 +45,13 @@ public class BBDD_Fisio extends BBDD_Proyecto{
 		}
 	}
 	
+	/**
+	 * Dar alta medica.
+	 *
+	 * @param dni
+	 *            the dni
+	 * @return the int
+	 */
 	//COMPROBADO Y FUNCIONA
 	public int darAltaMedica (String dni){
 		String cadena="UPDATE jugadores SET Lesionado='No' WHERE Dni_Jugador='"+dni+"'";
@@ -46,6 +69,13 @@ public class BBDD_Fisio extends BBDD_Proyecto{
 		}
 	}
 	
+	/**
+	 * Dar baja medica.
+	 *
+	 * @param dni
+	 *            the dni
+	 * @return the int
+	 */
 	//COMPROBADO Y FUNCIONA
 	public int darBajaMedica (String dni){
 		String cadena="UPDATE jugadores SET Lesionado='Si' WHERE Dni_Jugador='"+dni+"'";
@@ -64,6 +94,13 @@ public class BBDD_Fisio extends BBDD_Proyecto{
 	}
 	
 	
+	/**
+	 * Buscar jugadores lesionados.
+	 *
+	 * @param lesionado
+	 *            the lesionado
+	 * @return the vector
+	 */
 	//COMPROBADO Y FUNCIONA
 	public Vector<String> buscarJugadoresLesionados(String lesionado){
 		String cadena="SELECT Dni_Jugador FROM jugadores WHERE Lesionado='"+lesionado+"'";
@@ -85,6 +122,11 @@ public class BBDD_Fisio extends BBDD_Proyecto{
 	}
 	
 	
+	/**
+	 * Buscar fisioterapeutas.
+	 *
+	 * @return the vector
+	 */
 	public Vector<String> buscarFisioterapeutas(){
 		String cadena="SELECT Dni_Emple FROM empleados WHERE Cargo ='Fisioterapeuta'";
 		try{

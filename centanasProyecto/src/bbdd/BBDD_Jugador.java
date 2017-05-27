@@ -3,12 +3,28 @@ package bbdd;
 import java.sql.SQLException;
 import clases.Jugador;
 
+/**
+ * The Class BBDD_Jugador.
+ */
 public class BBDD_Jugador extends BBDD_Proyecto{
 
+	/**
+	 * Instantiates a new BBD D jugador.
+	 *
+	 * @param bbdd
+	 *            the bbdd
+	 */
 	public BBDD_Jugador(String bbdd) {
 		super(bbdd);
 	}
 	
+	/**
+	 * Alta jugador.
+	 *
+	 * @param j
+	 *            the j
+	 * @return true, if successful
+	 */
 	//COMPROBADO Y FUNCIONA
 	public boolean altaJugador (Jugador j){
 		String cadena="INSERT INTO jugadores values ('"+j.getDni_jugador()+"','"+j.getNombre()+"','"+j.getF_nac()+"','"+
@@ -27,6 +43,13 @@ public class BBDD_Jugador extends BBDD_Proyecto{
 		}
 	}
 	
+	/**
+	 * Borrar jugador.
+	 *
+	 * @param dni
+	 *            the dni
+	 * @return the int
+	 */
 	//COMPROBADO Y FUNCIONA
 	public int borrarJugador (String dni){
 		String cadena="DELETE FROM jugadores WHERE Dni_Jugador='"+dni+"'";
@@ -44,6 +67,13 @@ public class BBDD_Jugador extends BBDD_Proyecto{
 		}
 	}
 	
+	/**
+	 * Actualizar cuenta jugador.
+	 *
+	 * @param j
+	 *            the j
+	 * @return the int
+	 */
 	//COMPROBADO Y FUNCIONA
 	public int actualizarCuentaJugador (Jugador j){
 		String cadena="UPDATE jugadores SET Cuenta_Bancaria='"+j.getCuenta()+"' WHERE Dni_Jugador='"+j.getDni_jugador()+"'";
@@ -62,6 +92,13 @@ public class BBDD_Jugador extends BBDD_Proyecto{
 	}
 	
 	
+	/**
+	 * Buscar dni.
+	 *
+	 * @param dni
+	 *            the dni
+	 * @return the int
+	 */
 	//COMPROBADO Y FUNCIONA
 	public int buscarDni (String dni){
 		String cadena="SELECT Dni_Jugador FROM jugadores where Dni_Jugador='"+dni+"'";
@@ -84,6 +121,13 @@ public class BBDD_Jugador extends BBDD_Proyecto{
 		}
 	}
 	
+	/**
+	 * Buscar cuenta.
+	 *
+	 * @param cuenta
+	 *            the cuenta
+	 * @return the int
+	 */
 	//COMPROBADO Y FUNCIONA
 	public int buscarCuenta (String cuenta){
 		String cadena="SELECT Dni_Jugador FROM jugadores where Cuenta_Bancaria='"+cuenta+"'";

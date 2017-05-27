@@ -20,12 +20,26 @@ import bbdd.BBDD_Empleado;
 import clases.Empleado;
 import clases.Jugador;
 
+/**
+ * The Class ModificarCuentaEmpleado.
+ */
 public class ModificarCuentaEmpleado extends JFrame{
 
+	/** The Constant String. */
 	protected static final String String = null;
+	
+	/** The content pane. */
 	private JPanel contentPane;
+	
+	/** The nuevacuenta. */
 	private JTextField nuevacuenta;
 
+	/**
+	 * The main method.
+	 *
+	 * @param args
+	 *            the arguments
+	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -39,6 +53,12 @@ public class ModificarCuentaEmpleado extends JFrame{
 		});
 	}
 
+	/**
+	 * Instantiates a new modificar cuenta empleado.
+	 *
+	 * @param dni
+	 *            the dni
+	 */
 	public ModificarCuentaEmpleado(String dni) {
 		BBDD_Empleado bd=new BBDD_Empleado("proyecto");
 		setTitle("Modificar cuenta Empleado");
@@ -155,6 +175,13 @@ public class ModificarCuentaEmpleado extends JFrame{
 		lblNewLabel_1.setBounds(ancho/4, alto/4, ancho/2, alto/2);
 	}
 	
+	/**
+	 * Validar cuenta.
+	 *
+	 * @param cuenta
+	 *            the cuenta
+	 * @return true, if successful
+	 */
 	public static boolean validarCuenta(String cuenta){
 		String miCuenta[];
 		if(!cuenta.substring(0, 2).equals("ES"))

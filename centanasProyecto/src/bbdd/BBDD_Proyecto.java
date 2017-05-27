@@ -7,18 +7,39 @@ import java.time.LocalDate;
 import java.util.GregorianCalendar;
 import java.util.Vector;
 
+/**
+ * The Class BBDD_Proyecto.
+ */
 public class BBDD_Proyecto extends BBDD_Conexion{
 
+	/** The s. */
 	protected static Statement s;
+	
+	/** The s 2. */
 	protected static Statement s2;	
+	
+	/** The reg. */
 	protected static ResultSet reg;
+	
+	/** The reg 2. */
 	protected static ResultSet reg2;
 	
+	/**
+	 * Instantiates a new BBD D proyecto.
+	 *
+	 * @param bbdd
+	 *            the bbdd
+	 */
 	public BBDD_Proyecto(String bbdd){
 		super (bbdd);
 	}
 	
 	
+	/**
+	 * Buscar jugadores.
+	 *
+	 * @return the vector
+	 */
 	public Vector<String> buscarJugadores(){
 		String cadena="SELECT Dni_Jugador FROM jugadores";
 		try{
@@ -38,6 +59,11 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 		}
 	}
 	
+	/**
+	 * Buscar empleado.
+	 *
+	 * @return the vector
+	 */
 	public Vector<String> buscarEmpleado(){
 		String cadena="SELECT Dni_Emple FROM empleados";
 		try{
@@ -56,6 +82,14 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 			return null;
 		}
 	}
+	
+	/**
+	 * Validar cuenta.
+	 *
+	 * @param cuenta
+	 *            the cuenta
+	 * @return true, if successful
+	 */
 	public static boolean validarCuenta(String cuenta){
 		String miCuenta[];
 		try{
@@ -91,7 +125,14 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 		return true;
 	}
 	
-	 public boolean validarCorreo(String correo){
+	 /**
+	 * Validar correo.
+	 *
+	 * @param correo
+	 *            the correo
+	 * @return true, if successful
+	 */
+ 	public boolean validarCorreo(String correo){
 			boolean letra=false;
 			boolean fin=false;
 			for (int cont=0; cont < correo.length(); cont++)
@@ -105,7 +146,14 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 				return false;
 		}
 	 
-	 public boolean validarEdad(LocalDate fnacimiento){
+	 /**
+	 * Validar edad.
+	 *
+	 * @param fnacimiento
+	 *            the fnacimiento
+	 * @return true, if successful
+	 */
+ 	public boolean validarEdad(LocalDate fnacimiento){
 			GregorianCalendar hoy=new GregorianCalendar();
 			int anio=fnacimiento.getYear();
 			int mes=fnacimiento.getMonthValue();
@@ -118,7 +166,14 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 				return false;
 		}
 	 
-	 public boolean validarTelefono(String telefono){
+	 /**
+	 * Validar telefono.
+	 *
+	 * @param telefono
+	 *            the telefono
+	 * @return true, if successful
+	 */
+ 	public boolean validarTelefono(String telefono){
 			boolean primero=false;
 			boolean extension=false;
 			if(telefono.charAt(0) == '6' || telefono.charAt(0) == '7' || telefono.charAt(0) == '9')
@@ -131,7 +186,12 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 				return false;
 		}
 	
-	 public String buscarPresi (){
+	 /**
+	 * Buscar presi.
+	 *
+	 * @return the string
+	 */
+ 	public String buscarPresi (){
 			String cadena="SELECT Dni_Emple FROM empleados where cargo='PRESIDENTE'";
 			try{
 				this.abrir();
@@ -147,6 +207,11 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 			}
 		}
 		
+		/**
+		 * Buscar entrenador.
+		 *
+		 * @return the string
+		 */
 		public String buscarEntrenador (){
 			String cadena="SELECT Dni_Emple FROM empleados where cargo='ENTRENADOR'";
 			try{
@@ -163,6 +228,11 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 			}
 		}
 		
+		/**
+		 * Buscar financiero.
+		 *
+		 * @return the string
+		 */
 		public String buscarFinanciero (){
 			String cadena="SELECT Dni_Emple FROM empleados where cargo='FINANCIERO'";
 			try{

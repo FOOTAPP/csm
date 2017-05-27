@@ -4,12 +4,28 @@ import java.sql.SQLException;
 import java.util.Vector;
 import clases.Aviso;
 
+/**
+ * The Class BBDD_Aviso.
+ */
 public class BBDD_Aviso extends BBDD_Proyecto{
 
+	/**
+	 * Instantiates a new BBD D aviso.
+	 *
+	 * @param bbdd
+	 *            the bbdd
+	 */
 	public BBDD_Aviso(String bbdd) {
 		super(bbdd);
 	}
 	
+	/**
+	 * Crear aviso.
+	 *
+	 * @param a
+	 *            the a
+	 * @return true, if successful
+	 */
 	//COMPROBADO Y FUNCIONA
 	public boolean crearAviso(Aviso a){
 		String cadena1="INSERT INTO avisos (Dni_Emple, Motivo, FH_Creacion) values ('"+a.getDni_emple()+"','"+a.getMotivo()+"','"+a.getFh_creado()+"')";
@@ -38,6 +54,13 @@ public class BBDD_Aviso extends BBDD_Proyecto{
 		}
 	}
 	
+	/**
+	 * Leer avisos.
+	 *
+	 * @param dni
+	 *            the dni
+	 * @return the vector
+	 */
 	//COMPROBADO Y FUNCIONA
 	public Vector<Aviso> leerAvisos(String dni){
 		String cadena="SELECT N_Aviso FROM avisos_dest WHERE Destinatario='"+dni+"'";

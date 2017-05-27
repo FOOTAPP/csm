@@ -21,12 +21,19 @@ import javax.swing.border.LineBorder;
 import bbdd.BBDD_Aviso;
 import java.awt.Toolkit;
 
+/**
+ * The Class VentanaOpcionesEntrenador.
+ */
 public class VentanaOpcionesEntrenador extends JFrame {
 
+	/** The content pane. */
 	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
+	 *
+	 * @param args
+	 *            the arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

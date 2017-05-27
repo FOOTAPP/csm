@@ -14,12 +14,19 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * The Class OpcionDarBaja.
+ */
 public class OpcionDarBaja extends JFrame {
 
+	/** The content pane. */
 	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
+	 *
+	 * @param args
+	 *            the arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

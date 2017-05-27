@@ -22,13 +22,22 @@ import javax.swing.JEditorPane;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * The Class VentanaOpciones.
+ */
 public class VentanaOpciones extends JFrame {
 
+	/** The content pane. */
 	private JPanel contentPane;
 
+	/** The frame. */
 	private static VentanaOpciones frame;
+	
 	/**
 	 * Launch the application.
+	 *
+	 * @param args
+	 *            the arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

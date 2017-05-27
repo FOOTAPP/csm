@@ -10,18 +10,42 @@ import java.nio.file.Paths;
 import java.util.InvalidPropertiesFormatException;
 import java.util.Properties;
 
+/**
+ * The Class BBDD_Conexion.
+ */
 public class BBDD_Conexion {
 
+	/** The base. */
 	private String base;
+	
+	/** The usuario. */
 	private String usuario;
+	
+	/** The pass. */
 	private String pass;
+	
+	/** The url. */
 	private String url;
+	
+	/** The c. */
 	protected Connection c;
+	
+	/** The prop. */
 	private Properties prop;
+	
+	/** The dbms. */
 	private String dbms;
+	
+	/** The driver. */
 	private String driver;
+	
+	/** The db name. */
 	private String dbName;
+	
+	/** The server name. */
 	private String serverName;
+	
+	/** The port number. */
 	private int portNumber;
 	/*
 	public BBDD_Conexion(String bbdd){		
@@ -32,6 +56,12 @@ public class BBDD_Conexion {
 	}
 	*/
 	
+	/**
+	 * Instantiates a new BBD D conexion.
+	 *
+	 * @param fileName
+	 *            the file name
+	 */
 	public BBDD_Conexion(String fileName) {	
 		try{
 			this.prop = new Properties();
@@ -57,6 +87,9 @@ public class BBDD_Conexion {
 		}	
 	}
 	
+	/**
+	 * Abrir.
+	 */
 	public void abrir(){
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
@@ -72,6 +105,9 @@ public class BBDD_Conexion {
 		}
 	}	
 	
+	/**
+	 * Cerrar.
+	 */
 	public void cerrar(){
 		try{
 			c.close();

@@ -16,13 +16,22 @@ import javax.swing.border.EmptyBorder;
 
 import bbdd.BBDD_Jugador;
 
+/**
+ * The Class DarBajaJugador2.
+ */
 public class DarBajaJugador2 extends JFrame{
 
+	/** The content pane. */
 	private JPanel contentPane;
+	
+	/** The text field. */
 	private JTextField textField;
 
 	/**
 	 * Launch the application.
+	 *
+	 * @param args
+	 *            the arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

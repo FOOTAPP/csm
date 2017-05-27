@@ -22,12 +22,19 @@ import bbdd.BBDD_Empleado;
 import javax.swing.JButton;
 import javax.swing.JEditorPane;
 
+/**
+ * The Class VentanaOpcionesFinanciero.
+ */
 public class VentanaOpcionesFinanciero extends JFrame {
 
+	/** The content pane. */
 	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
+	 *
+	 * @param args
+	 *            the arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
