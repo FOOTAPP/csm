@@ -4,35 +4,35 @@ import java.sql.SQLException;
 import clases.Jugador;
 
 /**
- * The Class BBDD_Jugador.
+ * Clase BBDD_Jugador.
  */
 public class BBDD_Jugador extends BBDD_Proyecto{
 
 	/**
-	 * Instantiates a new BBD D jugador.
+	 * constructor BBDD_Jugador.
 	 *
 	 * @param bbdd
-	 *            the bbdd
+	 *            
 	 */
 	public BBDD_Jugador(String bbdd) {
 		super(bbdd);
 	}
 	
 	/**
-	 * Alta jugador.
-	 *
-	 * @param j
-	 *            the j
-	 * @return true, if successful
+	 * Método altaJugador,  alta a un nuevo jugador con todos sus datos personales.
+	 * Es utilizado en las clases DarAltaJugador y DarAltaJugador2 .
+	 * @param j de tipo Jugador(datos de la clase Jugador);
+	 *            
+	 * @return true, si es correcto.
 	 */
 	//COMPROBADO Y FUNCIONA
-	public boolean altaJugador (Jugador j){
+	public boolean altaJugador (Jugador j){ //recibe datos del jugador a insertar
 		String cadena="INSERT INTO jugadores values ('"+j.getDni_jugador()+"','"+j.getNombre()+"','"+j.getF_nac()+"','"+
 				j.getTelf()+"','"+j.getAlta_club()+"','"+j.getCuenta()+"','"+j.getDemarcacion()+"','"+j.getEmail()+"','No')";
 		try{
 			this.abrir();
-			s=c.createStatement();
-			s.executeUpdate(cadena);
+			s=c.createStatement(); // metodo para obtener s (objeto Statement)
+			s.executeUpdate(cadena); // Ejecuta la instrucción SQL en el objeto s 
 			s.close();
 			this.cerrar();
 			return true;
@@ -44,19 +44,19 @@ public class BBDD_Jugador extends BBDD_Proyecto{
 	}
 	
 	/**
-	 * Borrar jugador.
-	 *
+	 * Método borrarJugador, borra o da de baja a un jugador.
+	 * Es utilizado en las clases DarBajaJugador y DarBajaEmpleado2 .
 	 * @param dni
-	 *            the dni
-	 * @return the int
+	 *          
+	 * @return  int
 	 */
 	//COMPROBADO Y FUNCIONA
-	public int borrarJugador (String dni){
+	public int borrarJugador (String dni){ // recibe DNI del  jugadorer a borrar
 		String cadena="DELETE FROM jugadores WHERE Dni_Jugador='"+dni+"'";
 		try{
 			this.abrir();
-			s=c.createStatement();
-			int f=s.executeUpdate(cadena);
+			s=c.createStatement(); // metodo para obtener s (objeto Statement)
+			int f=s.executeUpdate(cadena); // Ejecuta la instrucción SQL en el objeto s 
 			s.close();
 			this.cerrar();
 			return f;
@@ -68,19 +68,19 @@ public class BBDD_Jugador extends BBDD_Proyecto{
 	}
 	
 	/**
-	 * Actualizar cuenta jugador.
-	 *
-	 * @param j
-	 *            the j
-	 * @return the int
+	 * Método actualizarCuentaJugador.
+	 * Es utilizado en la clase ModificarCuentaJugador.
+	 * @param j de tipo Jugador(datos de la clase Jugador);
+	 *            
+	 * @return int
 	 */
 	//COMPROBADO Y FUNCIONA
-	public int actualizarCuentaJugador (Jugador j){
+	public int actualizarCuentaJugador (Jugador j){ // recibe DNI del  jugadorer a modificar cuenta
 		String cadena="UPDATE jugadores SET Cuenta_Bancaria='"+j.getCuenta()+"' WHERE Dni_Jugador='"+j.getDni_jugador()+"'";
 		try{
 			this.abrir();
-			s=c.createStatement();
-			int f=s.executeUpdate(cadena);
+			s=c.createStatement(); // metodo para obtener s (objeto Statement)
+			int f=s.executeUpdate(cadena); // Ejecuta la instrucción SQL en el objeto s 
 			s.close();
 			this.cerrar();
 			return f;

@@ -41,7 +41,7 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 		try{
 			this.abrir();
 			s=c.createStatement(); // metodo para obtener s (objeto Statement)
-			reg=s.executeQuery(cadena); // Con el objeto s, se utiliza el método executeQuery(), devuelve "reg" tipo ResultSet 
+			reg=s.executeQuery(cadena); // Con el objeto s, se utiliza el método executeQuery(), devuelve "reg" de tipo ResultSet 
 			Vector<String> jug=new Vector<String>();
 			while(reg.next()) // mientras exista un próximo registro, añade Dni_Jugador
 				jug.add(reg.getString(1));
