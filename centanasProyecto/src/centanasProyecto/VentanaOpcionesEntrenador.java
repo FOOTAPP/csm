@@ -22,18 +22,15 @@ import bbdd.BBDD_Aviso;
 import java.awt.Toolkit;
 
 /**
- * The Class VentanaOpcionesEntrenador.
+ * Clase VentanaOpcionesEntrenador.
  */
 public class VentanaOpcionesEntrenador extends JFrame {
 
-	/** The content pane. */
+
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
-	 *
-	 * @param args
-	 *            the arguments
+	 * metodo principal
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -49,7 +46,7 @@ public class VentanaOpcionesEntrenador extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Crea ventana o construye VentanaOpcionesEntrenador.
 	 */
 	public VentanaOpcionesEntrenador() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaOpcionesEntrenador.class.getResource("/Resources/soccer.png")));

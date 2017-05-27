@@ -11,7 +11,7 @@ import java.util.InvalidPropertiesFormatException;
 import java.util.Properties;
 
 /**
- * Clase BBDD_Conexión.
+ * Clase BBDD_Conexion.
  */
 public class BBDD_Conexion {
 	private String base;
@@ -42,7 +42,7 @@ public class BBDD_Conexion {
 	 */
 	public BBDD_Conexion(String fileName) {	
 		try{
-			this.prop = new Properties();
+			this.prop = new Properties(); // Almacena la prefrencia del usuario
 			prop.loadFromXML(Files.newInputStream(Paths.get("xml\\mysql-properties.xml")));
 		
 			this.dbms = this.prop.getProperty("dbms"); // nombre del sistema de datos "mysql"
