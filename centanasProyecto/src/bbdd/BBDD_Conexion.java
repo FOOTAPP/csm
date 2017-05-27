@@ -59,22 +59,22 @@ public class BBDD_Conexion {
 	/**
 	 * Instantiates a new BBD D conexion.
 	 *
-	 * @param fileName
-	 *            the file name
+	 * @param fileName no se usa
+	 *            
 	 */
 	public BBDD_Conexion(String fileName) {	
 		try{
 			this.prop = new Properties();
 			prop.loadFromXML(Files.newInputStream(Paths.get("xml\\mysql-properties.xml")));
 		
-			this.dbms = this.prop.getProperty("dbms");
-			this.driver = this.prop.getProperty("driver");
-			this.dbName = this.prop.getProperty("database_name");
-			this.usuario = this.prop.getProperty("user_name");
-			this.pass = this.prop.getProperty("password");
-			this.serverName = this.prop.getProperty("server_name");
-			this.portNumber = Integer.parseInt(this.prop.getProperty("port_number"));
-			this.url = "jdbc:mysql://localhost/"+dbName;
+			this.dbms = this.prop.getProperty("dbms");// nombre del sistema de datos "mysql"
+			this.driver = this.prop.getProperty("driver");// manejador de la base de datos
+			this.dbName = this.prop.getProperty("database_name");// nombre del esquema de la bbdd
+			this.usuario = this.prop.getProperty("user_name");// usuario con la que me concto a la bbdd
+			this.pass = this.prop.getProperty("password");// contraseña del ususario
+			this.serverName = this.prop.getProperty("server_name");// servidor donde esta desplegada la bbdd
+			this.portNumber = Integer.parseInt(this.prop.getProperty("port_number"));//puerto donde esta la base de datos
+			this.url = "jdbc:mysql://localhost/"+dbName; // es la conexion en si
 		}
 		catch(FileNotFoundException e){
 			System.out.println("No se encuentra el archivo de configuración");  

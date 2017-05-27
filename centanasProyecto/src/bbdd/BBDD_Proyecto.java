@@ -41,7 +41,7 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 	 * @return the vector
 	 */
 	public Vector<String> buscarJugadores(){
-		String cadena="SELECT Dni_Jugador FROM jugadores";
+		String cadena="SELECT Dni_Jugador FROM jugadores";// selecciona el dni del jugador
 		try{
 			this.abrir();
 			s=c.createStatement();
