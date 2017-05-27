@@ -35,7 +35,7 @@ public class BBDD_Conexion {
 	public BBDD_Conexion(String fileName) {	
 		try{
 			this.prop = new Properties();
-			prop.loadFromXML(Files.newInputStream(Paths.get("mysql-properties.xml")));
+			prop.loadFromXML(Files.newInputStream(Paths.get("xml\\mysql-properties.xml")));
 		
 			this.dbms = this.prop.getProperty("dbms");
 			this.driver = this.prop.getProperty("driver");
