@@ -14,7 +14,7 @@ import java.util.Vector;
 public class BBDD_Proyecto extends BBDD_Conexion{
 
 	
-	protected static Statement s; // objeto tipo Statement,  
+	protected static Statement s; // variable tipo Statement,  
 	protected static Statement s2; // objeto tipo Statement,
 	protected static ResultSet reg; // objeto tipo ResultSet,
 	protected static ResultSet reg2; // objeto tipo ResultSet,

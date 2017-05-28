@@ -12,6 +12,10 @@ import javax.swing.border.EmptyBorder;
  */
 public class OtroErrorInicioSesion extends JDialog {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1023851153507905313L;
 	/** The content panel. */
 	private final JPanel contentPanel = new JPanel();
 
