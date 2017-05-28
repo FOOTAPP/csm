@@ -6,15 +6,15 @@ import java.util.Vector;
 import clases.Tratamiento;
 
 /**
- * The Class BBDD_Fisio.
+ * Clase BBDD_Fisio.
  */
 public class BBDD_Fisio extends BBDD_Proyecto{
 
 	/**
-	 * Instantiates a new BBD D fisio.
+	 * constructor BBDD_Fisio.
 	 *
 	 * @param bbdd
-	 *            the bbdd
+	 *            
 	 */
 	public BBDD_Fisio(String bbdd) {
 		super(bbdd);
