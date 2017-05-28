@@ -135,7 +135,7 @@ public class BBDD_Jugador extends BBDD_Proyecto{
 			this.abrir();
 			s=c.createStatement(); // similar al anterior
 			reg=s.executeQuery(cadena);
-			while(reg.next()){
+			while(reg.next()){ //mientras exista un próximo registro, retorna 1 o 0 si no hay mas registros
 				s.close();
 				this.cerrar();
 				return 1;
