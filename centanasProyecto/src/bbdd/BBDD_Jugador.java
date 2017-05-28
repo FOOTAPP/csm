@@ -120,20 +120,20 @@ public class BBDD_Jugador extends BBDD_Proyecto{
 			return -1;
 		}
 	}
-	//sssnknljl
+	
 	/**
 	 * Metodo BuscarCuenta.
-	 *
+	 * Es utilizado en las clases DarAltaJugador y ModificarCuentaJugador .
 	 * @param cuenta
-	 *            the cuenta
-	 * @return the int
+	 *            
+	 * @return  int
 	 */
 	//COMPROBADO Y FUNCIONA
-	public int buscarCuenta (String cuenta){
+	public int buscarCuenta (String cuenta){// busca el dni de los jugadores pasando un parametro cuenta valido
 		String cadena="SELECT Dni_Jugador FROM jugadores where Cuenta_Bancaria='"+cuenta+"'";
 		try{
 			this.abrir();
-			s=c.createStatement();
+			s=c.createStatement(); // similar al anterior
 			reg=s.executeQuery(cadena);
 			while(reg.next()){
 				s.close();
