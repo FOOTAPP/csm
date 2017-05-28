@@ -75,7 +75,7 @@ public class BBDD_Jugador extends BBDD_Proyecto{
 	 * @return int
 	 */
 	//COMPROBADO Y FUNCIONA
-	public int actualizarCuentaJugador (Jugador j){ // recibe DNI del  jugadorer a modificar cuenta
+	public int actualizarCuentaJugador (Jugador j){ // actualiza cuenta bancaria utilizando el dni del jugador de la clase jugador
 		String cadena="UPDATE jugadores SET Cuenta_Bancaria='"+j.getCuenta()+"' WHERE Dni_Jugador='"+j.getDni_jugador()+"'";
 		try{
 			this.abrir();
@@ -93,27 +93,27 @@ public class BBDD_Jugador extends BBDD_Proyecto{
 	
 	
 	/**
-	 * Buscar dni.
-	 *
+	 * Método buscarDni, busca el DNI del jugador pasando un parametro de busqueda.
+	 * Es utilizado en las clases DarAltaJugador y  DarAltaJugador2.
 	 * @param dni
-	 *            the dni
-	 * @return the int
+	 *            
+	 * @return int
 	 */
 	//COMPROBADO Y FUNCIONA
-	public int buscarDni (String dni){
+	public int buscarDni (String dni){ // busca el dni de los jugadores pasando un parametro valido
 		String cadena="SELECT Dni_Jugador FROM jugadores where Dni_Jugador='"+dni+"'";
 		try{
 			this.abrir();
-			s=c.createStatement();
-			reg=s.executeQuery(cadena);
-			while(reg.next()){
+			s=c.createStatement(); // metodo para obtener s (objeto Statement)
+			reg=s.executeQuery(cadena); // Con el objeto s, se utiliza el método executeQuery(), devuelve "reg" de tipo ResultSet
+			while(reg.next()){ //mientras exista un próximo registro, retorna 1 o 0 si no hay mas registros
 				s.close();
 				this.cerrar();
 				return 1;
 			}
 			s.close();
 			this.cerrar();
-			return 0;
+			return 0; 
 		}
 		catch ( SQLException e){
 			this.cerrar();
