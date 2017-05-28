@@ -4,38 +4,34 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /**
- * The Class Empleado.
+ * Clase Empleado.
  */
 public class Empleado {
 
-	/** The telf. */
+	
 	private String nombre, dni_emple, email, cargo, cuenta, telf;
-	
-	/** The alta club. */
 	private LocalDateTime alta_club;
-	
-	/** The f nac. */
 	private LocalDate f_nac;
 	
 	/**
-	 * Instantiates a new empleado.
+	 * Constructor Empleado.
 	 *
 	 * @param nombre
-	 *            the nombre
+	 *           
 	 * @param dni_emple
-	 *            the dni emple
+	 *            
 	 * @param email
-	 *            the email
+	 *            
 	 * @param cargo
-	 *            the cargo
+	 *           
 	 * @param cuenta
-	 *            the cuenta
+	 *           
 	 * @param telf
-	 *            the telf
+	 *            
 	 * @param alta_club
-	 *            the alta club
+	 *            
 	 * @param f_nac
-	 *            the f nac
+	 *           
 	 */
 	public Empleado(String nombre, String dni_emple, String email, String cargo, String cuenta, String telf,
 			LocalDateTime alta_club, LocalDate f_nac) {
@@ -51,12 +47,12 @@ public class Empleado {
 	}
 	
 	/**
-	 * Instantiates a new empleado.
+	 * Constructor  Empleado.
 	 *
 	 * @param dni_emple
-	 *            the dni emple
+	 *            
 	 * @param cuenta
-	 *            the cuenta
+	 *            
 	 */
 	public Empleado(String dni_emple,String cuenta) {
 		super();
@@ -65,72 +61,73 @@ public class Empleado {
 	}
 
 	/**
-	 * Gets the nombre.
-	 *
-	 * @return the nombre
+	 * Gets nombre.
+	 * Es utilizado en el método altaEmpleado de la clase BBDD_Empleado 
+	 * @return nombre tipo String
 	 */
 	public String getNombre() {
 		return nombre;
 	}
 
 	/**
-	 * Gets the dni emple.
-	 *
-	 * @return the dni emple
+	 * Gets dni_emple.
+	 * Es utilizado en el método altaEmpleado de la clase BBDD_Empleado 
+	 * y en el método actualizarCuentaEmpleado de la clase BBDD_Empleado
+	 * @return dni_emple tipo String
 	 */
 	public String getDni_emple() {
 		return dni_emple;
 	}
 
 	/**
-	 * Gets the email.
-	 *
-	 * @return the email
+	 * Gets email.
+	 * Es utilizado en el método altaEmpleado de la clase BBDD_Empleado
+	 * @return  email
 	 */
 	public String getEmail() {
 		return email;
 	}
 
 	/**
-	 * Gets the cargo.
-	 *
-	 * @return the cargo
+	 * Gets cargo.
+	 * Es utilizado en el método altaEmpleado de la clase BBDD_Empleado
+	 * @return cargo
 	 */
 	public String getCargo() {
 		return cargo;
 	}
 
 	/**
-	 * Gets the cuenta.
-	 *
-	 * @return the cuenta
+	 * Gets cuenta.
+	 * Es utilizado en el método altaEmpleado de la clase BBDD_Empleado
+	 * @return cuenta
 	 */
 	public String getCuenta() {
 		return cuenta;
 	}
 
 	/**
-	 * Gets the telf.
-	 *
-	 * @return the telf
+	 * Gets  telf.
+	 * Es utilizado en el método altaEmpleado de la clase BBDD_Empleado
+	 * @return telf
 	 */
 	public String getTelf() {
 		return telf;
 	}
 
 	/**
-	 * Gets the alta club.
-	 *
-	 * @return the alta club
+	 * Gets alta_club.
+	 * Es utilizado en el método altaEmpleado de la clase BBDD_Empleado
+	 * @return alta_club
 	 */
 	public LocalDateTime getAlta_club() {
 		return alta_club;
 	}
 
 	/**
-	 * Gets the f nac.
-	 *
-	 * @return the f nac
+	 * Gets  f_nac.
+	 * Es utilizado en el método altaEmpleado de la clase BBDD_Empleado
+	 * @return f nac tipo LocalDate
 	 */
 	public LocalDate getF_nac() {
 		return f_nac;
