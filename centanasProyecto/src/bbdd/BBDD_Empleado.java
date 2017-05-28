@@ -4,35 +4,35 @@ import java.sql.SQLException;
 import clases.Empleado;
 
 /**
- * The Class BBDD_Empleado.
+ * Clase BBDD_Empleado.
  */
 public class BBDD_Empleado extends BBDD_Proyecto{
 
 	/**
-	 * Instantiates a new BBD D empleado.
+	 * constructor BBDD_Empleado extiende de la clase BBDD_Proyecto.
 	 *
 	 * @param bbdd
-	 *            the bbdd
+	 *            
 	 */
 	public BBDD_Empleado(String bbdd) {
 		super(bbdd);
 	}
 
 	/**
-	 * Alta empleado.
-	 *
-	 * @param emp
-	 *            the emp
-	 * @return the int
+	 * Método altaEmpleado.
+	 * Es utilizado en las clases DarBajaEmpleado (método actionPerformed ) y DarBajaEmpleado2(método actionPerformed).
+	 * @param emp de tipo Empleado
+	 *        
+	 * @return  int filas
 	 */
 	//COMPROBADO Y FUNCIONA
-	public int altaEmpleado (Empleado emp){
+	public int altaEmpleado (Empleado emp){ // inserta a los empleados que se dan de alta, recibe parametro de la clase Empleado
 		String cadena="INSERT INTO empleados values ('"+emp.getDni_emple()+"','"+emp.getNombre()+"','"+emp.getF_nac()+"','"+
 				emp.getTelf()+"','"+emp.getAlta_club()+"','"+emp.getCuenta()+"','"+emp.getCargo()+"','"+emp.getEmail()+"')";
 		try{
 			this.abrir();
-			s=c.createStatement();
-			int filas=s.executeUpdate(cadena);
+			s=c.createStatement(); // metodo para obtener s (objeto Statement)
+			int filas=s.executeUpdate(cadena);// Ejecuta la instrucción SQL en el objeto s  y devuelve filas actualizadas
 			s.close();
 			this.cerrar();
 			return filas;
@@ -47,19 +47,19 @@ public class BBDD_Empleado extends BBDD_Proyecto{
 	}
 	
 	/**
-	 * Borrar empleado.
-	 *
+	 * Método borrarEmpleado, borrar el registro del empleado indicado identificado por su DNI .
+	 * Es utilizado en las clases DarBajaEmpleado (método actionPerformed ) y DarBajaEmpleado2(método actionPerformed).
 	 * @param dni
-	 *            the dni
-	 * @return the int
+	 *        
+	 * @return  int numero de filas
 	 */
 	//COMPROBADO Y FUNCIONA
-	public int borrarEmpleado (String dni){
+	public int borrarEmpleado (String dni){ // borra empleados de parametro DNI
 		String cadena="DELETE FROM empleados WHERE Dni_Emple='"+dni+"'";
 		try{
 			this.abrir();
-			s=c.createStatement();
-			int filas=s.executeUpdate(cadena);
+			s=c.createStatement();// metodo para obtener s (objeto Statement)
+			int filas=s.executeUpdate(cadena); // Ejecuta la instrucción SQL en el objeto s  y devuelve filas borradas
 			s.close();
 			this.cerrar();
 			return filas;
@@ -71,18 +71,18 @@ public class BBDD_Empleado extends BBDD_Proyecto{
 	}
 	
 	/**
-	 * Actualizar cuenta empleado.
-	 *
+	 * Método que Actualiza cuenta de empleado.
+	 * Es utilizado en la clase  (método actionPerformed ) .
 	 * @param emp
-	 *            the emp
-	 * @return the int
+	 *            
+	 * @return  int numero de filas
 	 */
 	//COMPROBADO Y FUNCIONA
-	public int actualizarCuentaEmpleado (Empleado emp){
+	public int actualizarCuentaEmpleado (Empleado emp){// actualiza cuentas de empleados indicados por un parametro DNI de la clase Empleado
 		String cadena="UPDATE empleados SET Cuenta_Bancaria='"+emp.getCuenta()+"' WHERE Dni_Emple='"+emp.getDni_emple()+"'";
 		try{
 			this.abrir();
-			s=c.createStatement();
+			s=c.createStatement(); // similar al metodo anterior, devuelve filas o -1 si no lo encuentra
 			int filas=s.executeUpdate(cadena);
 			s.close();
 			this.cerrar();
@@ -96,20 +96,20 @@ public class BBDD_Empleado extends BBDD_Proyecto{
 	
 	
 	/**
-	 * Buscar dni.
-	 *
+	 * Método buscarDni, busca  empleado del DNI indicado.
+	 * Es utilizado en las clases DarAltaEmpleado (método actionPerformed ) y DarAltaEmpleado2(método actionPerformed).
 	 * @param dni
-	 *            the dni
-	 * @return the int
+	 
+	 * @return  int 1, si es correcto o -1 si no lo es.
 	 */
 	//COMPROBADO Y FUNCIONA
 	public int buscarDni (String dni){
 		String cadena="SELECT Dni_Emple FROM empleados where Dni_Emple='"+dni+"'";
 		try{
 			this.abrir();
-			s=c.createStatement();
-			reg=s.executeQuery(cadena);
-			while(reg.next())
+			s=c.createStatement(); // metodo para obtener s (objeto Statement)
+			reg=s.executeQuery(cadena);// Con el objeto s, se utiliza el método executeQuery(), devuelve "reg" de tipo ResultSet (tabla)
+			while(reg.next()) // mientras queden registros, devuelve 1 
 				return 1;
 			return 0;
 		}
@@ -120,19 +120,19 @@ public class BBDD_Empleado extends BBDD_Proyecto{
 	}
 	
 	/**
-	 * Buscar cuenta.
-	 *
+	 * Método buscarCuenta, obtiene los DNIs  de empleados de una cuenta indicada.
+	 * Es utilizado en las clases DarAltaEmpleado (método actionPerformed ) y ModificarCuentaEmpleado(método actionPerformed).
 	 * @param cuenta
-	 *            the cuenta
-	 * @return the int
+	 *         
+	 * @return  int 1, si la cuenta  o 0 si no
 	 */
-	public int buscarCuenta (String cuenta){
+	public int buscarCuenta (String cuenta){ 
 		String cadena="SELECT Dni_Emple FROM empleados where Cuenta_Bancaria='"+cuenta+"'";
 		try{
 			this.abrir();
-			s=c.createStatement();
-			reg=s.executeQuery(cadena);
-			while(reg.next()){
+			s=c.createStatement();// metodo para obtener s (objeto Statement)
+			reg=s.executeQuery(cadena);// Con el objeto s, se utiliza el método executeQuery(), devuelve "reg" de tipo ResultSet (tabla)
+			while(reg.next()){// mientras queden registros lee el Resultset, devuelve 1 
 				s.close();
 				this.cerrar();
 				return 1;
@@ -149,8 +149,8 @@ public class BBDD_Empleado extends BBDD_Proyecto{
 	
 	
 	/**
-	 * Buscar cargo.
-	 *
+	 * Método buscarCargo, obtiene los empleados con cargo "ENTRENADOR" .
+	 * Es utilizado en la clase DarAltaEmpleado (método actionPerformed )
 	 * @return the int
 	 */
 	public int buscarCargo (){
@@ -158,7 +158,7 @@ public class BBDD_Empleado extends BBDD_Proyecto{
 		try{
 			this.abrir();
 			s=c.createStatement();
-			reg=s.executeQuery(cadena);
+			reg=s.executeQuery(cadena);// similar al anterior método
 			while(reg.next())
 				return 1;
 			return 0;

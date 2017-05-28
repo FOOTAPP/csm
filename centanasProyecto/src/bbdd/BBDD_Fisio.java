@@ -107,7 +107,7 @@ public class BBDD_Fisio extends BBDD_Proyecto{
 		try{
 			this.abrir();
 			s=c.createStatement(); // metodo para obtener s (objeto Statement)
-			reg=s.executeQuery(cadena); // Con el objeto s, se utiliza el método executeQuery(), devuelve "reg" de tipo ResultSet
+			reg=s.executeQuery(cadena); // Con el objeto s, se utiliza el método executeQuery(), devuelve "reg" de tipo ResultSet(tabla)
 			Vector<String> jug=new Vector<String>(); // instancia el vector jug para almacenar los jugadores lesionados
 			while(reg.next())
 				jug.add(reg.getString(1));
