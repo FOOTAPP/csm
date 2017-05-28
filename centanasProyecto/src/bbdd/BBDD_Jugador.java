@@ -122,7 +122,7 @@ public class BBDD_Jugador extends BBDD_Proyecto{
 	}
 	
 	/**
-	 * Buscar cuenta.
+	 * Metodo BuscarCuenta.
 	 *
 	 * @param cuenta
 	 *            the cuenta
