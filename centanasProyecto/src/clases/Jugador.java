@@ -4,41 +4,34 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /**
- * The Class Jugador.
+ * Clase Jugador.
  */
 public class Jugador {
-
-	/** The telf. */
+	
 	private String nombre, dni_jugador, email, demarcacion, cuenta, telf;
-	
-	/** The alta club. */
 	private LocalDateTime alta_club;
-	
-	/** The f nac. */
 	private LocalDate f_nac;
-	
-	/** The lesionado. */
 	private boolean lesionado=false;
 	
 	/**
-	 * Instantiates a new jugador.
+	 * Constructor Jugador.
 	 *
 	 * @param nombre
-	 *            the nombre
+	 *           
 	 * @param dni_jugador
-	 *            the dni jugador
+	 *        
 	 * @param email
-	 *            the email
+	 *            
 	 * @param demarcacion
-	 *            the demarcacion
+	 *           
 	 * @param cuenta
-	 *            the cuenta
+	 *         
 	 * @param telf
-	 *            the telf
+	 *       
 	 * @param alta_club
-	 *            the alta club
+	 *        
 	 * @param f_nac
-	 *            the f nac
+	 *        
 	 */
 	public Jugador(String nombre, String dni_jugador, String email, String demarcacion, String cuenta, String telf,
 			LocalDateTime alta_club, LocalDate f_nac) {
@@ -54,12 +47,12 @@ public class Jugador {
 	}
 	
 	/**
-	 * Instantiates a new jugador.
+	 * Constructor Jugador.
 	 *
 	 * @param dni_jugador
-	 *            the dni jugador
+	 *           
 	 * @param cuenta
-	 *            the cuenta
+	 *       
 	 */
 	public Jugador(String dni_jugador, String cuenta){
 		super();
@@ -68,9 +61,9 @@ public class Jugador {
 	}
 
 	/**
-	 * Gets the nombre.
-	 *
-	 * @return the nombre
+	 * Gets nombre.
+	 * Es utilizado en el método altaJugador (Jugador) de la clase BBDD_Jugador
+	 * @return nombre
 	 */
 	public String getNombre() {
 		return nombre;
@@ -78,7 +71,7 @@ public class Jugador {
 
 	/**
 	 * Gets the dni jugador.
-	 *
+	 * Es utilizado en el método altaJugador (Jugador) de la clase BBDD_Jugador
 	 * @return the dni jugador
 	 */
 	public String getDni_jugador() {
@@ -86,63 +79,64 @@ public class Jugador {
 	}
 
 	/**
-	 * Gets the email.
-	 *
-	 * @return the email
+	 * Gets email.
+	 * 
+	 * @return  email tipo String
 	 */
 	public String getEmail() {
 		return email;
 	}
 
 	/**
-	 * Gets the demarcacion.
-	 *
-	 * @return the demarcacion
+	 * Gets demarcacion.
+	 * Es utilizado en el método altaJugador (Jugador) de la clase BBDD_Jugador
+	 * @return demarcacion
 	 */
 	public String getDemarcacion() {
 		return demarcacion;
 	}
 
 	/**
-	 * Gets the cuenta.
-	 *
-	 * @return the cuenta
+	 * Gets cuenta.
+	 * Es utilizado en el método altaJugador (Jugador) de la clase BBDD_Jugador
+	 * y método actualizarCuentaJugador(Jugador) de la clase BBDD_Jugador
+	 * @return cuenta tipo String
 	 */
 	public String getCuenta() {
 		return cuenta;
 	}
 
 	/**
-	 * Gets the telf.
-	 *
-	 * @return the telf
+	 * Gets telf.
+	 * Es utilizado en el método altaJugador (Jugador) de la clase BBDD_Jugador
+	 * @return telf tipo String
 	 */
 	public String getTelf() {
 		return telf;
 	}
 
 	/**
-	 * Gets the alta club.
-	 *
-	 * @return the alta club
+	 * Gets alta_club.
+	 * Es utilizado en el método altaJugador (Jugador) de la clase BBDD_Jugador 
+	 * @return alta_club tipo LocalDateTime
 	 */
 	public LocalDateTime getAlta_club() {
 		return alta_club;
 	}
 
 	/**
-	 * Gets the f nac.
-	 *
-	 * @return the f nac
+	 * Gets f_nac.
+	 * Es utilizado en el método altaJugador (Jugador) de la clase BBDD_Jugador 
+	 * @return f_nac tipo LocalDate
 	 */
 	public LocalDate getF_nac() {
 		return f_nac;
 	}
 
 	/**
-	 * Checks if is lesionado.
-	 *
-	 * @return true, if is lesionado
+	 * Método  si es lesionado.
+	 * solo aquí
+	 * @return true, si es lesionado tipo boolean
 	 */
 	public boolean isLesionado() {
 		return lesionado;
