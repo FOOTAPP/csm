@@ -3,29 +3,26 @@ package clases;
 import java.time.LocalDateTime;
 
 /**
- * The Class Tratamiento.
+ * Clase Tratamiento.
  */
 public class Tratamiento {
 
-	/** The diagnostico. */
 	private String dni_jugador, motivo, dni_fisio, diagnostico;
-	
-	/** The fh sesion. */
 	private LocalDateTime fh_sesion;
 	
 	/**
-	 * Instantiates a new tratamiento.
+	 * Constructor Tratamiento.
 	 *
 	 * @param dni_jugador
-	 *            the dni jugador
+	 *          
 	 * @param motivo
-	 *            the motivo
+	 *     
 	 * @param dni_fisio
-	 *            the dni fisio
+	 *           
 	 * @param diagnostico
-	 *            the diagnostico
+	 *           
 	 * @param fh_sesion
-	 *            the fh sesion
+	 *        
 	 */
 	public Tratamiento(String dni_jugador, String motivo, String dni_fisio, String diagnostico, LocalDateTime fh_sesion) {
 		super();
@@ -37,45 +34,45 @@ public class Tratamiento {
 	}
 
 	/**
-	 * Gets the dni jugador.
-	 *
-	 * @return the dni jugador
+	 * Gets dni_jugador.
+	 * solo aquí
+	 * @return dni_jugador tipo String
 	 */
 	public String getDni_Jugador() {
 		return dni_jugador;
 	}
 
 	/**
-	 * Gets the motivo.
-	 *
-	 * @return the motivo
+	 * Gets  motivo.
+	 * solo aquí
+	 * @return  motivo tipo String
 	 */
 	public String getMotivo() {
 		return motivo;
 	}
 
 	/**
-	 * Gets the dni fisio.
-	 *
-	 * @return the dni fisio
+	 * Gets dni_fisio.
+	 * solo aquí
+	 * @return  dni_fisio tipo String
 	 */
 	public String getDni_fisio() {
 		return dni_fisio;
 	}
 
 	/**
-	 * Gets the diagnostico.
-	 *
-	 * @return the diagnostico
+	 * Gets diagnostico.
+	 * solo aquí
+	 * @return  diagnostico tipo String
 	 */
 	public String getDiagnostico() {
 		return diagnostico;
 	}
 
 	/**
-	 * Gets the fh sesion.
-	 *
-	 * @return the fh sesion
+	 * Gets fh_sesion.
+	 * solo aquí
+	 * @return fh_sesion tipo LocalDateTime
 	 */
 	public LocalDateTime getFh_sesion() {
 		return fh_sesion;
