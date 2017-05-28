@@ -21,7 +21,7 @@ import clases.Empleado;
 import clases.Jugador;
 
 /**
- * The Class ModificarCuentaEmpleado.
+ * Clase ModificarCuentaEmpleado.
  */
 public class ModificarCuentaEmpleado extends JFrame{
 

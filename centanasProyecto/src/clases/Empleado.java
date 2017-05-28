@@ -63,6 +63,7 @@ public class Empleado {
 	/**
 	 * Gets nombre.
 	 * Es utilizado en el método altaEmpleado de la clase BBDD_Empleado 
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase DarAltaEmpleado y la clase DarAltaEmpleado2.
 	 * @return nombre tipo String
 	 */
 	public String getNombre() {
@@ -71,8 +72,10 @@ public class Empleado {
 
 	/**
 	 * Gets dni_emple.
-	 * Es utilizado en el método altaEmpleado de la clase BBDD_Empleado 
-	 * y en el método actualizarCuentaEmpleado de la clase BBDD_Empleado
+	 * Es utilizado en el método altaEmpleado(Empleado) de la clase BBDD_Empleado 
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase DarAltaEmpleado y la clase DarAltaEmpleado2.
+	 * Es utilizado en el método actualizarCuentaEmpleado(Empleado) de la clase BBDD_Empleado
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase ModificarCuentaEmpleado.
 	 * @return dni_emple tipo String
 	 */
 	public String getDni_emple() {
@@ -81,8 +84,9 @@ public class Empleado {
 
 	/**
 	 * Gets email.
-	 * Es utilizado en el método altaEmpleado de la clase BBDD_Empleado
-	 * @return  email
+	 * Es utilizado en el método altaEmpleado(Empleado) de la clase BBDD_Empleado
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase DarAltaEmpleado y la clase DarAltaEmpleado2.
+	 * @return  email tipo String
 	 */
 	public String getEmail() {
 		return email;
@@ -90,8 +94,9 @@ public class Empleado {
 
 	/**
 	 * Gets cargo.
-	 * Es utilizado en el método altaEmpleado de la clase BBDD_Empleado
-	 * @return cargo
+	 * Es utilizado en el método altaEmpleado(Empleado) de la clase BBDD_Empleado
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase DarAltaEmpleado y la clase DarAltaEmpleado2.
+	 * @return cargo tipo String
 	 */
 	public String getCargo() {
 		return cargo;
@@ -99,8 +104,11 @@ public class Empleado {
 
 	/**
 	 * Gets cuenta.
-	 * Es utilizado en el método altaEmpleado de la clase BBDD_Empleado
-	 * @return cuenta
+	 * Es utilizado en el método altaEmpleado(Empleado) de la clase BBDD_Empleado
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase DarAltaEmpleado y la clase DarAltaEmpleado2.
+	 * Es utilizado en el método actualizarCuentaEmpleado(Empleado) de la clase BBDD_Empleado
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase ModificarCuentaEmpleado.
+	 * @return cuenta tipo String
 	 */
 	public String getCuenta() {
 		return cuenta;
@@ -109,7 +117,8 @@ public class Empleado {
 	/**
 	 * Gets  telf.
 	 * Es utilizado en el método altaEmpleado de la clase BBDD_Empleado
-	 * @return telf
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase DarAltaEmpleado y la clase DarAltaEmpleado2
+	 * @return telf tipo String
 	 */
 	public String getTelf() {
 		return telf;
@@ -118,7 +127,8 @@ public class Empleado {
 	/**
 	 * Gets alta_club.
 	 * Es utilizado en el método altaEmpleado de la clase BBDD_Empleado
-	 * @return alta_club
+	 *  y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase DarAltaEmpleado y la clase DarAltaEmpleado2
+	 * @return alta_club tipo LocalDateTime
 	 */
 	public LocalDateTime getAlta_club() {
 		return alta_club;
@@ -127,6 +137,7 @@ public class Empleado {
 	/**
 	 * Gets  f_nac.
 	 * Es utilizado en el método altaEmpleado de la clase BBDD_Empleado
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase DarAltaEmpleado y la clase DarAltaEmpleado2
 	 * @return f nac tipo LocalDate
 	 */
 	public LocalDate getF_nac() {

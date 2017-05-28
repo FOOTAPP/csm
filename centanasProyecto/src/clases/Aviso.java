@@ -90,7 +90,11 @@ public class Aviso {
 
 	/**
 	 * Gets dni_emple.
-	 * Es utilizado en el método crearAviso de la clase BBDD_Aviso y en la clase LeerAviso2
+	 * Es utilizado en el método crearAviso(Aviso) de la clase BBDD_Aviso
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase CrearAviso.
+	 * Es utilizado la clase LeerAviso2(Aviso, String)
+	 * y a su vez esta clase es utilizado en el metodo actionPerformed(ActionEvent) de la clase LeerAviso,
+	 * y a su vez esta clase es utilizado en el metodo run() de la clase LeerAviso2.
 	 * @return dni_emple tipo String
 	 */
 	public String getDni_emple() {
@@ -99,7 +103,11 @@ public class Aviso {
 
 	/**
 	 * Gets  motivo.
-	 * Es utilizado en el método crearAviso de la clase BBDD_Aviso y en la clase LeerAviso2
+	 * Es utilizado en el método crearAviso(Aviso) de la clase BBDD_Aviso
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase CrearAviso.
+	 * Es utilizado la clase LeerAviso2(Aviso, String)
+	 * y a su vez esta clase es utilizado en el metodo actionPerformed(ActionEvent) de la clase LeerAviso,
+	 * y a su vez esta clase es utilizado en el metodo run() de la clase LeerAviso2.
 	 * @return  motivo tipo String
 	 */
 	public String getMotivo() {
@@ -118,6 +126,7 @@ public class Aviso {
 	/**
 	 * Gets  fh creado.
 	 * Es utilizado en el método crearAviso de la clase BBDD_Aviso
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase CrearAviso
 	 * @return fh creado tipo LocalDateTime
 	 */
 	public LocalDateTime getFh_creado() {
@@ -127,7 +136,8 @@ public class Aviso {
 	/**
 	 * Gets destinatarios.
 	 * Es utilizado en el método crearAviso de la Clase BBDD_Aviso
-	 * @return destinatarios
+	 *  y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase CrearAviso
+	 * @return destinatarios tipo Vector
 	 */
 	public Vector<String> getDestinatarios() {
 		return destinatarios;
@@ -137,7 +147,7 @@ public class Aviso {
 	 * Metodo Getter date.
 	 * Es utilizado en la clase LeerAviso2 ( que a su vez esta en el método actionPerformed de la Clase LeerAviso  y run ),  
 	 * 
-	 * @return  date
+	 * @return  date tipo Date
 	 */
 	public Date getDate() {
 		return date;

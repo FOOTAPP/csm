@@ -63,6 +63,7 @@ public class Jugador {
 	/**
 	 * Gets nombre.
 	 * Es utilizado en el método altaJugador (Jugador) de la clase BBDD_Jugador
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase DarAltaJugador y la clase DarAltaJugador2.
 	 * @return nombre
 	 */
 	public String getNombre() {
@@ -71,7 +72,10 @@ public class Jugador {
 
 	/**
 	 * Gets the dni jugador.
+	 * Es utilizado en el método ModificarCuentaJugador(Jugador) de la clase BBDD_Jugador
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase ModificarCuentaJugador.
 	 * Es utilizado en el método altaJugador (Jugador) de la clase BBDD_Jugador
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase DarAltaJugador y la clase DarAltaJugador2.
 	 * @return the dni jugador
 	 */
 	public String getDni_jugador() {
@@ -80,7 +84,8 @@ public class Jugador {
 
 	/**
 	 * Gets email.
-	 * 
+	 * Es utilizado en el método altaJugador (Jugador) de la clase BBDD_Jugador
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase DarAltaJugador y la clase DarAltaJugador2.
 	 * @return  email tipo String
 	 */
 	public String getEmail() {
@@ -90,6 +95,7 @@ public class Jugador {
 	/**
 	 * Gets demarcacion.
 	 * Es utilizado en el método altaJugador (Jugador) de la clase BBDD_Jugador
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase DarAltaJugador y la clase DarAltaJugador2.
 	 * @return demarcacion
 	 */
 	public String getDemarcacion() {
@@ -99,7 +105,9 @@ public class Jugador {
 	/**
 	 * Gets cuenta.
 	 * Es utilizado en el método altaJugador (Jugador) de la clase BBDD_Jugador
-	 * y método actualizarCuentaJugador(Jugador) de la clase BBDD_Jugador
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase DarAltaJugador y la clase DarAltaJugador2. 
+	 * Es utilizado en el método actualizarCuentaJugador(Jugador) de la clase BBDD_Jugador
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase ModificarCuentaJugador
 	 * @return cuenta tipo String
 	 */
 	public String getCuenta() {
@@ -109,6 +117,7 @@ public class Jugador {
 	/**
 	 * Gets telf.
 	 * Es utilizado en el método altaJugador (Jugador) de la clase BBDD_Jugador
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase DarAltaJugador y la clase DarAltaJugador2 
 	 * @return telf tipo String
 	 */
 	public String getTelf() {
@@ -117,7 +126,8 @@ public class Jugador {
 
 	/**
 	 * Gets alta_club.
-	 * Es utilizado en el método altaJugador (Jugador) de la clase BBDD_Jugador 
+	 * Es utilizado en el método altaJugador (Jugador) de la clase BBDD_Jugador
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase DarAltaJugador y la clase DarAltaJugador2 
 	 * @return alta_club tipo LocalDateTime
 	 */
 	public LocalDateTime getAlta_club() {
@@ -126,7 +136,8 @@ public class Jugador {
 
 	/**
 	 * Gets f_nac.
-	 * Es utilizado en el método altaJugador (Jugador) de la clase BBDD_Jugador 
+	 * Es utilizado en el método altaJugador (Jugador) de la clase BBDD_Jugador
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase DarAltaJugador y la clase DarAltaJugador2
 	 * @return f_nac tipo LocalDate
 	 */
 	public LocalDate getF_nac() {
