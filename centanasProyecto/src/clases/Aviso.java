@@ -5,41 +5,32 @@ import java.time.LocalDateTime;
 import java.util.Vector;
 
 /**
- * The Class Aviso.
+ * Clase Aviso.
  */
 public class Aviso {
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
+	
 	@Override
 	public String toString() {
 		return dni_emple + ", " + motivo + ", " + date;
 	}
-
-	/** The motivo. */
+	
 	private String dni_emple, motivo;
-	
-	/** The fh creado. */
 	private LocalDateTime fh_leido, fh_creado;
-	
-	/** The destinatarios. */
 	private Vector<String> destinatarios;
-	
-	/** The date. */
 	private Date date;
 	
 	/**
-	 * Instantiates a new aviso.
+	 * Constructor Aviso.
 	 *
 	 * @param dni_emple
-	 *            the dni emple
+	 *            
 	 * @param motivo
-	 *            the motivo
+	 *           
 	 * @param fh_creado
-	 *            the fh creado
+	 *            
 	 * @param destinatarios
-	 *            the destinatarios
+	 *            
 	 */
 	public Aviso(String dni_emple, String motivo, LocalDateTime fh_creado, Vector<String> destinatarios) {
 		super();
@@ -50,14 +41,14 @@ public class Aviso {
 	}
 	
 	/**
-	 * Instantiates a new aviso.
+	 * Constructor Aviso.
 	 *
 	 * @param dni_emple
-	 *            the dni emple
+	 *            
 	 * @param motivo
-	 *            the motivo
+	 *           
 	 * @param fh_creado
-	 *            the fh creado
+	 *            
 	 */
 	public Aviso(String dni_emple, String motivo, LocalDateTime fh_creado) {
 		super();
@@ -67,14 +58,14 @@ public class Aviso {
 	}
 
 	/**
-	 * Instantiates a new aviso.
+	 * Constructor Aviso.
 	 *
 	 * @param dni_emple
-	 *            the dni emple
+	 *            
 	 * @param motivo
-	 *            the motivo
+	 *            
 	 * @param date
-	 *            the date
+	 *          
 	 */
 	public Aviso(String dni_emple, String motivo, Date date) {
 		super();
@@ -84,12 +75,12 @@ public class Aviso {
 	}
 	
 	/**
-	 * Instantiates a new aviso.
+	 * Constructor Aviso.
 	 *
 	 * @param dni_emple
-	 *            the dni emple
+	 *            
 	 * @param motivo
-	 *            the motivo
+	 *           
 	 */
 	public Aviso(String dni_emple, String motivo) {
 		super();
@@ -98,54 +89,55 @@ public class Aviso {
 	}
 
 	/**
-	 * Gets the dni emple.
-	 *
-	 * @return the dni emple
+	 * Gets dni_emple.
+	 * Es utilizado en el método crearAviso de la clase BBDD_Aviso y en la clase LeerAviso2
+	 * @return dni_emple tipo String
 	 */
 	public String getDni_emple() {
 		return dni_emple;
 	}
 
 	/**
-	 * Gets the motivo.
-	 *
-	 * @return the motivo
+	 * Gets  motivo.
+	 * Es utilizado en el método crearAviso de la clase BBDD_Aviso y en la clase LeerAviso2
+	 * @return  motivo tipo String
 	 */
 	public String getMotivo() {
 		return motivo;
 	}
 
 	/**
-	 * Gets the fh leido.
-	 *
-	 * @return the fh leido
+	 * Gets  fh leido.
+	 * Solo aqui
+	 * @returnfh leido tipo LocalDateTime
 	 */
 	public LocalDateTime getFh_leido() {
 		return fh_leido;
 	}
 
 	/**
-	 * Gets the fh creado.
-	 *
-	 * @return the fh creado
+	 * Gets  fh creado.
+	 * Es utilizado en el método crearAviso de la clase BBDD_Aviso
+	 * @return fh creado tipo LocalDateTime
 	 */
 	public LocalDateTime getFh_creado() {
 		return fh_creado;
 	}
 
 	/**
-	 * Gets the destinatarios.
-	 *
-	 * @return the destinatarios
+	 * Gets destinatarios.
+	 * Es utilizado en el método crearAviso de la Clase BBDD_Aviso
+	 * @return destinatarios
 	 */
 	public Vector<String> getDestinatarios() {
 		return destinatarios;
 	}
 
 	/**
-	 * Gets the date.
-	 *
-	 * @return the date
+	 * Metodo Getter date.
+	 * Es utilizado en la clase LeerAviso2 ( que a su vez esta en el método actionPerformed de la Clase LeerAviso  y run ),  
+	 * 
+	 * @return  date
 	 */
 	public Date getDate() {
 		return date;
