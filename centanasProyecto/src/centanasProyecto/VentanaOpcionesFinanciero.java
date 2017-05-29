@@ -18,6 +18,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.JButton;
 import javax.swing.JEditorPane;
+import java.awt.Toolkit;
 
 public class VentanaOpcionesFinanciero extends JFrame {
 
@@ -43,6 +44,8 @@ public class VentanaOpcionesFinanciero extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaOpcionesFinanciero() {
+		setTitle("Financiero");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaOpcionesFinanciero.class.getResource("/Resources/soccer.png")));
 		Border border = LineBorder.createBlackLineBorder();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 681, 505);
