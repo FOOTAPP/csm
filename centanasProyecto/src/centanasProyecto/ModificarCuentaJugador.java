@@ -22,24 +22,19 @@ import bbdd.BBDD_Jugador;
 import clases.Jugador;
 
 /**
- * The Class ModificarCuentaJugador.
+ * Clase ModificarCuentaJugador.
  */
 public class ModificarCuentaJugador extends JFrame{
 	
-	/** The Constant String. */
+	
 	protected static final String String = null;
-	
-	/** The content pane. */
 	private JPanel contentPane;
-	
-	/** The nuevacuenta. */
 	private JTextField nuevacuenta;
 
 	/**
-	 * Launch the application.
+	  Método main, lanzamiento.
 	 *
 	 * @param args
-	 *            the arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -58,7 +53,7 @@ public class ModificarCuentaJugador extends JFrame{
 	 * Create the frame.
 	 *
 	 * @param dni
-	 *            the dni
+	 *            
 	 */
 	public ModificarCuentaJugador(String dni) {
 		BBDD_Jugador bd=new BBDD_Jugador("proyecto");

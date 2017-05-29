@@ -14,10 +14,10 @@ public class ValidarDni {
 	    private String dni;
 	 
 	        /**
-			 * Instantiates a new validar dni.
+			 * Costructor ValidarDni.
 			 *
 			 * @param dni
-			 *            the dni
+			 *            
 			 */
         	public ValidarDni(String dni) {
 	            this.dni = dni;
@@ -25,9 +25,9 @@ public class ValidarDni {
 	 
 	     
 	    /**
-		 * Validar.
-		 *
-		 * @return true, if successful
+		 * Método Validar.
+		 *  Es utilizado en el método actionPerformed(ActionEvent) de las clases  DarAltaEmpleado, DarAltaEmpleado, DarAltaJugador,DarAltaJugador.
+		 * @return true, si es correcto
 		 */
     	public boolean validar() {
 	 
@@ -54,9 +54,9 @@ public class ValidarDni {
 	    }
 	 
 	        /**
-			 * Solo numeros.
+			 * Método Solo numeros.
 			 *
-			 * @return true, if successful
+			 * @return true, si es correcto
 			 */
         	private boolean soloNumeros() {
 	 
@@ -90,9 +90,9 @@ public class ValidarDni {
 	        }
 	 
 	        /**
-			 * Letra DNI.
+			 * Método letraDNI .
 			 *
-			 * @return the string
+			 * @return string
 			 */
         	private String letraDNI() {
 	        // El método es privado porque lo voy a usar internamente en esta clase, no se necesita fuera de ella

@@ -15,18 +15,17 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 /**
- * The Class OpcionDarAlta.
+ * Clase OpcionDarAlta.
  */
 public class OpcionDarAlta extends JFrame {
 
-	/** The content pane. */
+	
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	  Método main, lanzamiento.
 	 *
 	 * @param args
-	 *            the arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

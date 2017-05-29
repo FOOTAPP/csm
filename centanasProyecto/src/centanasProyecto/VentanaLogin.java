@@ -34,27 +34,22 @@ import javax.swing.JEditorPane;
 import javax.swing.JDialog;
 
 /**
- * The Class VentanaLogin.
+ * Clase VentanaLogin.
+ * Ventana principal
  */
 public class VentanaLogin extends JFrame {
 
-	/** The frame. */
+	
 	private static VentanaLogin frame;
-	
-	/** The content pane. */
 	private JPanel contentPane;
-	
-	/** The text field. */
 	private JTextField textField;
-	
-	/** The password field. */
 	private JPasswordField passwordField;
 
 	/**
-	 * Launch the application.
+	 * Método main
 	 *
 	 * @param args
-	 *            the arguments
+	 *            
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

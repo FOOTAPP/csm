@@ -3,29 +3,27 @@ package centanasProyecto;
 import java.time.LocalDateTime;
 
 /**
- * The Class Tratamiento.
+ * Clase Tratamiento.
  */
 public class Tratamiento {
 
-	/** The diagnostico. */
-	private String dni_jugador, motivo, dni_fisio, diagnostico;
 	
-	/** The fh sesion. */
+	private String dni_jugador, motivo, dni_fisio, diagnostico;
 	private LocalDateTime fh_sesion;
 	
 	/**
-	 * Instantiates a new tratamiento.
+	 * Constructor Tratamiento.
 	 *
 	 * @param dni_jugador
-	 *            the dni jugador
+	 *            
 	 * @param motivo
-	 *            the motivo
+	 *        
 	 * @param dni_fisio
-	 *            the dni fisio
+	 *      
 	 * @param diagnostico
-	 *            the diagnostico
+	 *           
 	 * @param fh_sesion
-	 *            the fh sesion
+	 *            
 	 */
 	public Tratamiento(String dni_jugador, String motivo, String dni_fisio, String diagnostico, LocalDateTime fh_sesion) {
 		super();
@@ -37,45 +35,49 @@ public class Tratamiento {
 	}
 
 	/**
-	 * Gets the dni jugador.
-	 *
-	 * @return the dni jugador
+	 * Gets dni_jugador.
+	 * Es utilizado en el método nuevaSesion(Tratamiento) de la clase BBDD_Fisio 
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase  VentanaGenerarInforme.
+	 * @return dni_jugador tipo String
 	 */
 	public String getDni_Jugador() {
 		return dni_jugador;
 	}
 
 	/**
-	 * Gets the motivo.
-	 *
-	 * @return the motivo
+	 * Gets  motivo.
+	 * Es utilizado en el método nuevaSesion(Tratamiento) de la clase BBDD_Fisio 
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase  VentanaGenerarInforme.
+	 * @return motivo tipo String
 	 */
 	public String getMotivo() {
 		return motivo;
 	}
 
 	/**
-	 * Gets the dni fisio.
-	 *
-	 * @return the dni fisio
+	 * Gets  dni_fisio.
+	 * Es utilizado en el método nuevaSesion(Tratamiento) de la clase BBDD_Fisio 
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase  VentanaGenerarInforme.
+	 * @return dni_fisio tipo String
 	 */
 	public String getDni_fisio() {
 		return dni_fisio;
 	}
 
 	/**
-	 * Gets the diagnostico.
-	 *
-	 * @return the diagnostico
+	 * Gets diagnostico.
+	 * Es utilizado en el método nuevaSesion(Tratamiento) de la clase BBDD_Fisio 
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase  VentanaGenerarInforme.
+	 * @return diagnostico tipo String
 	 */
 	public String getDiagnostico() {
 		return diagnostico;
 	}
 
 	/**
-	 * Gets the fh sesion.
-	 *
-	 * @return the fh sesion
+	 * Gets fh_sesion.
+	 * LocalDateTime
+	 * @return  fh_sesion tipo LocalDateTime
 	 */
 	public LocalDateTime getFh_sesion() {
 		return fh_sesion;

@@ -25,20 +25,16 @@ import clases.Jugador;
  */
 public class ModificarCuentaEmpleado extends JFrame{
 
-	/** The Constant String. */
+	
 	protected static final String String = null;
-	
-	/** The content pane. */
 	private JPanel contentPane;
-	
-	/** The nuevacuenta. */
 	private JTextField nuevacuenta;
 
 	/**
-	 * The main method.
+	 * Método main.
 	 *
 	 * @param args
-	 *            the arguments
+	 *          
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -54,10 +50,10 @@ public class ModificarCuentaEmpleado extends JFrame{
 	}
 
 	/**
-	 * Instantiates a new modificar cuenta empleado.
+	 * Constructor ModificarCuentaEmpleado.
 	 *
 	 * @param dni
-	 *            the dni
+	 *           
 	 */
 	public ModificarCuentaEmpleado(String dni) {
 		BBDD_Empleado bd=new BBDD_Empleado("proyecto");

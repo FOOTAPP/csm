@@ -30,36 +30,24 @@ import com.toedter.calendar.JDayChooser;
 import com.toedter.calendar.JDateChooser;
 
 /**
- * The Class DarAltaEmpleado.
+ * Clase DarAltaEmpleado.
  */
 public class DarAltaEmpleado extends JFrame{
 
-	/** The content pane. */
+	
 	private JPanel contentPane;
-	
-	/** The textdni. */
 	private JTextField textdni;
-	
-	/** The textnombre. */
 	private JTextField textnombre;
-	
-	/** The texttelf. */
 	private JTextField texttelf;
-	
-	/** The textcuenta. */
 	private JTextField textcuenta;
-	
-	/** The textcorreo. */
 	private JTextField textcorreo;
-	
-	/** The hoy. */
 	private LocalDateTime hoy=LocalDateTime.now();
 
 	/**
-	 * The main method.
+	 * Método main.
 	 *
 	 * @param args
-	 *            the arguments
+	 *        
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -76,7 +64,7 @@ public class DarAltaEmpleado extends JFrame{
 
 
 	/**
-	 * Instantiates a new dar alta empleado.
+	 * Constructor altaEmpleado.
 	 */
 	public DarAltaEmpleado() {
 		BBDD_Empleado bd=new BBDD_Empleado("proyecto");

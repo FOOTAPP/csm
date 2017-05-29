@@ -26,39 +26,25 @@ import java.awt.Toolkit;
 
 
 /**
- * The Class VentanaGenerarInforme.
+ * Clase VentanaGenerarInforme.
  */
 public class VentanaGenerarInforme extends JFrame {
 
-	/** The content pane. */
+	
 	private JPanel contentPane;
-
-	/** The validadodnijugador. */
 	private static boolean  validadodnijugador=true;
-	
-	/** The validadodniemple. */
 	private static boolean  validadodniemple=true;
-	
-	/** The text field. */
 	private JTextField textField;
-	
-	/** The text field 1. */
 	private JTextField textField_1;
-	
-	/** The dnijugador. */
 	private String dnijugador;
-	
-	/** The dniemple. */
 	private String dniemple;
-	
-	/** The combo box. */
 	JComboBox comboBox = new JComboBox();
 	
 	/**
-	 * Launch the application.
+	 * Método main, lanzamiento.
 	 *
 	 * @param args
-	 *            the arguments
+	 *            
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

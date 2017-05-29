@@ -15,18 +15,17 @@ import java.awt.event.ActionEvent;
 import java.awt.Dialog.ModalExclusionType;
 
 /**
- * The Class ErrorInicioSesion.
+ * Clase ErrorInicioSesion.
  */
 public class ErrorInicioSesion extends JFrame {
 
-	/** The content pane. */
+	
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 Método main, lanzamiento.
 	 *
 	 * @param args
-	 *            the arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

@@ -24,18 +24,18 @@ import javax.swing.JEditorPane;
 import java.awt.Toolkit;
 
 /**
- * The Class DarAltaMedica.
+ * Clase DarAltaMedica.
  */
 public class DarAltaMedica extends JFrame {
 
-	/** The content pane. */
+	
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 * Método main, lanzamiento.
 	 *
 	 * @param args
-	 *            the arguments
+	 *        
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

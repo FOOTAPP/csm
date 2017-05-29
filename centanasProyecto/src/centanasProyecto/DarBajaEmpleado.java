@@ -17,21 +17,18 @@ import javax.swing.border.EmptyBorder;
 import bbdd.BBDD_Empleado;
 
 /**
- * The Class DarBajaEmpleado.
+ * Clase DarBajaEmpleado.
  */
 public class DarBajaEmpleado extends JFrame{
 
-	/** The content pane. */
-	private JPanel contentPane;
 	
-	/** The text field. */
+	private JPanel contentPane;
 	private JTextField textField;
 
 	/**
-	 * Launch the application.
+	 * Método main, lanzamiento.
 	 *
 	 * @param args
-	 *            the arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

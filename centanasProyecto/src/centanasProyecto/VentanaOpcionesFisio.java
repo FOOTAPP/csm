@@ -21,15 +21,15 @@ import javax.swing.JEditorPane;
 import java.awt.Toolkit;
 
 /**
- * The Class VentanaOpcionesFisio.
+ * Class VentanaOpcionesFisio.
  */
 public class VentanaOpcionesFisio extends JFrame {
 
-	/** The content pane. */
+	
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 * Método main.
 	 *
 	 * @param args
 	 *            the arguments

@@ -22,30 +22,22 @@ import javax.swing.JTextArea;
 import javax.swing.JTextPane;
 
 /**
- * The Class LeerAviso2.
+ * Clase LeerAviso2.
  */
 public class LeerAviso2 extends JFrame{
 	
-	/** The Constant Aviso. */
+	
 	protected static final Aviso Aviso = null;
-	
-	/** The content pane. */
 	private JPanel contentPane;
-	
-	/** The text field. */
 	private JTextField textField;
-	
-	/** The text field 1. */
 	private JTextField textField_1;
-	
-	/** The dni. */
 	protected static String dni;
 
 	/**
-	 * The main method.
+	 * Metodo main.
 	 *
 	 * @param args
-	 *            the arguments
+	 *          
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -61,12 +53,12 @@ public class LeerAviso2 extends JFrame{
 	}
 
 	/**
-	 * Instantiates a new leer aviso 2.
+	 * Constructor LeerAviso2.
 	 *
 	 * @param av
-	 *            the av
+	 *            
 	 * @param dni
-	 *            the dni
+	 *           
 	 */
 	public LeerAviso2(Aviso av, String dni) {
 		

@@ -23,18 +23,12 @@ import java.awt.FocusTraversalPolicy;
  */
 public class FocusTraversalOnArray extends FocusTraversalPolicy {
 	
-	/** The m components. */
+	
 	private final Component m_Components[];
 	////////////////////////////////////////////////////////////////////////////
 	//
 	// Constructor
-	//
-	/**
-	 * Instantiates a new focus traversal on array.
-	 *
-	 * @param components
-	 *            the components
-	 */
+	//	
 	////////////////////////////////////////////////////////////////////////////
 	public FocusTraversalOnArray(Component components[]) {
 		m_Components = components;
@@ -43,15 +37,6 @@ public class FocusTraversalOnArray extends FocusTraversalPolicy {
 	//
 	// Utilities
 	//
-	/**
-	 * Index cycle.
-	 *
-	 * @param index
-	 *            the index
-	 * @param delta
-	 *            the delta
-	 * @return the int
-	 */
 	////////////////////////////////////////////////////////////////////////////
 	private int indexCycle(int index, int delta) {
 		int size = m_Components.length;
@@ -63,9 +48,9 @@ public class FocusTraversalOnArray extends FocusTraversalPolicy {
 	 * Cycle.
 	 *
 	 * @param currentComponent
-	 *            the current component
+	 *            
 	 * @param delta
-	 *            the delta
+	 *           
 	 * @return the component
 	 */
 	private Component cycle(Component currentComponent, int delta) {

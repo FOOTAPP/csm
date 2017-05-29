@@ -16,21 +16,18 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 /**
- * The Class OpcionModificarCuenta.
+ * Clase OpcionModificarCuenta.
  */
 public class OpcionModificarCuenta extends JFrame {
 
-	/** The Constant String. */
-	protected static final java.lang.String String = null;
 	
-	/** The content pane. */
+	protected static final java.lang.String String = null;
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 Método main, lanzamiento.
 	 *
 	 * @param args
-	 *            the arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -49,7 +46,7 @@ public class OpcionModificarCuenta extends JFrame {
 	 * Create the frame.
 	 *
 	 * @param dni
-	 *            the dni
+	 *           
 	 */
 	public OpcionModificarCuenta(String dni) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

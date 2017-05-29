@@ -25,21 +25,19 @@ import bbdd.BBDD_Empleado;
 import clases.Aviso;
 
 /**
- * The Class LeerAviso.
+ * Clase LeerAviso.
  */
 public class LeerAviso extends JFrame{
 	
-	/** The Constant String. */
-	protected static final String String = null;
 	
-	/** The content pane. */
+	protected static final String String = null;
 	private JPanel contentPane;
 
 	/**
-	 * The main method.
+	 * Método main.
 	 *
 	 * @param args
-	 *            the arguments
+	 *        
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -55,10 +53,10 @@ public class LeerAviso extends JFrame{
 	}
 
 	/**
-	 * Instantiates a new leer aviso.
+	 * Constructor LeerAviso .
 	 *
 	 * @param dni
-	 *            the dni
+	 *           
 	 */
 	public LeerAviso(String dni) {
 		

@@ -25,36 +25,24 @@ import clases.Jugador;
 import javax.swing.JComboBox;
 
 /**
- * The Class DarAltaJugador2.
+ * Clase DarAltaJugador2.
  */
 public class DarAltaJugador2 extends JFrame{
 
-	/** The content pane. */
+	
 	private JPanel contentPane;
-	
-	/** The textdni. */
 	private JTextField textdni;
-	
-	/** The textnombre. */
 	private JTextField textnombre;
-	
-	/** The texttelf. */
 	private JTextField texttelf;
-	
-	/** The textcuenta. */
 	private JTextField textcuenta;
-	
-	/** The textcorreo. */
 	private JTextField textcorreo;
-	
-	/** The hoy. */
 	private LocalDateTime hoy=LocalDateTime.now();
 
 	/**
-	 * Launch the application.
+	 * Método main.
 	 *
 	 * @param args
-	 *            the arguments
+	 *            
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
