@@ -27,6 +27,7 @@ import clases.Jugador;
 
 import javax.swing.JComboBox;
 import javax.swing.JEditorPane;
+import java.awt.Toolkit;
 
 public class DarAltaJugador extends JFrame{
 
@@ -58,6 +59,7 @@ public class DarAltaJugador extends JFrame{
 	 * Create the frame.
 	 */
 	public DarAltaJugador() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DarAltaJugador.class.getResource("/Resources/soccer.png")));
 		BBDD_Jugador bd=new BBDD_Jugador("proyecto");
 		setTitle("Dar alta jugador");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

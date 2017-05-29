@@ -21,6 +21,7 @@ import bbdd.BBDD_Empleado;
 
 import javax.swing.JButton;
 import javax.swing.JEditorPane;
+import java.awt.Toolkit;
 
 public class VentanaOpcionesFinanciero extends JFrame {
 
@@ -46,6 +47,8 @@ public class VentanaOpcionesFinanciero extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaOpcionesFinanciero() {
+
+    setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaOpcionesFinanciero.class.getResource("/Resources/soccer.png")));
 		BBDD_Empleado bd=new BBDD_Empleado("Proyecto");
 		Border border = LineBorder.createBlackLineBorder();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
