@@ -145,7 +145,9 @@ public class Aviso {
 
 	/**
 	 * Metodo Getter date.
-	 * Es utilizado en la clase LeerAviso2 ( que a su vez esta en el método actionPerformed de la Clase LeerAviso  y run ),  
+	 * Es utilizado en la clase LeerAviso2 (Aviso,String )
+	 * y a su vez este metodo es utilizado en el metodo actionPerformed(ActionEvent) de la clase LeerAviso, 
+	 * y  metodo run() de la clase LeerAviso2
 	 * 
 	 * @return  date tipo Date
 	 */
