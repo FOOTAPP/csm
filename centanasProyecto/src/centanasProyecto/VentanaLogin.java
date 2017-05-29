@@ -128,25 +128,27 @@ public class VentanaLogin extends JFrame {
 					VentanaOpciones obj=new VentanaOpciones();
 					obj.setVisible(true);
 					dispose();
-				}else
-				if(textField.getText().equals("entrenador") && passwordField.getText().equals("entrenador")){
-					VentanaOpcionesEntrenador obj2= new VentanaOpcionesEntrenador();
-					obj2.setVisible(true);
-					dispose();
-				}else
-				if(textField.getText().equals("financiero") && passwordField.getText().equals("financiero")){
-					VentanaOpcionesFinanciero obj3= new VentanaOpcionesFinanciero();
-					obj3.setVisible(true);
-					dispose();
-				}else
-				if(textField.getText().equals("fisio") && passwordField.getText().equals("fisio")){
-					VentanaOpcionesFisio obj4= new VentanaOpcionesFisio();
-					obj4.setVisible(true);
-					dispose();
 				}
-				else{
-					JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrecto.");
-				}
+				else
+					if(textField.getText().equals("entrenador") && passwordField.getText().equals("entrenador")){
+						VentanaOpcionesEntrenador obj2= new VentanaOpcionesEntrenador();
+						obj2.setVisible(true);
+						dispose();
+					}
+					else
+						if(textField.getText().equals("financiero") && passwordField.getText().equals("financiero")){
+							VentanaOpcionesFinanciero obj3= new VentanaOpcionesFinanciero();
+							obj3.setVisible(true);
+							dispose();
+						}
+						else
+							if(textField.getText().equals("fisio") && passwordField.getText().equals("fisio")){
+								VentanaOpcionesFisio obj4= new VentanaOpcionesFisio();
+								obj4.setVisible(true);
+								dispose();
+							}
+							else
+								JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrecto.");
 			}
 		});
 		
