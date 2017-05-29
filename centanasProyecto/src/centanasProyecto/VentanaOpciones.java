@@ -91,7 +91,7 @@ public class VentanaOpciones extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_7.setBounds(361, 331, 143, 23);
+		btnNewButton_7.setBounds(355, 355, 143, 23);
 		contentPane.add(btnNewButton_7);
 		
 		JButton btnNewButton_5 = new JButton("Leer Avisos");
@@ -135,7 +135,7 @@ public class VentanaOpciones extends JFrame {
 				dispose();
 			}
 		});
-		button.setBounds(282, 270, 262, 23);
+		button.setBounds(282, 260, 262, 23);
 		contentPane.add(button);		
 		
 		JButton btnNewButton = new JButton("Exportar base de datos a XML");
@@ -152,7 +152,7 @@ public class VentanaOpciones extends JFrame {
 				}
 			}
 		});
-		btnNewButton.setBounds(282, 345, 262, 23);
+		btnNewButton.setBounds(282, 304, 262, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnCrearAviso = new JButton("Crear Aviso");
