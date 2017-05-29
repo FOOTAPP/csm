@@ -14,12 +14,23 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Dialog.ModalExclusionType;
 
+/**
+ * Clase ErrorInicioSesion.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ */
 public class ErrorInicioSesion extends JFrame {
 
+	
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 Método main, lanzamiento.
+	 *
+	 * @param args
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

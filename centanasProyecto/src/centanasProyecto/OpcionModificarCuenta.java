@@ -18,13 +18,24 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
 
+/**
+ * Clase OpcionModificarCuenta.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ */
 public class OpcionModificarCuenta extends JFrame {
 
+	
 	protected static final java.lang.String String = null;
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 Método main, lanzamiento.
+	 *
+	 * @param args
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -41,6 +52,9 @@ public class OpcionModificarCuenta extends JFrame {
 
 	/**
 	 * Create the frame.
+	 *
+	 * @param dni
+	 *           
 	 */
 
 	public OpcionModificarCuenta(String dni) {

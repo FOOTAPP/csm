@@ -25,10 +25,18 @@ import javax.swing.JEditorPane;
 import java.awt.Toolkit;
 
 
+/**
+ * Clase VentanaGenerarInforme.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ */
 public class VentanaGenerarInforme extends JFrame {
 
+	
 	private JPanel contentPane;
-
 	private static boolean  validadodnijugador=true;
 	private static boolean  validadodniemple=true;
 	private JTextField textField;
@@ -38,7 +46,10 @@ public class VentanaGenerarInforme extends JFrame {
 	JComboBox comboBox = new JComboBox();
 	
 	/**
-	 * Launch the application.
+	 * Método main, lanzamiento.
+	 *
+	 * @param args
+	 *            
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -54,6 +65,9 @@ public class VentanaGenerarInforme extends JFrame {
 	}
 
 	
+	/**
+	 * Pintar ventana.
+	 */
 	private void pintarVentana(){
 		Border border = LineBorder.createBlackLineBorder();
 		BBDD_Fisio bd=new BBDD_Fisio("proyecto");
@@ -189,6 +203,12 @@ public class VentanaGenerarInforme extends JFrame {
 		lblNewLabel_1.setBorder(border);
 	}
 	
+	/**
+	 * Instantiates a new ventana generar informe.
+	 *
+	 * @param dni
+	 *            the dni
+	 */
 	public VentanaGenerarInforme(String dni){
 		BBDD_Fisio bd=new BBDD_Fisio("proyecto");
 		pintarVentana();
@@ -196,6 +216,9 @@ public class VentanaGenerarInforme extends JFrame {
 		dnijugador= (String) comboBox.getSelectedItem();
 	}
 	
+	/**
+	 * Instantiates a new ventana generar informe.
+	 */
 	public VentanaGenerarInforme() {
 		setTitle("Informe");
 		pintarVentana();

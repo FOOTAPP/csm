@@ -25,11 +25,26 @@ import bbdd.BBDD_Empleado;
 import clases.Aviso;
 import java.awt.Toolkit;
 
+/**
+ * Clase LeerAviso.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ */
 public class LeerAviso extends JFrame{
+	
 	
 	protected static final String String = null;
 	private JPanel contentPane;
 
+	/**
+	 * Método main.
+	 *
+	 * @param args
+	 *        
+	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -43,6 +58,12 @@ public class LeerAviso extends JFrame{
 		});
 	}
 
+	/**
+	 * Constructor LeerAviso .
+	 *
+	 * @param dni
+	 *           
+	 */
 	public LeerAviso(String dni) {
 		setTitle("Avisos");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(LeerAviso.class.getResource("/Resources/soccer.png")));

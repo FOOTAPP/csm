@@ -7,30 +7,52 @@ import java.time.LocalDate;
 import java.util.GregorianCalendar;
 import java.util.Vector;
 
+/**
+ * Clase BBDD_Proyecto.
+ * Clase padre de BBDD_Aviso,BBDD_Empleado,BBDD_Fisio,BBDD_Jugador.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria 
+ * @version 29.05.2017
+ */
 public class BBDD_Proyecto extends BBDD_Conexion{
 
-	protected static Statement s;
-	protected static Statement s2;	
-	protected static ResultSet reg;
-	protected static ResultSet reg2;
 	
+	protected static Statement s; // variable tipo Statement,  
+	protected static Statement s2; // objeto tipo Statement,
+	protected static ResultSet reg; // objeto tipo ResultSet,
+	protected static ResultSet reg2; // objeto tipo ResultSet,
+	
+	/**
+	 * Costructor BBDD proyecto.
+	 *
+	 * @parametro bbdd
+	 *           
+	 */
 	public BBDD_Proyecto(String bbdd){
 		super (bbdd);
 	}
 	
 	
+	/**
+	 * Método BuscarJugadores, devuelve un vector con los DNIs de los jugadores.
+	 * Es utilizado en las clases DarbajaJugador, DarbajaJugador2,  ModificarCuentaJugador y VentanaGenerarInforme
+	 *
+	 * @return the vector
+	 */
 	public Vector<String> buscarJugadores(){
-		String cadena="SELECT Dni_Jugador FROM jugadores";
+		String cadena="SELECT Dni_Jugador FROM jugadores";// selecciona el dni de los jugadores
 		try{
 			this.abrir();
-			s=c.createStatement();
-			reg=s.executeQuery(cadena);
+			s=c.createStatement(); // metodo para obtener s (objeto Statement)
+			reg=s.executeQuery(cadena); // Con el objeto s, se utiliza el método executeQuery(), devuelve "reg" de tipo ResultSet 
 			Vector<String> jug=new Vector<String>();
-			while(reg.next())
+			while(reg.next()) // mientras exista un próximo registro, añade Dni_Jugador
 				jug.add(reg.getString(1));
 			s.close();
 			this.cerrar();
-			return jug;	
+			return jug;	// retorna los jugadores encontrados
 		}
 		catch ( SQLException e){
 			this.cerrar();
@@ -38,11 +60,17 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 		}
 	}
 	
+	/**
+	 * Método BuscarEmpleado, devuelve un vector con los DNIs de los Empleado.
+	 * Es utilizado en las clases CrearAviso, DarBajaEmpleado, DarBajaEmpleado2 y ModificarCuentaEmpleado
+	 *
+	 * @return un vector
+	 */
 	public Vector<String> buscarEmpleado(){
-		String cadena="SELECT Dni_Emple FROM empleados";
+		String cadena="SELECT Dni_Emple FROM empleados";// selecciona el dni de los empleados
 		try{
 			this.abrir();
-			s=c.createStatement();
+			s=c.createStatement(); // similar al metodo anterior
 			reg=s.executeQuery(cadena);
 			Vector<String> emp=new Vector<String>();
 			while(reg.next())
@@ -56,6 +84,15 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 			return null;
 		}
 	}
+	
+	/**
+	 * Método estático validarCuenta, valida una cuenta u devuelve true o false.
+	 * Es utilizado en las clases DarAltaEmpleado, DarAltaJugador, ModificarCuentaJugador y ModificarCuentaEmpleado
+	 *
+	 * @param cuenta
+	 *            
+	 * @return true o false
+	 */
 	public static boolean validarCuenta(String cuenta){
 		String miCuenta[];
 		try{
@@ -91,7 +128,14 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 		return true;
 	}
 	
-	 public boolean validarCorreo(String correo){
+	 /**
+	 * Metodo Validar correo,valida una correo y devuelve true o false..
+	 * Es utilizado en las clases DarAltaEmpleado, DarAltaJugador.
+	 * @param correo
+	 *           
+	 * @return true, si es correcto.
+	 */
+ 	public boolean validarCorreo(String correo){
 			boolean letra=false;
 			boolean fin=false;
 			for (int cont=0; cont < correo.length(); cont++)
@@ -105,7 +149,14 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 				return false;
 		}
 	 
-	 public boolean validarEdad(LocalDate fnacimiento){
+	 /**
+	 * Método Validaredad, valida la edad que sea mayor de 18 años.
+	 * Es utilizado en las clases DarAltaEmpleado, DarAltaJugador.
+	 * @param fnacimiento (fecha de nacimiento)
+	 *            
+	 * @return true, si es correcto.
+	 */
+ 	public boolean validarEdad(LocalDate fnacimiento){
 			GregorianCalendar hoy=new GregorianCalendar();
 			int anio=fnacimiento.getYear();
 			int mes=fnacimiento.getMonthValue();
@@ -118,7 +169,14 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 				return false;
 		}
 	 
-	 public boolean validarTelefono(String telefono){
+	 /**
+	 * Método validarTelefono, valida el numero de teléfono o móvil.
+	 * Es utilizado en las clases DarAltaEmpleado, DarAltaJugador.
+	 * @param telefono
+	 *        
+	 * @return true, si es correcto.
+	 */
+ 	public boolean validarTelefono(String telefono){
 			boolean primero=false;
 			boolean extension=false;
 			if(telefono.charAt(0) == '6' || telefono.charAt(0) == '7' || telefono.charAt(0) == '9')
@@ -131,11 +189,16 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 				return false;
 		}
 	
-	 public String buscarPresi (){
-			String cadena="SELECT Dni_Emple FROM empleados where cargo='PRESIDENTE'";
+	 /**
+	 * Metodo buscarPresi, obtiene el DNI del presidente.
+	 * Es utilizado en las clases ModificarCuentaEmpleado, ModificarCuentaJugador y VentanaOpciones.
+	 * @return  string
+	 */
+ 	public String buscarPresi (){
+			String cadena="SELECT Dni_Emple FROM empleados where cargo='PRESIDENTE'"; // Selecciona el dni del presidente
 			try{
 				this.abrir();
-				s=c.createStatement();
+				s=c.createStatement();// similar al metodo anterior
 				reg=s.executeQuery(cadena);
 				while(reg.next())
 					return reg.getString(1);
@@ -147,11 +210,16 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 			}
 		}
 		
+		/**
+		 * Metodo buscarEntrenador, obtiene el DNI del entrenador.
+		 * Es utilizado en las clases CrearAviso,LeerAviso y VentanaOpcionesEntrenador.
+		 * @return  string
+		 */
 		public String buscarEntrenador (){
-			String cadena="SELECT Dni_Emple FROM empleados where cargo='ENTRENADOR'";
+			String cadena="SELECT Dni_Emple FROM empleados where cargo='ENTRENADOR'";// Selecciona el dni del entrenador
 			try{
 				this.abrir();
-				s=c.createStatement();
+				s=c.createStatement(); // similar al metodo anterior
 				reg=s.executeQuery(cadena);
 				while(reg.next())
 					return reg.getString(1);
@@ -163,11 +231,16 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 			}
 		}
 		
+		/**
+		 * Metodo buscarFinanciero, obtiene el DNI del financiero. .
+		 * Es utilizado en la clase VentanaOpcionesFinanciero.
+		 * @return string
+		 */
 		public String buscarFinanciero (){
-			String cadena="SELECT Dni_Emple FROM empleados where cargo='FINANCIERO'";
+			String cadena="SELECT Dni_Emple FROM empleados where cargo='FINANCIERO'"; // Selecciona el dni del financiero
 			try{
 				this.abrir();
-				s=c.createStatement();
+				s=c.createStatement(); // similar al metodo anterior
 				reg=s.executeQuery(cadena);
 				while(reg.next())
 					return reg.getString(1);
@@ -178,5 +251,4 @@ public class BBDD_Proyecto extends BBDD_Conexion{
 				return null;
 			}
 		}
-	
 }

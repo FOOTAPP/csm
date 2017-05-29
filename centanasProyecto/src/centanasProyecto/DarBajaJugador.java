@@ -21,18 +21,28 @@ import javax.swing.border.LineBorder;
 import bbdd.BBDD_Jugador;
 import java.awt.Toolkit;
 
+/**
+ *  Clase DarBajaJugador ventana.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ *  Es utilizado en la clase VentanaOpcionesEntrenador.
+ */
 public class DarBajaJugador extends JFrame{
-
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 * 
+	 *
+	 * @ metodo principal
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
-			public void run() {
+			public void run() { 
 				try {
-					DarBajaJugador frame = new DarBajaJugador();
+					DarBajaJugador frame = new DarBajaJugador();// Inicia frame
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,7 +52,7 @@ public class DarBajaJugador extends JFrame{
 	}
 
 	/**
-	 * Create the frame.
+	 * Crea ventana o construye DarBajaJugador.
 	 */
 	public DarBajaJugador() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DarBajaJugador.class.getResource("/Resources/soccer.png")));
@@ -84,7 +94,7 @@ public class DarBajaJugador extends JFrame{
 		JComboBox<String> comboBox = new JComboBox<String>();
 		comboBox.setBounds(446, 170, 124, 20);
 		contentPane.add(comboBox);		
-		for(String a : bd.buscarJugadores())
+		for(String a : bd.buscarJugadores()) // Lista documentos de jugadores
 			comboBox.addItem(a);
 		
 		

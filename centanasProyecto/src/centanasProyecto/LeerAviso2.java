@@ -26,7 +26,16 @@ import javax.swing.JTextArea;
 import javax.swing.JTextPane;
 import java.awt.Toolkit;
 
+/**
+ * Clase LeerAviso2.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ */
 public class LeerAviso2 extends JFrame{
+	
 	
 	protected static final Aviso Aviso = null;
 	private JPanel contentPane;
@@ -34,6 +43,12 @@ public class LeerAviso2 extends JFrame{
 	private JTextField textField_1;
 	protected static String dni;
 
+	/**
+	 * Metodo main.
+	 *
+	 * @param args
+	 *          
+	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -47,6 +62,14 @@ public class LeerAviso2 extends JFrame{
 		});
 	}
 
+	/**
+	 * Constructor LeerAviso2.
+	 *
+	 * @param av
+	 *            
+	 * @param dni
+	 *           
+	 */
 	public LeerAviso2(Aviso av, String dni) {
 		setTitle("Aviso");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(LeerAviso2.class.getResource("/Resources/soccer.png")));

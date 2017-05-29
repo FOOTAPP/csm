@@ -18,13 +18,24 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
+/**
+ * Clase errorotroEntrenador.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ */
 public class errorotroEntrenador extends JFrame {
 
+	
 	private JPanel contentPane;
 	private JTextField textField;
 
 	/**
-	 * Launch the application.
+	 Método main, lanzamiento.
+	 *
+	 * @param args
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

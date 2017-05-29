@@ -7,13 +7,17 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+
 public class OtroErrorInicioSesion extends JDialog {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1023851153507905313L;
+	
 	private final JPanel contentPanel = new JPanel();
 
-	/**
-	 * Launch the application.
-	 */
+	
 	public static void main(String[] args) {
 		try {
 			OtroErrorInicioSesion dialog = new OtroErrorInicioSesion();
@@ -25,7 +29,7 @@ public class OtroErrorInicioSesion extends JDialog {
 	}
 
 	/**
-	 * Create the dialog.
+	 * Crea dialogo.
 	 */
 	public OtroErrorInicioSesion() {
 		this.setModal(true);		

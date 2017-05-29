@@ -22,11 +22,13 @@ import java.awt.FocusTraversalPolicy;
  * @author scheglov_ke
  */
 public class FocusTraversalOnArray extends FocusTraversalPolicy {
+	
+	
 	private final Component m_Components[];
 	////////////////////////////////////////////////////////////////////////////
 	//
 	// Constructor
-	//
+	//	
 	////////////////////////////////////////////////////////////////////////////
 	public FocusTraversalOnArray(Component components[]) {
 		m_Components = components;
@@ -41,6 +43,16 @@ public class FocusTraversalOnArray extends FocusTraversalPolicy {
 		int next = (index + delta + size) % size;
 		return next;
 	}
+	
+	/**
+	 * Cycle.
+	 *
+	 * @param currentComponent
+	 *            
+	 * @param delta
+	 *           
+	 * @return the component
+	 */
 	private Component cycle(Component currentComponent, int delta) {
 		int index = -1;
 		loop : for (int i = 0; i < m_Components.length; i++) {
@@ -73,19 +85,38 @@ public class FocusTraversalOnArray extends FocusTraversalPolicy {
 	//
 	// FocusTraversalPolicy
 	//
+	/* (non-Javadoc)
+	 * @see java.awt.FocusTraversalPolicy#getComponentAfter(java.awt.Container, java.awt.Component)
+	 */
 	////////////////////////////////////////////////////////////////////////////
 	public Component getComponentAfter(Container container, Component component) {
 		return cycle(component, 1);
 	}
+	
+	/* (non-Javadoc)
+	 * @see java.awt.FocusTraversalPolicy#getComponentBefore(java.awt.Container, java.awt.Component)
+	 */
 	public Component getComponentBefore(Container container, Component component) {
 		return cycle(component, -1);
 	}
+	
+	/* (non-Javadoc)
+	 * @see java.awt.FocusTraversalPolicy#getFirstComponent(java.awt.Container)
+	 */
 	public Component getFirstComponent(Container container) {
 		return m_Components[0];
 	}
+	
+	/* (non-Javadoc)
+	 * @see java.awt.FocusTraversalPolicy#getLastComponent(java.awt.Container)
+	 */
 	public Component getLastComponent(Container container) {
 		return m_Components[m_Components.length - 1];
 	}
+	
+	/* (non-Javadoc)
+	 * @see java.awt.FocusTraversalPolicy#getDefaultComponent(java.awt.Container)
+	 */
 	public Component getDefaultComponent(Container container) {
 		return getFirstComponent(container);
 	}

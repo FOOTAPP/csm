@@ -26,12 +26,24 @@ import java.awt.Font;
 import javax.swing.UIManager;
 import java.awt.Toolkit;
 
+/**
+ * Clase ventanabajamedica.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ */
 public class ventanabajamedica extends JFrame {
 
+	
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 * Método main, lanzamiento.
+	 *
+	 * @param args
+	 *       
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

@@ -23,12 +23,24 @@ import javax.swing.JComboBox;
 import javax.swing.JEditorPane;
 import java.awt.Toolkit;
 
+/**
+ * Clase DarAltaMedica.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ */
 public class DarAltaMedica extends JFrame {
 
+	
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 * Método main, lanzamiento.
+	 *
+	 * @param args
+	 *        
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

@@ -21,12 +21,27 @@ import clases.Empleado;
 import clases.Jugador;
 import java.awt.Toolkit;
 
+/**
+ * Clase ModificarCuentaEmpleado.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ */
 public class ModificarCuentaEmpleado extends JFrame{
 
+	
 	protected static final String String = null;
 	private JPanel contentPane;
 	private JTextField nuevacuenta;
 
+	/**
+	 * Método main.
+	 *
+	 * @param args
+	 *          
+	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -40,6 +55,12 @@ public class ModificarCuentaEmpleado extends JFrame{
 		});
 	}
 
+	/**
+	 * Constructor ModificarCuentaEmpleado.
+	 *
+	 * @param dni
+	 *           
+	 */
 	public ModificarCuentaEmpleado(String dni) {
     setIconImage(Toolkit.getDefaultToolkit().getImage(ModificarCuentaEmpleado.class.getResource("/Resources/soccer.png")));
 		BBDD_Empleado bd=new BBDD_Empleado("proyecto");
@@ -157,6 +178,13 @@ public class ModificarCuentaEmpleado extends JFrame{
 		lblNewLabel_1.setBounds(ancho/4, alto/4, ancho/2, alto/2);
 	}
 	
+	/**
+	 * Validar cuenta.
+	 *
+	 * @param cuenta
+	 *            the cuenta
+	 * @return true, if successful
+	 */
 	public static boolean validarCuenta(String cuenta){
 		String miCuenta[];
 		if(!cuenta.substring(0, 2).equals("ES"))

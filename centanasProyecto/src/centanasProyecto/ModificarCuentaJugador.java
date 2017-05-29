@@ -22,13 +22,25 @@ import bbdd.BBDD_Jugador;
 import clases.Jugador;
 import java.awt.Toolkit;
 
+/**
+ * Clase ModificarCuentaJugador.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ */
 public class ModificarCuentaJugador extends JFrame{
+	
+	
 	protected static final String String = null;
 	private JPanel contentPane;
 	private JTextField nuevacuenta;
 
 	/**
-	 * Launch the application.
+	  Método main, lanzamiento.
+	 *
+	 * @param args
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -45,6 +57,9 @@ public class ModificarCuentaJugador extends JFrame{
 
 	/**
 	 * Create the frame.
+	 *
+	 * @param dni
+	 *            
 	 */
 
 	public ModificarCuentaJugador(String dni) {

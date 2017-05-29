@@ -21,13 +21,24 @@ import javax.swing.border.LineBorder;
 import bbdd.BBDD_Jugador;
 import java.awt.Toolkit;
 
+/**
+ * Clase DarBajaJugador2.
+ *  @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ * Es utilizado en la clase OpcionDarBaja.
+ */
 public class DarBajaJugador2 extends JFrame{
-
 	private JPanel contentPane;
 	private JTextField textField;
 
 	/**
-	 * Launch the application.
+	 *arranca la aplicación
+	 *
+	 * método principal
+	 *      
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

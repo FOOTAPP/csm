@@ -1,5 +1,13 @@
 package centanasProyecto;
 
+/**
+ * Clase ValidarDni.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ */
 public class ValidarDni {
 	/**
 	Clase que permite validar un DNI.  
@@ -10,12 +18,23 @@ public class ValidarDni {
 	 
 	    private String dni;
 	 
-	        public ValidarDni(String dni) {
+	        /**
+			 * Costructor ValidarDni.
+			 *
+			 * @param dni
+			 *            
+			 */
+        	public ValidarDni(String dni) {
 	            this.dni = dni;
 	        }
 	 
 	     
-	    public boolean validar() {
+	    /**
+		 * Método Validar.
+		 *  Es utilizado en el método actionPerformed(ActionEvent) de las clases  DarAltaEmpleado, DarAltaEmpleado, DarAltaJugador,DarAltaJugador.
+		 * @return true, si es correcto
+		 */
+    	public boolean validar() {
 	 
 	         
 	        String letraMayuscula = ""; //Guardaremos la letra introducida en formato mayúscula
@@ -39,7 +58,12 @@ public class ValidarDni {
 	        }
 	    }
 	 
-	        private boolean soloNumeros() {
+	        /**
+			 * Método Solo numeros.
+			 *
+			 * @return true, si es correcto
+			 */
+        	private boolean soloNumeros() {
 	 
 	            int i, j = 0;
 	            String numero = ""; // Es el número que se comprueba uno a uno por si hay alguna letra entre los 8 primeros dígitos
@@ -70,7 +94,12 @@ public class ValidarDni {
 	            }*/
 	        }
 	 
-	        private String letraDNI() {
+	        /**
+			 * Método letraDNI .
+			 *
+			 * @return string
+			 */
+        	private String letraDNI() {
 	        // El método es privado porque lo voy a usar internamente en esta clase, no se necesita fuera de ella
 	 
 	        // pasar miNumero a integer

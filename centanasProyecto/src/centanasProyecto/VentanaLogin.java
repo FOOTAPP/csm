@@ -34,15 +34,28 @@ import java.awt.event.FocusEvent;
 import javax.swing.JEditorPane;
 import javax.swing.JDialog;
 
+/**
+ * Clase VentanaLogin.
+ * Ventana principal
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ */
 public class VentanaLogin extends JFrame {
 
+	
 	private static VentanaLogin frame;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JPasswordField passwordField;
 
 	/**
-	 * Launch the application.
+	 * Método main
+	 *
+	 * @param args
+	 *            
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

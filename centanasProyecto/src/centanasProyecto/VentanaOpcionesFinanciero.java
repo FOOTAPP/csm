@@ -23,12 +23,24 @@ import javax.swing.JButton;
 import javax.swing.JEditorPane;
 import java.awt.Toolkit;
 
+/**
+ * Class VentanaOpcionesFinanciero.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ */
 public class VentanaOpcionesFinanciero extends JFrame {
 
+	
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 * Método main.
+	 *
+	 * @param args
+	 *            
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

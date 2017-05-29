@@ -21,12 +21,21 @@ import javax.swing.border.LineBorder;
 import bbdd.BBDD_Aviso;
 import java.awt.Toolkit;
 
+/**
+ * Clase VentanaOpcionesEntrenador.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ */
 public class VentanaOpcionesEntrenador extends JFrame {
+
 
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 * metodo principal
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -42,7 +51,7 @@ public class VentanaOpcionesEntrenador extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Crea ventana o construye VentanaOpcionesEntrenador.
 	 */
 	public VentanaOpcionesEntrenador() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaOpcionesEntrenador.class.getResource("/Resources/soccer.png")));

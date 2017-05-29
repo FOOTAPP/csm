@@ -28,8 +28,17 @@ import com.toedter.calendar.JDayChooser;
 import com.toedter.calendar.JDateChooser;
 import java.awt.Toolkit;
 
+/**
+ * Class DarAltaEmpleado2.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ */
 public class DarAltaEmpleado2 extends JFrame{
 
+	
 	private JPanel contentPane;
 	private JTextField textdni;
 	private JTextField textnombre;
@@ -38,6 +47,12 @@ public class DarAltaEmpleado2 extends JFrame{
 	private JTextField textcorreo;
 	private LocalDateTime hoy=LocalDateTime.now();
 
+	/**
+	 * Método main.
+	 *
+	 * @param args
+	 *            
+	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -52,6 +67,9 @@ public class DarAltaEmpleado2 extends JFrame{
 	}
 
 
+	/**
+	 * Constructor DarAltaEmpleado2.
+	 */
 	public DarAltaEmpleado2() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DarAltaEmpleado2.class.getResource("/Resources/soccer.png")));
 		BBDD_Empleado bd=new BBDD_Empleado("proyecto");

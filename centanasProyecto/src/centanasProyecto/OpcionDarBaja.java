@@ -17,12 +17,23 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
 
+/**
+ * Clase OpcionDarBaja.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ */
 public class OpcionDarBaja extends JFrame {
 
+	
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	  M�todo main, lanzamiento.
+	 *
+	 * @param args
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -38,9 +49,9 @@ public class OpcionDarBaja extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Crea ventana o construye  OpcionDarBaja.
 	 */
-	public OpcionDarBaja() {
+	public OpcionDarBaja() { // Se utiliza en DarAltaEmpleado2
 		setTitle("Dar baja");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(OpcionDarBaja.class.getResource("/Resources/soccer.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

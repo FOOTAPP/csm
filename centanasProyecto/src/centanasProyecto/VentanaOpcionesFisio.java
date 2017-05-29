@@ -20,12 +20,24 @@ import javax.swing.border.LineBorder;
 import javax.swing.JEditorPane;
 import java.awt.Toolkit;
 
+/**
+ * Class VentanaOpcionesFisio.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ */
 public class VentanaOpcionesFisio extends JFrame {
 
+	
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 * Método main.
+	 *
+	 * @param args
+	 *            the arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

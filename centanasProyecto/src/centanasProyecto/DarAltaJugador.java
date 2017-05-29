@@ -29,8 +29,17 @@ import javax.swing.JComboBox;
 import javax.swing.JEditorPane;
 import java.awt.Toolkit;
 
+/**
+ * Clase DarAltaJugador.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ */
 public class DarAltaJugador extends JFrame{
 
+	
 	private JPanel contentPane;
 	private JTextField textdni;
 	private JTextField textnombre;
@@ -40,7 +49,10 @@ public class DarAltaJugador extends JFrame{
 	private LocalDateTime hoy=LocalDateTime.now();
 
 	/**
-	 * Launch the application.
+	 * Método main.
+	 *
+	 * @param args
+	 *           
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

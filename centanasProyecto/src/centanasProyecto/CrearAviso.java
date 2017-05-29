@@ -33,15 +33,22 @@ import javax.swing.JTextArea;
 import javax.swing.DropMode;
 import java.awt.Toolkit;
 
+/**
+ * Clase CrearAviso.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria 
+ * @version 29.05.2017
+ */
 public class CrearAviso extends JFrame {
 
+	
 	protected static final java.lang.String String = null;
 	private JPanel contentPane;
 	private LocalDateTime hoy=LocalDateTime.now();
 
-	/**
-	 * Launch the application.
-	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -57,6 +64,9 @@ public class CrearAviso extends JFrame {
 
 	/**
 	 * Create the frame.
+	 *
+	 * @param dni
+	 *            
 	 */
 	public CrearAviso(String dni) {
 		setTitle("Crear Aviso");

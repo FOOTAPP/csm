@@ -21,13 +21,24 @@ import javax.swing.border.LineBorder;
 import bbdd.BBDD_Empleado;
 import java.awt.Toolkit;
 
+/**
+ * Clase DarBajaEmpleado2.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
+ */
 public class DarBajaEmpleado2 extends JFrame{
 
+	
 	private JPanel contentPane;
 	private JTextField textField;
 
 	/**
-	 * Launch the application.
+	 * Método main, lanzamiento.
+	 *
+	 * @param args
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
