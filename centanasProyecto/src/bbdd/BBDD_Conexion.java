@@ -10,6 +10,8 @@ import java.nio.file.Paths;
 import java.util.InvalidPropertiesFormatException;
 import java.util.Properties;
 
+import javax.swing.JOptionPane;
+
 public class BBDD_Conexion {
 
 	private String base;
@@ -35,7 +37,8 @@ public class BBDD_Conexion {
 	public BBDD_Conexion(String fileName) {	
 		try{
 			this.prop = new Properties();
-			prop.loadFromXML(Files.newInputStream(Paths.get("xml\\mysql-properties.xml")));
+			prop.loadFromXML(BBDD_Conexion.class.getResourceAsStream("/Recursos/mysql-properties.xml"));
+			//prop.loadFromXML(Files.newInputStream(Paths.get("mysql-properties.xml")));
 		
 			this.dbms = this.prop.getProperty("dbms");
 			this.driver = this.prop.getProperty("driver");
@@ -47,13 +50,16 @@ public class BBDD_Conexion {
 			this.url = "jdbc:mysql://localhost/"+dbName;
 		}
 		catch(FileNotFoundException e){
-			System.out.println("No se encuentra el archivo de configuración");  
+			JOptionPane.showMessageDialog(null,"No se encuentra el archivo de configuración");
+			//System.out.println("No se encuentra el archivo de configuración");  
 		}
 		catch(InvalidPropertiesFormatException e){
-			System.out.println("Error formato fichero de configuración");
+			JOptionPane.showMessageDialog(null, "Error formato fichero de configuración");
+			//System.out.println("Error formato fichero de configuración");
 		}
 		catch(IOException e){
-			System.out.println("Error abriendo fichero de configuración");
+			JOptionPane.showMessageDialog(null, "Error abriendo fichero de configuración");
+			//System.out.println("Error abriendo fichero de configuración");
 		}	
 	}
 	

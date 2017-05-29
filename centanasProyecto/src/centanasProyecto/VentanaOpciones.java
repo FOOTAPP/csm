@@ -137,16 +137,14 @@ public class VentanaOpciones extends JFrame {
 		JButton btnNewButton = new JButton("Exportar base de datos a XML");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String direccion = "xml\\proyecto.xml";
-				try
-				                {
-									//Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + direccion);
-									Runtime.getRuntime().exec("C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe "+direccion);
-				                }
-				                catch(Exception err)
-				                {
-				                    JOptionPane.showMessageDialog(null,"Error: "+err);
-				                }
+				String direccion = "src\\Resources\\xml\\proyecto.xml";
+				try{
+					//Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + direccion);
+					Runtime.getRuntime().exec("C:\\Program Files\\Mozilla Firefox\\firefox.exe "+direccion);
+			    }
+				catch(Exception err){
+					JOptionPane.showMessageDialog(null,"Error: "+err);
+				}
 			}
 		});
 		btnNewButton.setBounds(282, 345, 262, 23);
