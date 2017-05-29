@@ -26,6 +26,11 @@ import clases.Aviso;
 
 /**
  * Clase LeerAviso.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
  */
 public class LeerAviso extends JFrame{
 	

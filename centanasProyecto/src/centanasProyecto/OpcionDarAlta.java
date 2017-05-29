@@ -16,6 +16,11 @@ import java.awt.event.ActionEvent;
 
 /**
  * Clase OpcionDarAlta.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
  */
 public class OpcionDarAlta extends JFrame {
 

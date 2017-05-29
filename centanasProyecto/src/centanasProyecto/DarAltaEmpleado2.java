@@ -25,6 +25,11 @@ import com.toedter.calendar.JDateChooser;
 
 /**
  * Class DarAltaEmpleado2.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
  */
 public class DarAltaEmpleado2 extends JFrame{
 

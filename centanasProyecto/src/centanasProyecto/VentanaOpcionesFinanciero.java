@@ -24,6 +24,11 @@ import javax.swing.JEditorPane;
 
 /**
  * Class VentanaOpcionesFinanciero.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
  */
 public class VentanaOpcionesFinanciero extends JFrame {
 

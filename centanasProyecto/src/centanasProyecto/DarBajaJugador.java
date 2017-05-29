@@ -18,6 +18,11 @@ import bbdd.BBDD_Jugador;
 
 /**
  *  Clase DarBajaJugador ventana.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
  *  Es utilizado en la clase VentanaOpcionesEntrenador.
  */
 public class DarBajaJugador extends JFrame{

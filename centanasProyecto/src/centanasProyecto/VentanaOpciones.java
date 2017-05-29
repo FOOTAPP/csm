@@ -24,6 +24,11 @@ import java.awt.event.ActionEvent;
 
 /**
  * Clase VentanaOpciones.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
  */
 public class VentanaOpciones extends JFrame {
 

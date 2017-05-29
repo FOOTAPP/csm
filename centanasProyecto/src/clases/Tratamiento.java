@@ -4,6 +4,11 @@ import java.time.LocalDateTime;
 
 /**
  * Clase Tratamiento.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
  */
 public class Tratamiento {
 

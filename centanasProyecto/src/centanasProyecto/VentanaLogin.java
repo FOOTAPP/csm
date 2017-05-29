@@ -36,6 +36,11 @@ import javax.swing.JDialog;
 /**
  * Clase VentanaLogin.
  * Ventana principal
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
  */
 public class VentanaLogin extends JFrame {
 

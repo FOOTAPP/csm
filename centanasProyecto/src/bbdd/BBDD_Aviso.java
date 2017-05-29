@@ -6,6 +6,11 @@ import clases.Aviso;
 
 /**
  * Clase BBDD_Aviso.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria 
+ * @version 29.05.2017
  */
 public class BBDD_Aviso extends BBDD_Proyecto{
 

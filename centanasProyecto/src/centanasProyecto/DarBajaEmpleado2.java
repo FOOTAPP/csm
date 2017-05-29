@@ -18,6 +18,11 @@ import bbdd.BBDD_Empleado;
 
 /**
  * Clase DarBajaEmpleado2.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
  */
 public class DarBajaEmpleado2 extends JFrame{
 

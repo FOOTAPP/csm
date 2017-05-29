@@ -10,6 +10,11 @@ import java.util.Vector;
 /**
  * Clase BBDD_Proyecto.
  * Clase padre de BBDD_Aviso,BBDD_Empleado,BBDD_Fisio,BBDD_Jugador.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria 
+ * @version 29.05.2017
  */
 public class BBDD_Proyecto extends BBDD_Conexion{
 

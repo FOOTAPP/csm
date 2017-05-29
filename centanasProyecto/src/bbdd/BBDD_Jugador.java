@@ -5,6 +5,11 @@ import clases.Jugador;
 
 /**
  * Clase BBDD_Jugador.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
  */
 public class BBDD_Jugador extends BBDD_Proyecto{
 

@@ -20,6 +20,11 @@ import javax.swing.SwingConstants;
 
 /**
  * Clase errorotroEntrenador.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
  */
 public class errorotroEntrenador extends JFrame {
 

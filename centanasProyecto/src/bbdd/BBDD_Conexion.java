@@ -12,6 +12,11 @@ import java.util.Properties;
 
 /**
  * Clase BBDD_Conexion.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
  */
 public class BBDD_Conexion {
 	private String base;

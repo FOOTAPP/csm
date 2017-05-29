@@ -6,6 +6,10 @@ import java.util.Vector;
 
 /**
  * Clase Aviso.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
  */
 public class Aviso {
 

@@ -16,6 +16,11 @@ import java.awt.Dialog.ModalExclusionType;
 
 /**
  * Clase ErrorInicioSesion.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
  */
 public class ErrorInicioSesion extends JFrame {
 

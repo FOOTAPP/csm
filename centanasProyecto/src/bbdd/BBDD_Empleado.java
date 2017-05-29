@@ -5,6 +5,11 @@ import clases.Empleado;
 
 /**
  * Clase BBDD_Empleado.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria 
+ * @version 29.05.2017
  */
 public class BBDD_Empleado extends BBDD_Proyecto{
 

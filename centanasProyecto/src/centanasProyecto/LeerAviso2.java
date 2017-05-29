@@ -23,6 +23,11 @@ import javax.swing.JTextPane;
 
 /**
  * Clase LeerAviso2.
+ * @author Pablo Zarzalejo
+ * @author Jose Angel Moro
+ * @author Ellioth Fernandez C.
+ * @author David Valverde Oria
+ * @version 29.05.2017
  */
 public class LeerAviso2 extends JFrame{
 	
