@@ -9,7 +9,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 
 import bbdd.BBDD_Aviso;
 
@@ -21,6 +23,7 @@ import javax.swing.JEditorPane;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
 
 /**
  * Clase VentanaOpciones.
@@ -59,6 +62,8 @@ public class VentanaOpciones extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaOpciones() {
+		setTitle("Presidente");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaOpciones.class.getResource("/Resources/soccer.png")));
 		BBDD_Aviso bd=new BBDD_Aviso("Proyecto");
 		
 		String dni=bd.buscarPresi();
@@ -69,8 +74,7 @@ public class VentanaOpciones extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		contentPane.setBackground(new Color(60, 179, 113));
-		
+		contentPane.setBackground(new Color(38, 233, 78));
 		int ancho=java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
 		int inicioancho=ancho/4;
 		int alto=java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
@@ -80,13 +84,13 @@ public class VentanaOpciones extends JFrame {
 		//setBounds()
 		setBounds(inicioancho,inicioalto, ancho, alto);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\csmx.jpg"));
-		lblNewLabel.setBounds(10, 0, 213, 84);
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(VentanaOpcionesFinanciero.class.getResource("/Resources/csmx.jpg")));
+		lblNewLabel.setBounds(0, 0, 213, 84);
 		contentPane.add(lblNewLabel);
 		
 		JEditorPane editorPane = new JEditorPane();
-		editorPane.setBackground(new Color(0, 0, 0));
+		editorPane.setBackground(new Color(1,3,64));
 		editorPane.setBounds(0, 0, 834, 84);
 		contentPane.add(editorPane);
 		
@@ -99,7 +103,7 @@ public class VentanaOpciones extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_7.setBounds(131, 411, 143, 23);
+		btnNewButton_7.setBounds(355, 355, 143, 23);
 		contentPane.add(btnNewButton_7);
 		
 		JButton btnNewButton_5 = new JButton("Leer Avisos");
@@ -110,7 +114,7 @@ public class VentanaOpciones extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_5.setBounds(186, 163, 164, 23);
+		btnNewButton_5.setBounds(221, 163, 164, 23);
 		contentPane.add(btnNewButton_5);
 		
 		JButton btnNewButton_4 = new JButton("Dar baja");
@@ -121,7 +125,7 @@ public class VentanaOpciones extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_4.setBounds(467, 211, 164, 23);
+		btnNewButton_4.setBounds(454, 211, 164, 23);
 		contentPane.add(btnNewButton_4);
 		
 		JButton btnNewButton_3 = new JButton("Dar alta");
@@ -132,7 +136,7 @@ public class VentanaOpciones extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_3.setBounds(467, 163, 164, 23);
+		btnNewButton_3.setBounds(454, 163, 164, 23);
 		contentPane.add(btnNewButton_3);
 		
 		JButton button = new JButton("Modificar cuentas");
@@ -143,25 +147,24 @@ public class VentanaOpciones extends JFrame {
 				dispose();
 			}
 		});
-		button.setBounds(282, 270, 262, 23);
+		button.setBounds(282, 260, 262, 23);
 		contentPane.add(button);		
 		
 		JButton btnNewButton = new JButton("Exportar base de datos a XML");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String direccion = "xml\\proyecto.xml";
-				try
-				                {
-									//Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + direccion);
-									Runtime.getRuntime().exec("C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe "+direccion);
-				                }
-				                catch(Exception err)
-				                {
-				                    JOptionPane.showMessageDialog(null,"Error: "+err);
-				                }
+
+				String direccion = "src\\Resources\\xml\\proyecto.xml";
+				try{
+					//Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + direccion);
+					Runtime.getRuntime().exec("C:\\Program Files\\Mozilla Firefox\\firefox.exe "+direccion);
+			    }
+				catch(Exception err){
+					JOptionPane.showMessageDialog(null,"Error: "+err);
+				}
 			}
 		});
-		btnNewButton.setBounds(282, 345, 262, 23);
+		btnNewButton.setBounds(282, 304, 262, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnCrearAviso = new JButton("Crear Aviso");
@@ -172,7 +175,7 @@ public class VentanaOpciones extends JFrame {
 				dispose();
 			}
 		});
-		btnCrearAviso.setBounds(186, 211, 164, 23);
+		btnCrearAviso.setBounds(221, 211, 164, 23);
 		contentPane.add(btnCrearAviso);
 		
 		JLabel lblBienvenidoUsuario = new JLabel("Bienvenido Usuario");
@@ -183,10 +186,12 @@ public class VentanaOpciones extends JFrame {
 		lblBienvenidoUsuario.setBounds(207, 63, 240, 41);
 		contentPane.add(lblBienvenidoUsuario);
 		
+		Border border=LineBorder.createBlackLineBorder();
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\fondo2.jpg"));
-		lblNewLabel_1.setBounds(131, 129, 500, 305);
+		lblNewLabel_1.setIcon(new ImageIcon(VentanaOpcionesFisio.class.getResource("/Resources/fondobueno.jpg")));
+		lblNewLabel_1.setBounds(ancho/4, alto/4, ancho/2, alto/2);
 		contentPane.add(lblNewLabel_1);
+		lblNewLabel_1.setBorder(border);
 		
 	}
 }

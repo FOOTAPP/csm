@@ -23,6 +23,7 @@ import javax.swing.border.LineBorder;
 import bbdd.BBDD_Aviso;
 import bbdd.BBDD_Empleado;
 import clases.Aviso;
+import java.awt.Toolkit;
 
 /**
  * Clase LeerAviso.
@@ -64,6 +65,8 @@ public class LeerAviso extends JFrame{
 	 *           
 	 */
 	public LeerAviso(String dni) {
+		setTitle("Avisos");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(LeerAviso.class.getResource("/Resources/soccer.png")));
 		
 		BBDD_Aviso bd=new BBDD_Aviso("proyecto");
 		

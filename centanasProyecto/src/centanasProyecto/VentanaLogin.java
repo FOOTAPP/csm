@@ -14,6 +14,7 @@ import javax.swing.JTextPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.SystemColor;
@@ -141,30 +142,26 @@ public class VentanaLogin extends JFrame {
 					obj.setVisible(true);
 					dispose();
 				}
-				if(textField.getText().equals("entrenador") && passwordField.getText().equals("entrenador")){
-					VentanaOpcionesEntrenador obj2= new VentanaOpcionesEntrenador();
-					obj2.setVisible(true);
-					dispose();
-				}
-				if(textField.getText().equals("financiero") && passwordField.getText().equals("financiero")){
-					VentanaOpcionesFinanciero obj3= new VentanaOpcionesFinanciero();
-					obj3.setVisible(true);
-					dispose();
-				}
-				if(textField.getText().equals("fisio") && passwordField.getText().equals("fisio")){
-					VentanaOpcionesFisio obj4= new VentanaOpcionesFisio();
-					obj4.setVisible(true);
-					dispose();
-				}
-				else{
-					//JDialog obj14=new JDialog(this);
-					//obj14.setModal(true);
-				
-					//obj14.setBounds(100, 100, 450, 300);
-					//OtroErrorInicioSesion obj14=new OtroErrorInicioSesion();
-					//ErrorInicioSesion obj14=new ErrorInicioSesion();
-					//obj14.setVisible(true);
-				}
+				else
+					if(textField.getText().equals("entrenador") && passwordField.getText().equals("entrenador")){
+						VentanaOpcionesEntrenador obj2= new VentanaOpcionesEntrenador();
+						obj2.setVisible(true);
+						dispose();
+					}
+					else
+						if(textField.getText().equals("financiero") && passwordField.getText().equals("financiero")){
+							VentanaOpcionesFinanciero obj3= new VentanaOpcionesFinanciero();
+							obj3.setVisible(true);
+							dispose();
+						}
+						else
+							if(textField.getText().equals("fisio") && passwordField.getText().equals("fisio")){
+								VentanaOpcionesFisio obj4= new VentanaOpcionesFisio();
+								obj4.setVisible(true);
+								dispose();
+							}
+							else
+								JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrecto.");
 			}
 		});
 		

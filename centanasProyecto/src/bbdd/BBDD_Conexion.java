@@ -18,6 +18,8 @@ import java.util.Properties;
  * @author David Valverde Oria
  * @version 29.05.2017
  */
+
+import javax.swing.JOptionPane;
 public class BBDD_Conexion {
 	private String base;
 	private String usuario;
@@ -40,33 +42,38 @@ public class BBDD_Conexion {
 	*/
 	
 	/**
-	 * Inicia una conexi髇 de la BBDD.
+	 * Inicia una conexi贸n de la BBDD.
 	 *
 	 * @param fileName no se usa
 	 *            
 	 */
 	public BBDD_Conexion(String fileName) {	
 		try{
+
 			this.prop = new Properties(); // Almacena la prefrencia del usuario
-			prop.loadFromXML(Files.newInputStream(Paths.get("xml\\mysql-properties.xml")));
+			prop.loadFromXML(BBDD_Conexion.class.getResourceAsStream("/Recursos/mysql-properties.xml"));
+			//prop.loadFromXML(Files.newInputStream(Paths.get("mysql-properties.xml")));
 		
 			this.dbms = this.prop.getProperty("dbms"); // nombre del sistema de datos "mysql"
 			this.driver = this.prop.getProperty("driver"); // manejador de la base de datos
 			this.dbName = this.prop.getProperty("database_name"); // nombre del esquema de la bbdd
 			this.usuario = this.prop.getProperty("user_name");  // usuario con la que me concto a la bbdd
-			this.pass = this.prop.getProperty("password");  // contrase馻 del ususario
+			this.pass = this.prop.getProperty("password");  // contrase帽a del ususario
 			this.serverName = this.prop.getProperty("server_name");  // servidor donde esta desplegada la bbdd
 			this.portNumber = Integer.parseInt(this.prop.getProperty("port_number"));  //puerto donde esta la base de datos
 			this.url = "jdbc:mysql://localhost/"+dbName;  // es la conexion en si
 		}
 		catch(FileNotFoundException e){
-			System.out.println("No se encuentra el archivo de configuraci髇");  
+			JOptionPane.showMessageDialog(null,"No se encuentra el archivo de configuraci贸n");
+			//System.out.println("No se encuentra el archivo de configuraci贸n");  
 		}
 		catch(InvalidPropertiesFormatException e){
-			System.out.println("Error formato fichero de configuraci髇");
+			JOptionPane.showMessageDialog(null, "Error formato fichero de configuraci贸n");
+			//System.out.println("Error formato fichero de configuraci贸n");
 		}
 		catch(IOException e){
-			System.out.println("Error abriendo fichero de configuraci髇");
+			JOptionPane.showMessageDialog(null, "Error abriendo fichero de configuraci贸n");
+			//System.out.println("Error abriendo fichero de configuraci贸n");
 		}	
 	}
 	
@@ -81,7 +88,7 @@ public class BBDD_Conexion {
 			System.out.println(e.getMessage());
 		}
 		try{
-		 	c=DriverManager.getConnection(url,usuario,pass); // Crea objeto tipo conecci髇
+		 	c=DriverManager.getConnection(url,usuario,pass); // Crea objeto tipo conecci贸n
 		}
 		catch (SQLException e ){
 			System.out.println(e.getMessage());

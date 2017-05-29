@@ -28,6 +28,7 @@ import clases.Jugador;
 
 import com.toedter.calendar.JDayChooser;
 import com.toedter.calendar.JDateChooser;
+import java.awt.Toolkit;
 
 /**
  * Clase DarAltaEmpleado.
@@ -72,6 +73,7 @@ public class DarAltaEmpleado extends JFrame{
 	 * Constructor altaEmpleado.
 	 */
 	public DarAltaEmpleado() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DarAltaEmpleado.class.getResource("/Resources/soccer.png")));
 		BBDD_Empleado bd=new BBDD_Empleado("proyecto");
 		setTitle("Dar alta empleado");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

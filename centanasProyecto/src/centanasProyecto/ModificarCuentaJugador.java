@@ -20,6 +20,7 @@ import javax.swing.border.LineBorder;
 
 import bbdd.BBDD_Jugador;
 import clases.Jugador;
+import java.awt.Toolkit;
 
 /**
  * Clase ModificarCuentaJugador.
@@ -60,7 +61,9 @@ public class ModificarCuentaJugador extends JFrame{
 	 * @param dni
 	 *            
 	 */
+
 	public ModificarCuentaJugador(String dni) {
+  setIconImage(Toolkit.getDefaultToolkit().getImage(ModificarCuentaJugador.class.getResource("/Resources/soccer.png")));
 		BBDD_Jugador bd=new BBDD_Jugador("proyecto");
 		setTitle("Modificar cuenta Jugador");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

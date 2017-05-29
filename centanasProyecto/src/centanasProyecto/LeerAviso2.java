@@ -6,12 +6,16 @@ import java.awt.GraphicsConfiguration;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import javax.swing.text.Caret;
 
 import bbdd.BBDD_Aviso;
@@ -20,6 +24,7 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JTextPane;
+import java.awt.Toolkit;
 
 /**
  * Clase LeerAviso2.
@@ -66,6 +71,8 @@ public class LeerAviso2 extends JFrame{
 	 *           
 	 */
 	public LeerAviso2(Aviso av, String dni) {
+		setTitle("Aviso");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(LeerAviso2.class.getResource("/Resources/soccer.png")));
 		
 		BBDD_Aviso bd=new BBDD_Aviso("proyecto");
 		
@@ -74,6 +81,16 @@ public class LeerAviso2 extends JFrame{
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		contentPane.setBackground(new Color(38, 233, 78));
+		int ancho=java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
+		int inicioancho=ancho/4;
+		int alto=java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
+		int inicioalto=alto/4;
+		ancho=ancho/2;
+		alto=alto/2;
+		//setBounds()
+		setBounds(inicioancho,inicioalto, ancho, alto);
 		contentPane.setLayout(null);
 		
 		
@@ -86,19 +103,19 @@ public class LeerAviso2 extends JFrame{
 				
 			}
 		});
-		btnVolver.setBounds(10, 228, 89, 23);
+		btnVolver.setBounds(394, 347, 89, 23);
 		contentPane.add(btnVolver);
 		
 		textField = new JTextField();
 		textField.setEditable(false);
-		textField.setBounds(107, 29, 86, 20);
+		textField.setBounds(240, 170, 86, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		textField.setText(av.getDni_emple());
 		
 		JTextPane textPane = new JTextPane();
 		textPane.setEditable(false);
-		textPane.setBounds(107, 77, 282, 68);
+		textPane.setBounds(240, 212, 282, 68);
 		contentPane.add(textPane);
 		textPane.setText(av.getMotivo());
 		
@@ -106,10 +123,27 @@ public class LeerAviso2 extends JFrame{
 		
 		textField_1 = new JTextField();
 		textField_1.setEditable(false);
-		textField_1.setBounds(107, 170, 86, 20);
+		textField_1.setBounds(240, 302, 86, 20);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		textField_1.setText(fecha);
+		
+		Border border=LineBorder.createBlackLineBorder();
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(VentanaOpcionesFisio.class.getResource("/Resources/fondobueno.jpg")));
+		lblNewLabel_1.setBounds(ancho/4, alto/4, ancho/2, alto/2);
+		contentPane.add(lblNewLabel_1);
+		lblNewLabel_1.setBorder(border);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(VentanaOpcionesFinanciero.class.getResource("/Resources/csmx.jpg")));
+		lblNewLabel.setBounds(0, 0, 213, 84);
+		contentPane.add(lblNewLabel);
+		
+		JEditorPane editorPane = new JEditorPane();
+		editorPane.setBackground(new Color(1,3,64));
+		editorPane.setBounds(0, 0, 834, 84);
+		contentPane.add(editorPane);
 		
 	}
 }

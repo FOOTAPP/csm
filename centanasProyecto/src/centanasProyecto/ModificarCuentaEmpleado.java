@@ -19,6 +19,7 @@ import javax.swing.border.EmptyBorder;
 import bbdd.BBDD_Empleado;
 import clases.Empleado;
 import clases.Jugador;
+import java.awt.Toolkit;
 
 /**
  * Clase ModificarCuentaEmpleado.
@@ -61,6 +62,7 @@ public class ModificarCuentaEmpleado extends JFrame{
 	 *           
 	 */
 	public ModificarCuentaEmpleado(String dni) {
+    setIconImage(Toolkit.getDefaultToolkit().getImage(ModificarCuentaEmpleado.class.getResource("/Resources/soccer.png")));
 		BBDD_Empleado bd=new BBDD_Empleado("proyecto");
 		setTitle("Modificar cuenta Empleado");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
