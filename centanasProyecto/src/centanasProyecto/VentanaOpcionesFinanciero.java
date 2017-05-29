@@ -16,6 +16,9 @@ import javax.swing.UIManager;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+
+import bbdd.BBDD_Empleado;
+
 import javax.swing.JButton;
 import javax.swing.JEditorPane;
 import java.awt.Toolkit;
@@ -44,8 +47,9 @@ public class VentanaOpcionesFinanciero extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaOpcionesFinanciero() {
-		setTitle("Financiero");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaOpcionesFinanciero.class.getResource("/Resources/soccer.png")));
+
+    setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaOpcionesFinanciero.class.getResource("/Resources/soccer.png")));
+		BBDD_Empleado bd=new BBDD_Empleado("Proyecto");
 		Border border = LineBorder.createBlackLineBorder();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 681, 505);
@@ -88,7 +92,7 @@ public class VentanaOpcionesFinanciero extends JFrame {
 		btnNewButton_2.setBounds(273, 226, 300, 30);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ModificarCuentaJugador obj = new ModificarCuentaJugador();
+				ModificarCuentaJugador obj = new ModificarCuentaJugador(bd.buscarFinanciero());
 				obj.setVisible(true);
 				dispose();
 			}
@@ -99,7 +103,7 @@ public class VentanaOpcionesFinanciero extends JFrame {
 		btnNewButton_1.setBounds(273, 163, 300, 30);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ModificarCuentaEmpleado obj = new ModificarCuentaEmpleado();
+				ModificarCuentaEmpleado obj = new ModificarCuentaEmpleado(bd.buscarFinanciero());
 				obj.setVisible(true);
 				dispose();
 			}

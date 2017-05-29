@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="proyecto.xsl"?>
+
+    <database name="proyecto">
+        <!-- Tabla avisos -->
+        <table name="avisos">
+            <column name="N_Aviso">1</column>
+            <column name="Dni_emple">47296949Z</column>
+            <column name="Motivo">Alta_lesion</column>
+            <column name="FH_Creacion">2017-05-04 11:08:37</column>
+            <column name="FH_Leido">2017-05-16 10:31:35</column>
+        </table>
+        <table name="avisos">
+            <column name="N_Aviso">2</column>
+            <column name="Dni_emple">47296949Z</column>
+            <column name="Motivo">Baja_lesion</column>
+            <column name="FH_Creacion">2017-05-04 11:09:26</column>
+            <column name="FH_Leido">2017-05-16 10:31:35</column>
+        </table>
+        <table name="avisos">
+            <column name="N_Aviso">3</column>
+            <column name="Dni_emple">47296949Z</column>
+            <column name="Motivo">Alta_lesion</column>
+            <column name="FH_Creacion">2017-05-04 11:09:26</column>
+            <column name="FH_Leido">2017-05-16 10:31:35</column>
+        </table>
+        <table name="avisos">
+            <column name="N_Aviso">4</column>
+            <column name="Dni_emple">47296949Z</column>
+            <column name="Motivo">Baja_lesion</column>
+            <column name="FH_Creacion">2017-05-04 11:09:26</column>
+            <column name="FH_Leido">2017-05-16 10:31:35</column>
+        </table>
+        <table name="avisos">
+            <column name="N_Aviso">9</column>
+            <column name="Dni_emple">37198985H</column>
+            <column name="Motivo">Este es el motivo</column>
+            <column name="FH_Creacion">2017-05-16 10:32:48</column>
+            <column name="FH_Leido">2017-05-16 10:34:29</column>
+        </table>
+        <table name="avisos">
+            <column name="N_Aviso">10</column>
+            <column name="Dni_emple">47296949Z</column>
+            <column name="Motivo">Esto es una prueba</column>
+            <column name="FH_Creacion">2017-05-19 11:15:14</column>
+            <column name="FH_Leido">2017-05-23 13:57:26</column>
+        </table>
+        <!-- Tabla avisos_dest -->
+        <table name="avisos_dest">
+            <column name="N_Aviso">1</column>
+            <column name="Destinatario">37198985H</column>
+        </table>
+        <table name="avisos_dest">
+            <column name="N_Aviso">1</column>
+            <column name="Destinatario">77598912M</column>
+        </table>
+        <table name="avisos_dest">
+            <column name="N_Aviso">2</column>
+            <column name="Destinatario">77598912M</column>
+        </table>
+        <table name="avisos_dest">
+            <column name="N_Aviso">3</column>
+            <column name="Destinatario">77598912M</column>
+        </table>
+        <table name="avisos_dest">
+            <column name="N_Aviso">4</column>
+            <column name="Destinatario">77598912M</column>
+        </table>
+        <table name="avisos_dest">
+            <column name="N_Aviso">9</column>
+            <column name="Destinatario">47296949Z</column>
+        </table>
+        <table name="avisos_dest">
+            <column name="N_Aviso">9</column>
+            <column name="Destinatario">57298999E</column>
+        </table>
+        <table name="avisos_dest">
+            <column name="N_Aviso">9</column>
+            <column name="Destinatario">68497919C</column>
+        </table>
+        <table name="avisos_dest">
+            <column name="N_Aviso">9</column>
+            <column name="Destinatario">77598912M</column>
+        </table>
+        <table name="avisos_dest">
+            <column name="N_Aviso">10</column>
+            <column name="Destinatario">37198985H</column>
+        </table>
+        <!-- Tabla empleados -->
+        <table name="empleados">
+            <column name="Dni_Emple">37198985H</column>
+            <column name="Nombre">Florentino Perez</column>
+            <column name="F_Nacimiento">1978-01-22</column>
+            <column name="Tfno_Contacto">664134507</column>
+            <column name="Alta_Club">2017-05-02 22:00:00</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-000000060</column>
+            <column name="Cargo">Presidente</column>
+            <column name="Correo">FlorentinoPerez@Futbolistacsm.es</column>
+        </table>
+        <table name="empleados">
+            <column name="Dni_Emple">47296949Z</column>
+            <column name="Nombre">Pablo Montes</column>
+            <column name="F_Nacimiento">1980-05-29</column>
+            <column name="Tfno_Contacto">664134503</column>
+            <column name="Alta_Club">2017-05-02 22:00:00</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-000000063</column>
+            <column name="Cargo">Fisioterapeuta</column>
+            <column name="Correo">PabloMontes@Futbolistacsm.es</column>
+        </table>
+        <table name="empleados">
+            <column name="Dni_Emple">57298999E</column>
+            <column name="Nombre">Ivan Garcia</column>
+            <column name="F_Nacimiento">1985-07-25</column>
+            <column name="Tfno_Contacto">664134504</column>
+            <column name="Alta_Club">2017-05-02 22:00:00</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-000000064</column>
+            <column name="Cargo">Financiero</column>
+            <column name="Correo">IvanGarcia@Futbolistacsm.es</column>
+        </table>
+        <table name="empleados">
+            <column name="Dni_Emple">68497919C</column>
+            <column name="Nombre">Jose Pedrerol</column>
+            <column name="F_Nacimiento">1976-03-15</column>
+            <column name="Tfno_Contacto">664134506</column>
+            <column name="Alta_Club">2017-05-02 22:00:00</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-000000062</column>
+            <column name="Cargo">SegundoEntrenador</column>
+            <column name="Correo">JosePedrerol@Futbolistacsm.es</column>
+        </table>
+        <table name="empleados">
+            <column name="Dni_Emple">77598912M</column>
+            <column name="Nombre">David Valverde</column>
+            <column name="F_Nacimiento">1975-11-12</column>
+            <column name="Tfno_Contacto">664134505</column>
+            <column name="Alta_Club">2017-05-02 22:00:00</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-000000061</column>
+            <column name="Cargo">Entrenador</column>
+            <column name="Correo">DavidValverde@Futbolistacsm.es</column>
+        </table>
+        <!-- Tabla jugadores -->
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298910A</column>
+            <column name="Nombre">Aleix Garcia</column>
+            <column name="F_Nacimiento">1991-05-15</column>
+            <column name="Tfno_Contacto">664124577</column>
+            <column name="Alta_Club">2017-05-03 11:13:11</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00002001</column>
+            <column name="Demarcacion">DC</column>
+            <column name="Correo">AleixGarcia@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298911Z</column>
+            <column name="Nombre">Javier Espinosa</column>
+            <column name="F_Nacimiento">1990-06-16</column>
+            <column name="Tfno_Contacto">664124566</column>
+            <column name="Alta_Club">2017-05-03 11:13:11</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-07000001</column>
+            <column name="Demarcacion">EI</column>
+            <column name="Correo">JavierEspinosa@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298912D</column>
+            <column name="Nombre">David Valverde</column>
+            <column name="F_Nacimiento">1988-07-17</column>
+            <column name="Tfno_Contacto">664124555</column>
+            <column name="Alta_Club">2017-05-03 11:13:11</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00900001</column>
+            <column name="Demarcacion">MC</column>
+            <column name="Correo">DavidValverde@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298913F</column>
+            <column name="Nombre">Cesar Manzanilla</column>
+            <column name="F_Nacimiento">1996-08-18</column>
+            <column name="Tfno_Contacto">664124540</column>
+            <column name="Alta_Club">2017-05-03 11:13:11</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-50000001</column>
+            <column name="Demarcacion">LD</column>
+            <column name="Correo">CesarManzanilla@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298914J</column>
+            <column name="Nombre">Armindo Zubizareta</column>
+            <column name="F_Nacimiento">1992-09-19</column>
+            <column name="Tfno_Contacto">664124539</column>
+            <column name="Alta_Club">2017-05-03 11:13:11</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00009001</column>
+            <column name="Demarcacion">DFC</column>
+            <column name="Correo">ArmindoZubizareta@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298915K</column>
+            <column name="Nombre">Jose Garcia</column>
+            <column name="F_Nacimiento">1991-11-20</column>
+            <column name="Tfno_Contacto">664124527</column>
+            <column name="Alta_Club">2017-05-03 11:13:11</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00000301</column>
+            <column name="Demarcacion">LI</column>
+            <column name="Correo">JoseGarcia@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298916L</column>
+            <column name="Nombre">Gregorio Montes</column>
+            <column name="F_Nacimiento">1990-12-21</column>
+            <column name="Tfno_Contacto">664124515</column>
+            <column name="Alta_Club">2017-05-03 11:13:11</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00700001</column>
+            <column name="Demarcacion">MCD</column>
+            <column name="Correo">GregorioMontes@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298917M</column>
+            <column name="Nombre">Jon Monteño</column>
+            <column name="F_Nacimiento">1986-12-22</column>
+            <column name="Tfno_Contacto">664124533</column>
+            <column name="Alta_Club">2017-05-03 11:13:11</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00000041</column>
+            <column name="Demarcacion">MC</column>
+            <column name="Correo">JonMonteño@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298918P</column>
+            <column name="Nombre">Javier Del rio</column>
+            <column name="F_Nacimiento">1985-11-23</column>
+            <column name="Tfno_Contacto">664124595</column>
+            <column name="Alta_Club">2017-05-03 11:13:11</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00070001</column>
+            <column name="Demarcacion">POR</column>
+            <column name="Correo">JavierDelrio@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298919O</column>
+            <column name="Nombre">Abel Roncero</column>
+            <column name="F_Nacimiento">1984-09-24</column>
+            <column name="Tfno_Contacto">664124598</column>
+            <column name="Alta_Club">2017-05-03 11:13:11</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00000801</column>
+            <column name="Demarcacion">DC</column>
+            <column name="Correo">AbelRoncero@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298920W</column>
+            <column name="Nombre">Alfredo Soria</column>
+            <column name="F_Nacimiento">1994-08-25</column>
+            <column name="Tfno_Contacto">664124599</column>
+            <column name="Alta_Club">2017-05-03 11:13:11</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00005001</column>
+            <column name="Demarcacion">ED</column>
+            <column name="Correo">AlfredoSoria@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298921C</column>
+            <column name="Nombre">Jorge Monteño</column>
+            <column name="F_Nacimiento">1997-07-26</column>
+            <column name="Tfno_Contacto">664124578</column>
+            <column name="Alta_Club">2017-05-03 11:13:11</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00009001</column>
+            <column name="Demarcacion">EI</column>
+            <column name="Correo">JorgeMonteño@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298922B</column>
+            <column name="Nombre">Lucas Blazquez</column>
+            <column name="F_Nacimiento">1988-05-27</column>
+            <column name="Tfno_Contacto">664124522</column>
+            <column name="Alta_Club">2017-05-03 11:13:11</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00020001</column>
+            <column name="Demarcacion">MI</column>
+            <column name="Correo">LucasBlazquez@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298924Y</column>
+            <column name="Nombre">Mariano Elvira</column>
+            <column name="F_Nacimiento">1991-03-29</column>
+            <column name="Tfno_Contacto">664124510</column>
+            <column name="Alta_Club">2017-05-03 11:13:11</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-06000001</column>
+            <column name="Demarcacion">DFC</column>
+            <column name="Correo">MarianoElvira@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298925U</column>
+            <column name="Nombre">Deco Casillas</column>
+            <column name="F_Nacimiento">1992-05-30</column>
+            <column name="Tfno_Contacto">664124511</column>
+            <column name="Alta_Club">2017-05-03 11:13:11</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00080001</column>
+            <column name="Demarcacion">POR</column>
+            <column name="Correo">DecoCasillas@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298990V</column>
+            <column name="Nombre">Sergio Sanchez</column>
+            <column name="F_Nacimiento">1992-04-14</column>
+            <column name="Tfno_Contacto">664124588</column>
+            <column name="Alta_Club">2017-05-03 11:13:11</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00700001</column>
+            <column name="Demarcacion">ED</column>
+            <column name="Correo">SergioSanchez@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298991V</column>
+            <column name="Nombre">Pablo Motors</column>
+            <column name="F_Nacimiento">1994-03-10</column>
+            <column name="Tfno_Contacto">665450885</column>
+            <column name="Alta_Club">2017-05-03 10:34:43</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00000001</column>
+            <column name="Demarcacion">POR</column>
+            <column name="Correo">PabloMotors@futbolistacsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298992H</column>
+            <column name="Nombre">Angel Morillo</column>
+            <column name="F_Nacimiento">1993-10-03</column>
+            <column name="Tfno_Contacto">665430789</column>
+            <column name="Alta_Club">2017-05-03 10:53:27</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00000002</column>
+            <column name="Demarcacion">LD</column>
+            <column name="Correo">AngelMorillo@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298993G</column>
+            <column name="Nombre">Javier Viloria</column>
+            <column name="F_Nacimiento">1995-03-21</column>
+            <column name="Tfno_Contacto">663230550</column>
+            <column name="Alta_Club">2017-05-03 10:58:39</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00000021</column>
+            <column name="Demarcacion">DFC</column>
+            <column name="Correo">JavierVilora@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298994Q</column>
+            <column name="Nombre">Francisco Levenga</column>
+            <column name="F_Nacimiento">1994-01-01</column>
+            <column name="Tfno_Contacto">664124571</column>
+            <column name="Alta_Club">2017-05-03 11:11:15</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00000301</column>
+            <column name="Demarcacion">DFC</column>
+            <column name="Correo">FranciscoLevenga@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298995E</column>
+            <column name="Nombre">Kisko Kajko</column>
+            <column name="F_Nacimiento">1993-05-13</column>
+            <column name="Tfno_Contacto">664124581</column>
+            <column name="Alta_Club">2017-05-03 11:11:29</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00000401</column>
+            <column name="Demarcacion">LI</column>
+            <column name="Correo">Kiskokajko@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298996R</column>
+            <column name="Nombre">Diego Vazquez</column>
+            <column name="F_Nacimiento">1993-01-11</column>
+            <column name="Tfno_Contacto">664124517</column>
+            <column name="Alta_Club">2017-05-03 11:11:41</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00010001</column>
+            <column name="Demarcacion">MCD</column>
+            <column name="Correo">DiegoVazquez@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298997T</column>
+            <column name="Nombre">Diego Caldera</column>
+            <column name="F_Nacimiento">1996-02-12</column>
+            <column name="Tfno_Contacto">664124516</column>
+            <column name="Alta_Club">2017-05-03 11:13:11</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00040001</column>
+            <column name="Demarcacion">MC</column>
+            <column name="Correo">DiegoCaldera@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <table name="jugadores">
+            <column name="Dni_Jugador">47298998I</column>
+            <column name="Nombre">Carlos Vaute</column>
+            <column name="F_Nacimiento">1994-03-13</column>
+            <column name="Tfno_Contacto">664124523</column>
+            <column name="Alta_Club">2017-05-03 11:13:11</column>
+            <column name="Cuenta_Bancaria">ES00-0000-0000-00-00005001</column>
+            <column name="Demarcacion">MC</column>
+            <column name="Correo">CarlosVaute@futbolistascsm.es</column>
+            <column name="Lesionado">No</column>
+        </table>
+        <!-- Tabla sesion -->
+        <table name="sesion">
+            <column name="Dni_Jugador">47298994Q</column>
+            <column name="Dni_emple">47296949Z</column>
+            <column name="FH_Sesion">2017-05-04 10:49:58</column>
+            <column name="Motivo">Rotura Muscular</column>
+            <column name="Diagnostico">Observaremos su evolucion durante las proximas dos semanas</column>
+        </table>
+        <table name="sesion">
+            <column name="Dni_Jugador">47298997T</column>
+            <column name="Dni_emple">47296949Z</column>
+            <column name="FH_Sesion">2017-05-04 10:50:05</column>
+            <column name="Motivo">Rotura Muscular</column>
+            <column name="Diagnostico">Observaremos su evolucion durante un corto periodo de tiempo</column>
+        </table>
+    </database>

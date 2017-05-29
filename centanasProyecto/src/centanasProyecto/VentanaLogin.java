@@ -14,6 +14,7 @@ import javax.swing.JTextPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.SystemColor;
@@ -105,9 +106,12 @@ public class VentanaLogin extends JFrame {
 		btnNewButton.setBounds(439, 317, 77, 65);
 		contentPane.add(btnNewButton);
 		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(388, 245, 161, 20);
-		contentPane.add(passwordField);
+		JLabel lblUsuario = new JLabel("Usuario:");
+		lblUsuario.setFont(new Font("Lucida Sans", Font.BOLD, 15));
+		lblUsuario.setForeground(Color.WHITE);
+		lblUsuario.setBackground(UIManager.getColor("Button.darkShadow"));
+		lblUsuario.setBounds(282, 214, 102, 23);
+		contentPane.add(lblUsuario);
 		
 		JLabel lblContrasea = new JLabel("Contrase\u00F1a: ");
 		lblContrasea.setFont(new Font("Lucida Sans", Font.BOLD, 16));
@@ -115,18 +119,6 @@ public class VentanaLogin extends JFrame {
 		lblContrasea.setBackground(Color.BLACK);
 		lblContrasea.setBounds(282, 237, 141, 33);
 		contentPane.add(lblContrasea);
-		
-		textField = new JTextField();
-		textField.setBounds(388, 217, 161, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
-		
-		JLabel lblUsuario = new JLabel("Usuario:");
-		lblUsuario.setFont(new Font("Lucida Sans", Font.BOLD, 15));
-		lblUsuario.setForeground(Color.WHITE);
-		lblUsuario.setBackground(UIManager.getColor("Button.darkShadow"));
-		lblUsuario.setBounds(282, 214, 102, 23);
-		contentPane.add(lblUsuario);
 		
 		JButton btnIniciciarSesion = new JButton("");
 		btnIniciciarSesion.setIcon(new ImageIcon(VentanaLogin.class.getResource("/Resources/login.png")));
@@ -137,32 +129,38 @@ public class VentanaLogin extends JFrame {
 					obj.setVisible(true);
 					dispose();
 				}
-				if(textField.getText().equals("entrenador") && passwordField.getText().equals("entrenador")){
-					VentanaOpcionesEntrenador obj2= new VentanaOpcionesEntrenador();
-					obj2.setVisible(true);
-					dispose();
-				}
-				if(textField.getText().equals("financiero") && passwordField.getText().equals("financiero")){
-					VentanaOpcionesFinanciero obj3= new VentanaOpcionesFinanciero();
-					obj3.setVisible(true);
-					dispose();
-				}
-				if(textField.getText().equals("fisio") && passwordField.getText().equals("fisio")){
-					VentanaOpcionesFisio obj4= new VentanaOpcionesFisio();
-					obj4.setVisible(true);
-					dispose();
-				}
-				else{
-					//JDialog obj14=new JDialog(this);
-					//obj14.setModal(true);
-				
-					//obj14.setBounds(100, 100, 450, 300);
-					//OtroErrorInicioSesion obj14=new OtroErrorInicioSesion();
-					//ErrorInicioSesion obj14=new ErrorInicioSesion();
-					//obj14.setVisible(true);
-				}
+				else
+					if(textField.getText().equals("entrenador") && passwordField.getText().equals("entrenador")){
+						VentanaOpcionesEntrenador obj2= new VentanaOpcionesEntrenador();
+						obj2.setVisible(true);
+						dispose();
+					}
+					else
+						if(textField.getText().equals("financiero") && passwordField.getText().equals("financiero")){
+							VentanaOpcionesFinanciero obj3= new VentanaOpcionesFinanciero();
+							obj3.setVisible(true);
+							dispose();
+						}
+						else
+							if(textField.getText().equals("fisio") && passwordField.getText().equals("fisio")){
+								VentanaOpcionesFisio obj4= new VentanaOpcionesFisio();
+								obj4.setVisible(true);
+								dispose();
+							}
+							else
+								JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrecto.");
 			}
 		});
+		
+		textField = new JTextField();
+		textField.setBounds(388, 217, 161, 20);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(388, 245, 161, 20);
+		contentPane.add(passwordField);
+		
 		btnIniciciarSesion.setForeground(SystemColor.infoText);
 		btnIniciciarSesion.setFont(new Font("Kartika", Font.BOLD, 14));
 		btnIniciciarSesion.setBackground(SystemColor.scrollbar);
@@ -179,6 +177,5 @@ public class VentanaLogin extends JFrame {
 		lblNewLabel_1.setBounds(267, 169, 305, 243);
 		contentPane.add(lblNewLabel_1);
 		lblNewLabel_1.setBorder(border);
-		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{contentPane, btnNewButton, passwordField, lblContrasea, textField, lblUsuario, btnIniciciarSesion}));
 	}
 }

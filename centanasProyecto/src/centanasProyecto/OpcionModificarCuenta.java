@@ -3,6 +3,7 @@ package centanasProyecto;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.GraphicsConfiguration;
 
 import javax.swing.ImageIcon;
 import javax.swing.JEditorPane;
@@ -19,6 +20,7 @@ import java.awt.Toolkit;
 
 public class OpcionModificarCuenta extends JFrame {
 
+	protected static final java.lang.String String = null;
 	private JPanel contentPane;
 
 	/**
@@ -28,7 +30,7 @@ public class OpcionModificarCuenta extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					OpcionModificarCuenta frame = new OpcionModificarCuenta();
+					OpcionModificarCuenta frame = new OpcionModificarCuenta(String);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,8 +42,9 @@ public class OpcionModificarCuenta extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public OpcionModificarCuenta() {
-		setTitle("Modificar cuenta");
+
+	public OpcionModificarCuenta(String dni) {
+    setTitle("Modificar cuenta");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(OpcionModificarCuenta.class.getResource("/Resources/soccer.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -83,7 +86,7 @@ public class OpcionModificarCuenta extends JFrame {
 		JButton btnDarAltaEmpleado = new JButton("Modificar cuenta empleado");
 		btnDarAltaEmpleado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ModificarCuentaEmpleado obj= new ModificarCuentaEmpleado();
+				ModificarCuentaEmpleado obj= new ModificarCuentaEmpleado(dni);
 				obj.setVisible(true);
 				dispose();
 			}
@@ -94,7 +97,7 @@ public class OpcionModificarCuenta extends JFrame {
 		JButton btnDarAltaJugador = new JButton("Modificar cuenta jugador");
 		btnDarAltaJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ModificarCuentaJugador obj= new ModificarCuentaJugador();
+				ModificarCuentaJugador obj= new ModificarCuentaJugador(dni);
 				obj.setVisible(true);
 				dispose();
 			}
