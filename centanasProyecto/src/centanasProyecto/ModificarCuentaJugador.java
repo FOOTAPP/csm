@@ -142,9 +142,16 @@ public class ModificarCuentaJugador extends JFrame{
 				else{
 					Jugador j=new Jugador(dni, nuevacuenta.getText());
 					bd.actualizarCuentaJugador(j);
-					VentanaOpcionesFinanciero obj2=new VentanaOpcionesFinanciero();
-					obj2.setVisible(true);
-					dispose();
+					if(dni.equals(bd.buscarPresi())){
+						OpcionModificarCuenta obj4=new OpcionModificarCuenta(dni);
+						obj4.setVisible(true);
+						dispose();
+					}
+					else{
+						VentanaOpcionesFinanciero obj4=new VentanaOpcionesFinanciero();
+						obj4.setVisible(true);
+						dispose();
+					}
 				}
 			}
 		});

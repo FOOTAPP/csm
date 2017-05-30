@@ -142,9 +142,16 @@ public class ModificarCuentaEmpleado extends JFrame{
 				else{
 					Empleado e=new Empleado(dni, nuevacuenta.getText());
 					bd.actualizarCuentaEmpleado(e);
-					VentanaOpcionesFinanciero obj2=new VentanaOpcionesFinanciero();
-					obj2.setVisible(true);
-					dispose();
+					if(dni.equals(bd.buscarPresi())){
+						OpcionModificarCuenta obj4=new OpcionModificarCuenta(dni);
+						obj4.setVisible(true);
+						dispose();
+					}
+					else{
+						VentanaOpcionesFinanciero obj4=new VentanaOpcionesFinanciero();
+						obj4.setVisible(true);
+						dispose();
+					}
 				}
 			}
 		});
@@ -178,40 +185,4 @@ public class ModificarCuentaEmpleado extends JFrame{
 		lblNewLabel_1.setBounds(ancho/4, alto/4, ancho/2, alto/2);
 	}
 	
-	/**
-	 * Validar cuenta.
-	 *
-	 * @param cuenta
-	 *            the cuenta
-	 * @return true, if successful
-	 */
-	public static boolean validarCuenta(String cuenta){
-		String miCuenta[];
-		if(!cuenta.substring(0, 2).equals("ES"))
-			return false;
-		if(cuenta.length() != 27 )
-			return false;
-		miCuenta=cuenta.split("-");
-		if (miCuenta.length!=5)
-			 return false;
-		try{
-		Integer.parseInt(miCuenta[0].substring(2, 4));
-		}
-		catch(StringIndexOutOfBoundsException e){
-			return false;
-		}
-		catch(NumberFormatException e){
-			return false;
-		}
-		
-		for (int i=1;i<miCuenta.length;i++){
-		try{
-		Integer.parseInt(miCuenta[i]);
-		}
-		catch(NumberFormatException e){
-			return false;
-		}
-		}
-		return true;
-	}
 }

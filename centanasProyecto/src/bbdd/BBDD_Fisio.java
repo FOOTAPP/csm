@@ -33,7 +33,7 @@ public class BBDD_Fisio extends BBDD_Proyecto{
 	 * @return true, si es correcto.
 	 */
 	//COMPROBADO Y FUNCIONA
-	public boolean nuevaSesion (centanasProyecto.Tratamiento t){//recibe e inserta datos del jugador de la  clase Tratamiento
+	public boolean nuevaSesion (Tratamiento t){//recibe e inserta datos del jugador de la  clase Tratamiento
 		String cadena="INSERT INTO sesion values ('"+t.getDni_Jugador()+"','"+t.getDni_fisio()+"','"+t.getFh_sesion()+"','"+
 				t.getMotivo()+"','"+t.getDiagnostico()+"')";
 		try{

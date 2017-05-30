@@ -118,14 +118,6 @@ public class Aviso {
 		return motivo;
 	}
 
-	/**
-	 * Gets  fh leido.
-	 * Solo aqui
-	 * @returnfh leido tipo LocalDateTime
-	 */
-	public LocalDateTime getFh_leido() {
-		return fh_leido;
-	}
 
 	/**
 	 * Gets  fh creado.

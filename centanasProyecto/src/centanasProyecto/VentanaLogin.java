@@ -26,7 +26,6 @@ import javax.swing.UIManager;
 import javax.swing.JPasswordField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import org.eclipse.wb.swing.FocusTraversalOnArray;
 import java.awt.Component;
 import java.awt.Dialog.ModalExclusionType;
 import java.awt.event.FocusAdapter;

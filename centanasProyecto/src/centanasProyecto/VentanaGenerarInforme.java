@@ -19,6 +19,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import bbdd.BBDD_Fisio;
+import clases.Tratamiento;
 
 import javax.swing.JComboBox;
 import javax.swing.JEditorPane;

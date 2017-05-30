@@ -150,6 +150,7 @@ public class CrearAviso extends JFrame {
 			dnidest.addItem(a);
 		}
 			
+		String dnicompar=bd2.buscarEntrenador();
 		
 		JButton btnNewButton = new JButton("Crear Aviso");
 		btnNewButton.setBounds(506, 370, 124, 23);
@@ -167,15 +168,20 @@ public class CrearAviso extends JFrame {
 					else{
 						Aviso av=new Aviso((String) dnicrea.getSelectedItem(), textArea.getText(), hoy, dest );
 						bd2.crearAviso(av);
-						VentanaOpcionesEntrenador obj2=new VentanaOpcionesEntrenador();
-						obj2.setVisible(true);
-						dispose();
+						if(dni.equals(dnicompar)){
+							VentanaOpcionesEntrenador obj4=new VentanaOpcionesEntrenador();
+							obj4.setVisible(true);
+							dispose();
+						}
+						else{
+							VentanaOpciones obj4=new VentanaOpciones();
+							obj4.setVisible(true);
+							dispose();
+						}
 					}
 			}
 		});
 		contentPane.add(btnNewButton);
-		
-		String dnicompar=bd2.buscarEntrenador();
 		
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setBounds(210, 370, 89, 23);
