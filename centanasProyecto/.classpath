@@ -11,5 +11,6 @@
 	<classpathentry kind="lib" path="miglayout15-swing.jar"/>
 	<classpathentry kind="lib" path="mysql-connector-java-5.1.35-bin.jar"/>
 	<classpathentry kind="lib" path="Recursos.jar"/>
+	<classpathentry kind="lib" path="xml.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

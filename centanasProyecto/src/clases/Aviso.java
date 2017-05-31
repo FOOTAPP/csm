@@ -78,19 +78,6 @@ public class Aviso {
 		this.date = date;
 	}
 	
-	/**
-	 * Constructor Aviso.
-	 *
-	 * @param dni_emple
-	 *            
-	 * @param motivo
-	 *           
-	 */
-	public Aviso(String dni_emple, String motivo) {
-		super();
-		this.dni_emple = dni_emple;
-		this.motivo = motivo;
-	}
 
 	/**
 	 * Gets dni_emple.

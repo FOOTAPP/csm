@@ -22,6 +22,10 @@ import javax.swing.JButton;
 import javax.swing.JEditorPane;
 
 import java.awt.event.ActionListener;
+import java.io.BufferedInputStream;
+import java.io.InputStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
 
@@ -153,10 +157,18 @@ public class VentanaOpciones extends JFrame {
 		JButton btnNewButton = new JButton("Exportar base de datos a XML");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				//Path direccionn=Paths.get("/Resources/xml/proyecto.xml");
 				String direccion = "src\\Resources\\xml\\proyecto.xml";
+				//InputStream direccionn = VentanaOpciones.class.getResourceAsStream("xml/Resources/xml/proyecto.xml");
+				//ClassLoader ruta=VentanaOpciones.class.getClassLoader();
+				//InputStream direccion=ruta.getResourceAsStream("Resources/xml/proyecto.xml");				
+
 				try{
 					//Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + direccion);
+					/*BufferedInputStream b=new BufferedInputStream(direccion);
+					byte [] nuevo=new byte[100];
+					b.read(nuevo);
+					String a=new String(nuevo);*/
 					Runtime.getRuntime().exec("C:\\Program Files\\Mozilla Firefox\\firefox.exe "+direccion);
 			    }
 				catch(Exception err){
